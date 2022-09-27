@@ -1,0 +1,9 @@
+.ActivityCardList {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  overflow-y: clip;
+  flex: 0 0 auto;
+  scroll-behavior: smooth;
+  scrollbar-color: transparent;
+}

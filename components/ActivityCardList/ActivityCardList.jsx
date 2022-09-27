@@ -1,9 +1,9 @@
+import styles from "../../styles/layout/ActivityCardList.module.scss";
 import ActivityCard from "../ActivityCard/";
 
 const ActivityCardList = () => {
   return (
-    <div>
-      <h1>CardList</h1>
+    <div className={styles.ActivityCardList}>
       <ActivityCard />
     </div>
   );

@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap");
+
+.ActivityCardDiv {
+  display: flex;
+  flex-direction: row;
+
+  .ActivityCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // border: 2px solid red;
+  }
+  .ActivityCardImg {
+    width: 100px;
+    height: 100px;
+    border-radius: 4px;
+    margin: 10px 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.589);
+    object-fit: cover;
+  }
+  .ActivityCardTitle {
+    padding: 0 1rem;
+    margin: 0;
+    font-size: 1rem;
+    font-family: "Julius Sans One", sans-serif;
+  }
+}
