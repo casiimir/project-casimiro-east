@@ -1,7 +1,38 @@
 @import '../utilities/variables';
 
+
+
 .Hero {
+  img {
+    position: relative;
+  }
+  
   .Caption {
-    
+    h2 {
+      color: white;
+      font-weight: $fw-light;
+      @media (max-width: 767.98px) {
+        font-size: 36px;
+      }
+    }
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    padding: 20px;
+    background: rgb(255, 255, 255, 0.1);
+    justify-content: flex-end;
+
+    .azure {
+      color: $color_primary;
+    }
+    .orange {
+      color: $color_secondary;
+    }
+    .green {
+      color: $color_tertiary;
+    }
+
   }
 }
