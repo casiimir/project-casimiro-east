@@ -1,0 +1,28 @@
+.CardList {
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+
+
+    div {
+        background-size: cover;
+        height: 230px;
+        width: 180px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.616);
+
+        h2 {
+            backdrop-filter: blur(3px);
+            padding: 16px;
+            color: white;
+            border-radius: 0 0 8px 8px;
+            justify-content: center;
+        }
+    }
+ 
+    
+}
+
