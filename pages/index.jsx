@@ -13,6 +13,7 @@ export default function Home() {
       </Head>
       <CardList list={"cities"} />
       <CardList list={"experiences"} />
+      <Navbar/>
     </div>
   )
 }
