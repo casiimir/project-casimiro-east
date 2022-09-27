@@ -1,0 +1,23 @@
+/// Colors
+$color_primary: #30B0F9;
+$color_secondary: #C8FE6F;
+$color_tertiary: #FF800B;
+
+$color_text-main: #3D3D3D;
+$color_text-midtone: #4d4e4c;
+$color_text-dark: #191919;
+$color_text-light: #F8F8F8;
+
+$color_background-main: #E3D3B8;
+$color_background-dark: #073767;
+$color_background-light: #f7f7f7;
+
+
+$ff-main: 'Julius Sans One', sans-serif;
+$ff-alt: 'Lato', sans-serif;
+
+/// Transitions
+$anim-time: .6s;
+$anim-ease: cubic-bezier(.77, 0, .175, 1);
+$anim-duration: .05s;
+$anim: $anim-time $anim-ease $anim-duration;
