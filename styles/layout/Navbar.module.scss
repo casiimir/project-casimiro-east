@@ -41,7 +41,7 @@
                 visibility: hidden;
             }
         }
-        datalist{
+        ul{
             display: flex;
             flex-direction: column;
             background-color: rgba(255,255,255,0.4);
@@ -50,7 +50,7 @@
             position: absolute;
             width: 100%;
             top: 100%;
-            option{
+            li{
                 width: 100%;
                 height: 25px;
                 &:hover{

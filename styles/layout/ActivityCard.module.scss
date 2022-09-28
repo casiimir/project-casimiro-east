@@ -1,0 +1,30 @@
+.ActivityCard {
+  display: flex;
+  flex-direction: row;
+
+  overflow-x: scroll;
+  overflow-y: clip;
+  flex: 0 0 auto;
+  scroll-behavior: smooth;
+  scrollbar-color: transparent;
+  //   border: 2px solid red;
+  .ActivityCardDiv {
+    // border: 2px solid green;
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .ActivityCardImg {
+      //   border: 2px solid red;
+      width: 100px;
+      margin: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.589);
+      border-radius: 4px;
+
+      object-fit: cover;
+    }
+    .ActivityCardTitle {
+      font-size: 10px;
+    }
+  }
+}
