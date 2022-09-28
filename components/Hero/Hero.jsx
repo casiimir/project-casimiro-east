@@ -1,7 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-// import Image from 'next/image';
+import Image from 'next/image';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 // import required modules
@@ -85,30 +85,25 @@ const Hero = () => {
               }}
               modules={[EffectFade, Autoplay]}
             >
+            {
+              photos.map( ( item, index, array ) => <SwiperSlide key={index}>
+                    
+                <Image src={item.url} alt="slider-images" layout='fill'/>
 
-            
-              {
-                photos.map( ( item, index, array ) => <SwiperSlide key={index}>
-                      
-                      <img src={item.url} alt="img" />
+                <div className={`${styles.Caption}`}>
 
-                      <div className={`${styles.Caption}`}>
+                  <h2>
+                    Create <br />
+                    <small>Your</small> <br />
+                    J<span className={`${styles.azure}`}>o</span>u<span className={`${styles.orange}`}>r</span>n<span className={`${styles.green}`}>e</span>y
+                  </h2>
 
-                        <h2>
-                          Create <br />
-                          <small>Your</small> <br />
-                          J<span className={`${styles.azure}`}>o</span>u<span className={`${styles.orange}`}>r</span>n<span className={`${styles.green}`}>e</span>y
-                        </h2>
+                </div>
 
-                      </div>
-
-                    </SwiperSlide>
-                 
-                  
-                )
-              }
-              
-          
+              </SwiperSlide>
+                
+              )
+            }
 
             </Swiper>
           </Col>
