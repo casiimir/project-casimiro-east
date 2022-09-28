@@ -4,3 +4,4 @@ const GET = async(BASE_URL, section) => {
 };
 
 export {GET};  
+
