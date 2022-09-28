@@ -26,7 +26,7 @@ const CardList = ({}) => {
   }, []);
 
   return (
-    <div>
+    <div className={styles.CardList}>
       {cityCard.map((el) => (
         <Card key={el.id} name={el.name} image={el.cover_image_url} />
       ))}
