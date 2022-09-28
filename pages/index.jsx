@@ -1,8 +1,9 @@
-import Head from 'next/head'
-import styles from '../styles/layout/Home.module.scss'
-import Navbar from '../components/Navbar';
-import Hero from '../components/Hero';
-import CardList from '../components/CardList/CardList'
+import Head from "next/head";
+import styles from "../styles/layout/Home.module.scss";
+import Navbar from "../components/Navbar";
+import Hero from "../components/Hero";
+import CardList from "../components/CardList/CardList";
+import ActivityCardList from "../components/ActivityCardList/ActivityCardList";
 
 export default function Home() {
   return (
@@ -17,5 +18,5 @@ export default function Home() {
       <CardList list={"cities"} />
       <CardList list={"experiences"} />
     </div>
-  )
+  );
 }
