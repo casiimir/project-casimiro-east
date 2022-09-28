@@ -3,6 +3,31 @@
 
 
 .Hero {
+  z-index: 9;
+  .Logo {
+    z-index: 10;
+    padding: 10px 20px;
+    img {
+      width: 100%;
+    }
+  }
+  .motto {
+    z-index: 10;
+    padding: 10px 20px;
+    left: 50%;
+    top: 76px;
+    width: auto;
+    @media (min-width: 768px) {
+      left: 80%;
+    }
+    @media (max-width: 379.98px) {
+      left: 60%;
+    }
+    h5 {
+      color: white;
+      text-shadow: 2px 2px 4px #131313;
+    }
+  }
   img {
     position: relative;
     height: 100%;
