@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/layout/Home.module.scss'
-import Navbar from '../components/Navbar'
+import Navbar from '../components/Navbar';
+import Hero from '../components/Hero';
 import CardList from '../components/CardList/CardList'
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
       <CardList list={"cities"} />
       <CardList list={"experiences"} />
       <Navbar/>
+      <Hero />
     </div>
   )
 }
