@@ -3,6 +3,7 @@ import Link from "next/link";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Image from "next/future/image";
+import HeroCity from '../../../components/HeroCity';
 
 const cityPage = () => {
   const router = useRouter();
@@ -22,19 +23,19 @@ const cityPage = () => {
   }, [id]);
 
   return (
-    <>
-      <h1>city {id}</h1>
-      <p>{cityData.name}</p>
-      <p>{cityData.content}</p>
-
-      {cityData.cover_image_url && (
+    <>  
+      { 
+        cityData.cover_image_url && <HeroCity image={cityData.cover_image_url} title={cityData.name} content={cityData.content} />
+      }
+      
+      {/* {cityData.cover_image_url && (
         <Image
           src={cityData.cover_image_url}
           alt="Homepage"
           width={600}
           height={400}
         />
-      )}
+      )} */}
     </>
   );
 };
