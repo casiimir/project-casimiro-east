@@ -5,12 +5,16 @@
 .Hero {
   img {
     position: relative;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
   
   .Caption {
     h2 {
       color: white;
       font-weight: $fw-light;
+      text-shadow: 2px 2px 4px #131313;
       @media (max-width: 767.98px) {
         font-size: 36px;
       }
@@ -36,3 +40,5 @@
 
   }
 }
+
+
