@@ -3,6 +3,7 @@ import Hero from '../components/Hero';
 import styles from '../styles/layout/Home.module.scss'
 import Navbar from '../components/Navbar'
 import CardList from '../components/CardList/CardList'
+import Footer from '../components/Footer';
 import Image from 'next/image';
 
 
@@ -19,6 +20,7 @@ const Home = () => {
       <Navbar/>
       <CardList list={"cities"} />
       <CardList list={"experiences"} />
+      <Footer/>
     </div>
   )
 }
