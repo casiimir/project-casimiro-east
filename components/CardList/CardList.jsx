@@ -1,4 +1,4 @@
-import styles from "./index.module.scss"
+import styles from "../../styles/layout/CardList.module.scss"
 import { cityCardPlaceholder, experienceCardPlaceholder } from "../../utils/cardPlaceholder"
 import Card from "../Card/Card";
 
