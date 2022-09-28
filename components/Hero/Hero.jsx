@@ -76,6 +76,19 @@ const Hero = () => {
       <Container fluid className={`${'g-0'}`}>
         <Row>
           <Col>
+            <Row>
+              <div className={`${styles.Logo} ${'position-absolute'}`}>
+                <Image src='/logo-scont_3.png' alt="logo-image" width='200' height='200' />
+              </div>
+           
+              <div className={`${styles.motto} ${'position-absolute'}`}>
+                <h5>
+                  Not all those <br />
+                  who wander <br />
+                  are 404
+                </h5>
+              </div>
+            </Row>
             <Swiper
               spaceBetween={0}
               effect={"fade"}
@@ -87,7 +100,7 @@ const Hero = () => {
             >
             {
               photos.map( ( item, index, array ) => <SwiperSlide key={index}>
-                    
+                
                 <Image src={item.url} alt="slider-images" layout='fill'/>
 
                 <div className={`${styles.Caption}`}>
