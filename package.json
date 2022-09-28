@@ -17,7 +17,10 @@
     "sass": "^1.55.0"
   },
   "devDependencies": {
+    "bootstrap": "^5.2.1",
     "eslint": "8.24.0",
-    "eslint-config-next": "12.3.1"
+    "eslint-config-next": "12.3.1",
+    "react-bootstrap": "^2.5.0",
+    "swiper": "^8.4.2"
   }
 }
