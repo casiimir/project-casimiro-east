@@ -4,6 +4,7 @@ import cart from "../../public/cart-28-512.png";
 import Image from "next/future/image";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import Link from 'next/link';
 
 const Navbar = () => {
   const [query, setQuery] = useState("");
@@ -63,13 +64,15 @@ const Navbar = () => {
             value={query}
             onChange={handleChange}
           />
-          <datalist>
+          <ul>
             {items.map((item) => (
-              <option key={item.id} value={item.id}>
-                {item.title}
-              </option>
+              <li key={item.id} value={item.id}>  
+                <Link href={`/city/${item.id}`}>
+                  <a>{item.title}</a>
+                </Link>   
+              </li>
             ))}
-          </datalist>
+          </ul>
         </div>
 
         <li>
