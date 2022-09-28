@@ -7,7 +7,7 @@ const cityCardPlaceholder = [
     {
         id: "1",
         name:"Parigi",
-        img:"https://pugliablu.com/components/com_djclassifieds/images/item/753_parigi_thb.jpg"
+        img:"https://www.vieniviadiqui.it/wpvieni/wp-content/uploads/2020/03/Torre-eiffel-illuminata-25-cose-da-fare-a-parigi-1024x768.jpg"
     },
     {
         id: "2",
