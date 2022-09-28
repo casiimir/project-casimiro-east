@@ -9,6 +9,8 @@ import Link from 'next/link';
 const Navbar = () => {
   const [query, setQuery] = useState("");
   const [items, setItems] = useState([]);
+  const [isInputVisible, setInputVisibility] = useState(false);
+  
   const baseURL = "https://api.musement.com/api/v3/autocomplete";
   const handleChange = (event) => {
     setQuery(event.target.value);
@@ -48,6 +50,15 @@ const Navbar = () => {
   useEffect(() => {
     !query && setItems([]);
   }, [query]);
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+    if (window.scrollY >= 700) {
+      setInputVisibility(true)
+    } else {
+      setInputVisibility(false)
+    }
+  }, []);
 
   return (
     <nav className={styles.nav}>
