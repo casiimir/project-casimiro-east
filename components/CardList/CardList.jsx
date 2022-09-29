@@ -5,13 +5,13 @@ import axios from "axios";
 
 const CardList = ({ list, title }) => {
   const headers = {'Accept-Language':'it-IT'}
-  const experiencesBaseURL = "https://api.musement.com/api/v3/activities";
+  const BASE_URL = "https://api.musement.com/api/v3/activities";
   const [displayList, setDisplayList] = useState([]);
 
 
   useEffect(() => {
     axios
-      .get(experiencesBaseURL, {
+      .get(BASE_URL, {
         headers: headers,
         params: {
           limit: 10,
