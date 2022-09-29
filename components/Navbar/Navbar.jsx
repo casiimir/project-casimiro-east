@@ -6,7 +6,16 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import Link from 'next/link';
 
-const Navbar = () => {
+
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import Offcanvas from 'react-bootstrap/Offcanvas';
+
+
+
+const NavbarMain = () => {
   const [query, setQuery] = useState("");
   const [items, setItems] = useState([]);
   const [isInputVisible, setInputVisibility] = useState(false);
@@ -61,39 +70,71 @@ const Navbar = () => {
   // }, []);
 
   return (
-    <nav className={styles.nav}>
-      <ul>
-        <li>
-          <Image src={logo} alt="Homepage" height={60} />
-        </li>
-
-        <div className={styles.customSearch}>
-          <input
-            className={styles.icon}
-            placeholder="Search City..."
-            type="text"
-            value={query}
-            onChange={handleChange}
-          />
-          <ul>
-            {items.map((item) => (
-              <li key={item.id} value={item.id}>  
-                <Link href={`/city/${item.id}`}>
-                  <a>{item.title}</a>
-                </Link>   
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <li>
-          <Image src={cart} alt="Cart" height={40} />
-        </li>
-      </ul>
-    </nav>
+    <>
+      
+        <Navbar bg="dark" expand='xxl' className={`${styles.Navbar}`}>
+          <Container fluid>
+            <Navbar.Brand href="#">
+              <Image src={logo} alt="Homepage" height={60} />
+            </Navbar.Brand>
+            
+            <div className={styles.CustomSearch}>
+              <input
+                className={`${styles.input} ${'form-control'}`}
+                placeholder="Search City..."
+                type="text"
+                value={query}
+                onChange={handleChange}
+              />
+              <ul>
+                {items.map((item) => (
+                  <li key={item.id} value={item.id}>  
+                    <Link href={`/city/${item.id}`}>
+                      <a>{item.title}</a>
+                    </Link>   
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-$'xxl'`} />
+            <Navbar.Offcanvas
+              id={`offcanvasNavbar-expand-$'xxl'`}
+              aria-labelledby={`offcanvasNavbarLabel-expand-$'xxl'`}
+              placement="end"
+            >
+              <Offcanvas.Header closeButton>
+                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-$'xxl'`}>
+                  Offcanvas
+                </Offcanvas.Title>
+              </Offcanvas.Header>
+              <Offcanvas.Body>
+                <Nav className={`${'justify-content-end'} ${'flex-grow-1'} ${'pe-3'}`}>
+                  <Nav.Link href="#action1">Home</Nav.Link>
+                  <Nav.Link href="#action2">Link</Nav.Link>
+                  <NavDropdown
+                    title="Dropdown"
+                    id={`offcanvasNavbarDropdown-expand-$'xxl'`}
+                  >
+                    <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
+                    <NavDropdown.Item href="#action4">
+                      Another action
+                    </NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item href="#action5">
+                      Something else here
+                    </NavDropdown.Item>
+                  </NavDropdown>
+                </Nav>
+                
+                <Image src={cart} alt="Cart" height={40} />
+              </Offcanvas.Body>
+            </Navbar.Offcanvas>
+          </Container>
+        </Navbar>
+      
+    </>
   );
 };
 
-// TODO: MISSING ONCLICK REDIRECT TO CITY PAGE (OPTION TAG)
 
-export default Navbar;
+export default NavbarMain;

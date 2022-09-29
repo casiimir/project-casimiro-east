@@ -64,7 +64,7 @@ const cityPage = () => {
         <HeroCity
           image={cityData.cover_image_url}
           title={cityData.name}
-          content={cityData.content}
+          content={cityData.more}
         />
       )}
 
