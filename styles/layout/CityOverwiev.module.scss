@@ -1,10 +1,17 @@
+.MainContent {
+  background-color: #ededed;
+  overflow-y: scroll;
+  overflow-x: clip;
+  flex: 0 0 auto;
+  scroll-behavior: smooth;
+  scrollbar-color: transparent;
+}
+
 .Exp {
-  //   border: 2px solid red;
   display: flex;
   flex-direction: column;
 
   .ExpList {
-    // border: 2px solid blue;
     gap: 24px;
     padding: 24px;
     display: flex;

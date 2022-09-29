@@ -3,12 +3,9 @@
 .ActivityCard {
   display: flex;
   flex-direction: row;
-  overflow-x: scroll;
-  overflow-y: clip;
-  flex: 0 0 auto;
-  scroll-behavior: smooth;
-  scrollbar-color: transparent;
   // border: 2px solid red;
+  background-color: white;
+  border-radius: 4px;
 
   .ActivityCardDiv {
     // border: 2px solid green;
@@ -36,6 +33,7 @@
       font-size: 13px;
       font-weight: 600;
       line-height: 15px;
+      padding: 10px;
     }
   }
 }

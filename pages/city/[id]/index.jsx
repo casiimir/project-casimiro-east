@@ -4,7 +4,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import HeroCity from "../../../components/HeroCity";
 import ActivityCard from "../../../components/ActivityCard/ActivityCard";
-import styles from "../../../styles/layout/LinkList.module.scss";
+import styles from "../../../styles/layout/CityOverwiev.module.scss";
 import { getCategory } from "../../../api/api";
 
 const cityPage = () => {
@@ -34,18 +34,12 @@ const cityPage = () => {
   }, [id]);
 
   return (
-    <>
+    <div className={styles.MainContent}>
       {cityData?.cover_image_url && (
-        <HeroCity
-          image={cityData?.cover_image_url}
-          title={cityData?.name}
-        />
+        <HeroCity image={cityData?.cover_image_url} title={cityData?.name} />
       )}
 
-        <div>
-          descrizione
-        </div>
-
+      <div>descrizione</div>
 
       <div className={styles.Exp}>
         <h1 className={styles.ExpTitle}>Food Experiences:</h1>
@@ -96,7 +90,7 @@ const cityPage = () => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

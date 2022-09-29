@@ -1,11 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Nunito+Sans&display=swap');
-@import './utilities/variables';
-@import 'bootstrap/scss/bootstrap';
+@import url("https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Nunito+Sans&display=swap");
+@import "./utilities/variables";
+@import "bootstrap/scss/bootstrap";
 
 html,
 body {
   padding: 0;
   margin: 0;
+}
+
+body {
+  overflow-y: scroll;
+  overflow-x: clip;
+  flex: 0 0 auto;
+  scroll-behavior: smooth;
+  scrollbar-color: transparent;
 }
 
 body::-webkit-scrollbar {
@@ -23,7 +31,6 @@ a {
   margin: 0;
 }
 
-
 h1,
 h2,
 h3,
@@ -36,7 +43,7 @@ h6 {
   font-weight: $fw-bold;
 
   &.no-ls {
-    letter-spacing: 0
+    letter-spacing: 0;
   }
 }
 
@@ -53,7 +60,6 @@ h6 {
     font-size: 64px;
     line-height: 72px;
   }
-
 }
 
 p,
@@ -125,20 +131,19 @@ h5,
 }
 
 .tc {
-
   &-light {
     color: white;
   }
 
   &-alt {
-    color: #50E3C2;
+    color: #50e3c2;
   }
 
   &-primary {
     color: $color_primary;
 
     &-light {
-      color: #578BBB;
+      color: #578bbb;
     }
   }
 }
@@ -152,20 +157,19 @@ h5,
   font-family: $ff-main;
 }
 
-
-.button{
+.button {
   -webkit-appearance: none;
   border: none;
   min-width: 180px;
   font-size: 11px;
-  padding:  15px 30px;
+  padding: 15px 30px;
   display: inline-block;
   vertical-align: middle;
   font-size: 10px;
   line-height: 0.83333;
   font-weight: bold;
-  letter-spacing: .267em;
-  text-indent: .267em;
+  letter-spacing: 0.267em;
+  text-indent: 0.267em;
   text-transform: uppercase;
   text-align: center;
   padding: 1.5em 1.6em 1.5em;
@@ -175,63 +179,63 @@ h5,
 
   cursor: pointer;
 
-  &:hover, &:focus{
-      outline: 0;
-      color: white;
-      background: $color_primary;
-      text-decoration: none;
+  &:hover,
+  &:focus {
+    outline: 0;
+    color: white;
+    background: $color_primary;
+    text-decoration: none;
   }
-  
+
   &--small {
-      min-width: 160px;
-      font-size: 10px;
-      padding:  15px 30px;
+    min-width: 160px;
+    font-size: 10px;
+    padding: 15px 30px;
   }
 
   &--primary {
-      background: transparent;
-      border: 1px solid $color_primary;
-      color: $color_primary;
+    background: transparent;
+    border: 1px solid $color_primary;
+    color: $color_primary;
 
-      &:hover{
-          color: white;
-          background: $color_primary;
-          text-decoration: none;
-      }
+    &:hover {
+      color: white;
+      background: $color_primary;
+      text-decoration: none;
+    }
   }
 
   &--light {
-      background: white;
-      color: $color_primary;
+    background: white;
+    color: $color_primary;
 
-      &:hover{
-          background: $color_primary;
-          text-decoration: none;
-          color: white;
-      }
+    &:hover {
+      background: $color_primary;
+      text-decoration: none;
+      color: white;
+    }
   }
   &--ghost {
-      background: transparent;
-      border: 1px solid white;
-      color: white;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
 
-      &:hover{
-          background: white;
-          text-decoration: none;
-          color: $color_primary;
-      }
+    &:hover {
+      background: white;
+      text-decoration: none;
+      color: $color_primary;
+    }
   }
 
   &--block {
-      display: block;
-      width: 100%;
+    display: block;
+    width: 100%;
   }
 }
 
-
 .swiper-slide {
   height: 600px !important;
-} 
+}
 
 .navbar > .container-fluid {
   justify-content: flex-end;
