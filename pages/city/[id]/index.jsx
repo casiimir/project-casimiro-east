@@ -20,7 +20,7 @@ const cityPage = () => {
       .get(`https://api.musement.com/api/v3/cities/${id}`)
       .then((res) => {
         setCityData(res.data);
-        console.log(res.data);
+        console.table(res.data);
       })
       .catch((error) => {
         console.log(error.response);
@@ -39,9 +39,14 @@ const cityPage = () => {
         <HeroCity
           image={cityData?.cover_image_url}
           title={cityData?.name}
-          content={cityData?.content}
         />
       )}
+
+        <div>
+          descrizione
+        </div>
+
+
       <div className={styles.Exp}>
         <h1 className={styles.ExpTitle}>Food Experiences:</h1>
         <div className={styles.ExpList}>

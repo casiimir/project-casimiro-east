@@ -6,7 +6,7 @@ import Col from 'react-bootstrap/Col';
 import styles from '../../styles/layout/HeroCity.module.scss';
 
 
-const HeroCity = ({ image, title, content }) => {
+const HeroCity = ({ image, title}) => {
 
   
   return (
@@ -19,7 +19,6 @@ const HeroCity = ({ image, title, content }) => {
               <img src={image} alt="hero-city" />
               <div className={`${styles.Caption}`}>
                 <h2>{title}</h2>
-                <p>{content}</p>
               </div>
             </div>
           </Col>
