@@ -1,6 +1,6 @@
 import styles from "../../styles/layout/Navbar.module.scss";
-import logo from "../../public/logo-scont_3.png";
-import cart from "../../public/cart-28-512.png";
+import logo from "../../public/logo.png";
+// import cart from "../../public/cart-28-512.png";
 import Image from "next/future/image";
 import axios from "axios";
 import { useState, useEffect } from "react";
@@ -73,11 +73,12 @@ const NavbarMain = () => {
 
   // useEffect(() => {
   //   window.addEventListener('scroll', () => {
-  //   if (window.scrollY >= 700) {
+  //   if (window.scrollY >= 700) 
   //     setInputVisibility(true)
-  //   } else {
+  //   else 
   //     setInputVisibility(false)
-  //   }
+   
+    
   // }, []);
 
   return (
@@ -86,12 +87,12 @@ const NavbarMain = () => {
         <Navbar cariant="dark" expand='' className={`${styles.Navbar}`}>
           <Container fluid>
             <Row className={`${'w-100 align-items-center'}`}>
-              <Col xs={4}>
+              <Col xs={3}>
                 <Navbar.Brand href="#">
                   <Image src={logo} alt="Homepage" height={60} />
                 </Navbar.Brand>
               </Col>
-              <Col xs={4}>
+              <Col xs={5}>
                 <div className={styles.CustomSearch}>
                   <input
                     className={`${styles.input} ${'form-control'}`}

@@ -36,15 +36,9 @@ const cityPage = () => {
     <>
       {cityData?.cover_image_url && (
         <HeroCity
-<<<<<<< HEAD
-          image={cityData.cover_image_url}
-          title={cityData.name}
-          content={cityData.more}
-=======
           image={cityData?.cover_image_url}
           title={cityData?.name}
-          content={cityData?.content}
->>>>>>> main
+          content={cityData?.more}
         />
       )}
 
