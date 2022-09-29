@@ -7,7 +7,7 @@ import ActivityCard from "../../../components/ActivityCard/ActivityCard";
 import styles from "../../../styles/layout/LinkList.module.scss";
 import { getCategory } from "../../../api/api";
 
-const cityPage = () => {
+const CityPage = () => {
   const router = useRouter();
   const id = router.query.id;
   const [cityData, setCityData] = useState([]);
@@ -102,4 +102,4 @@ const cityPage = () => {
 
 // TODO: in console avete tutto l'oggetto della città
 
-export default cityPage;
+export default CityPage;
