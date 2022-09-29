@@ -1,32 +1,37 @@
-import styles from "../../styles/layout/CardList.module.scss"
-import { cityCardPlaceholder, experienceCardPlaceholder } from "../../utils/cardPlaceholder"
+import { useState, useEffect } from "react";
+import styles from "../../styles/layout/CardList.module.scss";
+// import { cityCardPlaceholder, experienceCardPlaceholder } from "../../utils/cardPlaceholder"
 import Card from "../Card/Card";
+import axios from "axios";
 
-const CardList = ({list}) => {
+const CardList = ({}) => {
+  const baseURL = "https://api.musement.com/api/v3/cities";
+  const [cityCard, setCityCard] = useState([]);
 
-    let displayList = [];
-    let isVisible = "flex";
+  useEffect(() => {
+    axios
+      .get(baseURL, {
+        params: {
+          limit: 10,
+          offset: 0,
+        },
+      })
+      .then((res) => {
+        setCityCard(res.data);
+        // console.table(res.data);
+      })
+      .catch((error) => {
+        console.log(error.response);
+      });
+  }, []);
 
-    if(list === "cities") {
-        displayList.push(...cityCardPlaceholder);
-    }
-    if(list === "experiences") {
-        displayList.push(...experienceCardPlaceholder);
-        isVisible = "none";
-    }
-
-    return(
-        <div className={styles.CardList}>
-
-            {displayList.map((item) => <Card 
-                                            key={item.id} 
-                                            name={item.name} 
-                                            image={item.img} 
-                                            visibility={isVisible}
-                                        />)}
-            {console.log(displayList)}
-        </div>
-    )
-}
+  return (
+    <div className={styles.CardList}>
+      {cityCard.map((el) => (
+        <Card key={el.id} name={el.name} image={el.cover_image_url} />
+      ))}
+    </div>
+  );
+};
 
 export default CardList;
