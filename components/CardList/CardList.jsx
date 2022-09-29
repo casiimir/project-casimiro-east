@@ -5,20 +5,21 @@ import Card from "../Card/Card";
 import axios from "axios";
 
 const CardList = ({list}) => {
-  const baseURL = "https://api.musement.com/api/v3/cities";
-  const [cityCard, setCityCard] = useState([]);
+  const citiesBaseURL = "https://api.musement.com/api/v3/cities";
+  const experiencesBaseURL = "https://api.musement.com/api/v3/activities";
+  const [experiences, setExperiences] = useState([]);
+
 
   useEffect(() => {
     axios
-      .get(baseURL, {
+      .get(experiencesBaseURL, {
         params: {
           limit: 10,
           offset: 0,
         },
       })
       .then((res) => {
-        setCityCard(res.data);
-        console.table(res.data);
+        setExperiences(res.data.data);
       })
       .catch((error) => {
         console.log(error.response);
@@ -28,18 +29,18 @@ const CardList = ({list}) => {
 
   return (
     <div className={styles.CardList}>
-      {cityCard.map((el) => {
+      
+      {console.log(experiences)}
+      {experiences.map((experience) => {
 
-        if(list === "cities") {  //questo controllo rende dinamico il componente, in modo da poterlo usare per più liste diverse
+        if(list === "cities") {
 
-          return(<Card key={el.id} name={el.name} image={el.cover_image_url} />)
+          return(<Card key={experience.city.id} name={experience.city.name} image={experience.city.cover_image_url}/>)
         }
-
         if(list === "experiences") {
-
-          return(<Card key={el.uuid}/>) //qui andrà un secondo map per l'array experiences
+          
+          return(<Card key={experience.uuid} name={experience.title} image={experience.cover_image_url}/>)
         }
- 
       })}
     </div>
   );
