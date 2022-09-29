@@ -1,6 +1,5 @@
 import styles from "../../styles/layout/Navbar.module.scss";
 import logo from "../../public/logo.png";
-// import cart from "../../public/cart-28-512.png";
 import Image from "next/future/image";
 import axios from "axios";
 import { useState, useEffect, useRef } from "react";
@@ -29,7 +28,6 @@ import {
 const NavbarMain = () => {
   const [query, setQuery] = useState("");
   const [items, setItems] = useState([]);
-  const [isInputVisible, setInputVisibility] = useState(false);
   
   const baseURL = "https://api.musement.com/api/v3/autocomplete";
   const handleChange = (event) => {
@@ -77,12 +75,10 @@ const NavbarMain = () => {
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      if (window.scrollY >= 200) {
+      if (window.scrollY >= 700) {
         navbarRef.current.classList.add('position-fixed');
         navbarRef.current.classList.add('top-0');
-        setInputVisibility(true);
       } else {
-        setInputVisibility(false); 
         navbarRef.current.classList.remove('position-fixed');
         navbarRef.current.classList.remove('top-0');
       }
