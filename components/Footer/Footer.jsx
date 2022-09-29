@@ -1,5 +1,5 @@
 import styles from "../../styles/layout/Footer.module.scss";
-import logo from "../../public/logo-scont_3.png";
+import logo from "../../public/logo.png";
 import Image from "next/future/image";
 
 const Footer = () => {

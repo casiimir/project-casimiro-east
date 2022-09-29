@@ -6,6 +6,8 @@ import HeroCity from "../../../components/HeroCity";
 import ActivityCard from "../../../components/ActivityCard/ActivityCard";
 import styles from "../../../styles/layout/LinkList.module.scss";
 import { getCategory } from "../../../api/api";
+import NavbarMain from '../../../components/Navbar'
+
 
 const CityPage = () => {
   const router = useRouter();
@@ -41,6 +43,8 @@ const CityPage = () => {
           title={cityData?.name}
         />
       )}
+
+      <NavbarMain />
 
         <div>
           descrizione
