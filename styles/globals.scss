@@ -232,3 +232,12 @@ h5,
 .swiper-slide {
   height: 600px !important;
 } 
+
+.navbar > .container-fluid {
+  justify-content: flex-end;
+}
+
+.navbar-toggler-icon {
+  background-image: url(../public/images/hm-menu.png);
+  background-repeat: no-repeat;
+}
