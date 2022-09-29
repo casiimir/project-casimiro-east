@@ -2,16 +2,10 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import Image from "next/future/image";
 import HeroCity from "../../../components/HeroCity";
-<<<<<<< HEAD
-import Card from "../../../components/Card/Card";
 import ActivityCard from "../../../components/ActivityCard/ActivityCard";
-
 import styles from "../../../styles/layout/LinkList.module.scss";
-=======
 import { getCategory } from "../../../api/api";
->>>>>>> main
 
 const cityPage = () => {
   const router = useRouter();
