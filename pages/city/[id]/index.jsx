@@ -53,12 +53,12 @@ const cityPage = () => {
         <div className={styles.ExpList}>
           {foodExp.map((item) => (
             <ActivityCard
-              key={item.id}
-              name={item.title}
-              image={item.cover_image_url}
+              key={item?.id}
+              name={item?.title}
+              image={item?.cover_image_url}
             >
-              <Link href={`/city/${id}/${item.uuid}`}>
-                <a className={styles.LinkList}>{item.title}</a>
+              <Link href={`/city/${id}/${item?.uuid}`}>
+                <a className={styles.LinkList}>{item?.title}</a>
               </Link>
             </ActivityCard>
           ))}
@@ -69,71 +69,34 @@ const cityPage = () => {
         <div className={styles.ExpList}>
           {museumExp.map((item) => (
             <ActivityCard
-              key={item.id}
-              name={item.title}
-              image={item.cover_image_url}
+              key={item?.id}
+              name={item?.title}
+              image={item?.cover_image_url}
             >
-              <Link href={`/city/${id}/${item.uuid}`}>
-                <a className={styles.LinkList}>{item.title}</a>
+              <Link href={`/city/${id}/${item?.uuid}`}>
+                <a className={styles.LinkList}>{item?.title}</a>
               </Link>
             </ActivityCard>
           ))}
         </div>
       </div>
 
-<<<<<<< HEAD
       <div className={styles.Exp}>
         <h1 className={styles.ExpTitle}>Outdoor Experiences:</h1>
         <div className={styles.ExpList}>
           {outdoorExp.map((item) => (
             <ActivityCard
-              key={item.id}
-              name={item.title}
-              image={item.cover_image_url}
+              key={item?.id}
+              name={item?.title}
+              image={item?.cover_image_url}
             >
               <Link href={`/city/${id}/${item.uuid}`}>
-                <a className={styles.LinkList}>{item.title}</a>
+                <a className={styles.LinkList}>{item?.title}</a>
               </Link>
             </ActivityCard>
           ))}
         </div>
       </div>
-=======
-      {/* IN QUESTA SEZIONE AL POSTO DELLE LISTE, DEVONO ESSERE MAPPATE LE CARDS, CON LE DOVUTE PROPS A CUI VERRANNO PASSATE LE IMMAGINI E LE INFO */}
-
-      <h1>Food Experiences:</h1>
-      <ul>
-        {foodExp.map((item) => (
-          <li>
-            <Link href={`/city/${id}/${item?.uuid}`}>
-              <a>{item?.title}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
-
-      <h1>History Experiences:</h1>
-      <ul>
-        {museumExp.map((item) => (
-          <li>
-            <Link href={`/city/${id}/${item?.uuid}`}>
-              <a>{item?.title}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
-
-      <h1>Outdoor Experiences:</h1>
-      <ul>
-        {outdoorExp.map((item) => (
-          <li>
-            <Link href={`/city/${id}/${item?.uuid}`}>
-              <a>{item?.title}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
->>>>>>> main
     </>
   );
 };
