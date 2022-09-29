@@ -20,4 +20,16 @@ const getCategory = (cityId, categoryId, setter) => {
     });
 }
 
-export {GET, getCategory};  
+const getActivity = (activityId, setter) => {
+    axios
+    .get(`https://api.musement.com/api/v3/activities/${activityId}`)
+    .then((res)=>{
+        setter(res.data);
+        console.log(res.data);
+    })
+    .catch((error) =>{
+        console.log(error.response);
+    })
+}
+
+export {GET, getCategory, getActivity};  
