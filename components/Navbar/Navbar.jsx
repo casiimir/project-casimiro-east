@@ -3,7 +3,7 @@ import logo from "../../public/logo.png";
 // import cart from "../../public/cart-28-512.png";
 import Image from "next/future/image";
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from 'next/link';
 
 
@@ -71,93 +71,99 @@ const NavbarMain = () => {
     !query && setItems([]);
   }, [query]);
 
-  // useEffect(() => {
-  //   window.addEventListener('scroll', () => {
-  //   if (window.scrollY >= 700) 
-  //     setInputVisibility(true)
-  //   else 
-  //     setInputVisibility(false)
-   
-    
-  // }, []);
+
+  const navbarRef = useRef(null);
+
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY >= 200) {
+        navbarRef.current.classList.add('position-fixed');
+        navbarRef.current.classList.add('top-0');
+        setInputVisibility(true);
+      } else {
+        setInputVisibility(false); 
+        navbarRef.current.classList.remove('position-fixed');
+        navbarRef.current.classList.remove('top-0');
+      }
+    })
+  }, []);
 
   return (
     <>
-      
-        <Navbar cariant="dark" expand='' className={`${styles.Navbar}`}>
-          <Container fluid>
-            <Row className={`${'w-100 align-items-center'}`}>
-              <Col xs={3}>
-                <Navbar.Brand href="#">
-                  <Image src={logo} alt="Homepage" height={60} />
-                </Navbar.Brand>
-              </Col>
-              <Col xs={5}>
-                <div className={styles.CustomSearch}>
-                  <input
-                    className={`${styles.input} ${'form-control'}`}
-                    placeholder="Search City..."
-                    type="text"
-                    value={query}
-                    onChange={handleChange}
-                  />
-                  <ul>
-                    {items.map((item) => (
-                      <li key={item.id} value={item.id}>  
-                        <Link href={`/city/${item.id}`}>
-                          <a>{item.title}</a>
-                        </Link>   
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </Col>
-              <Col xs={4} className={`${'d-flex justify-content-end'}`}>
-                <div className={styles.RelativeIcon}>
-                  <FontAwesomeIcon
-                    icon={faShoppingCart}
-                    style={{ fontSize: 24, color: "white" }}
-                  />
-                </div>
-                <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-$'xxl'`} />
-              </Col>
-            </Row>
+      <Navbar variant="dark" expand='' className={`${styles.Navbar}`} ref={navbarRef}>
+        <Container fluid>
+          <Row className={`${'w-100 align-items-center'}`}>
+            <Col xs={3}>
+              <Navbar.Brand href="/">
+                <Image src={logo} alt="Homepage" height={60} />
+              </Navbar.Brand>
+            </Col>
+            <Col xs={5}>
+              <div className={styles.CustomSearch}>
+                <input
+                  className={`${styles.input} ${'form-control'}`}
+                  placeholder="Search City..."
+                  type="text"
+                  value={query}
+                  onChange={handleChange}
+                />
+                <ul>
+                  {items.map((item) => (
+                    <li key={item.id} value={item.id}>  
+                      <Link href={`/city/${item.id}`}>
+                        <a>{item.title}</a>
+                      </Link>   
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Col>
+            <Col xs={4} className={`${'d-flex justify-content-end'}`}>
+              <div className={styles.RelativeIcon}>
+                <FontAwesomeIcon
+                  icon={faShoppingCart}
+                  style={{ fontSize: 24, color: "white" }}
+                />
+              </div>
+              <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-$'xxl'`} />
+            </Col>
+          </Row>
 
-            <Navbar.Offcanvas
-              id={`offcanvasNavbar-expand-$'xxl'`}
-              aria-labelledby={`offcanvasNavbarLabel-expand-$'xxl'`}
-              placement="end"
-            >
-              <Offcanvas.Header closeButton>
-                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-$'xxl'`}>
-                  Offcanvas
-                </Offcanvas.Title>
-              </Offcanvas.Header>
-              <Offcanvas.Body>
-                <Nav className={`${'justify-content-end'} ${'flex-grow-1'} ${'pe-3'}`}>
-                  <Nav.Link href="#action1">Home</Nav.Link>
-                  <Nav.Link href="#action2">Link</Nav.Link>
-                  <NavDropdown
-                    title="Dropdown"
-                    id={`offcanvasNavbarDropdown-expand-$'xxl'`}
-                  >
-                    <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">
-                      Another action
-                    </NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action5">
-                      Something else here
-                    </NavDropdown.Item>
-                  </NavDropdown>
-                </Nav>
-                
-                {/* <Image src={cart} alt="Cart" height={40} /> */}
-              </Offcanvas.Body>
-            </Navbar.Offcanvas>
-          </Container>
-        </Navbar>
-      
+          <Navbar.Offcanvas
+            id={`offcanvasNavbar-expand-$'xxl'`}
+            aria-labelledby={`offcanvasNavbarLabel-expand-$'xxl'`}
+            placement="end"
+          >
+            <Offcanvas.Header closeButton>
+              <Offcanvas.Title id={`offcanvasNavbarLabel-expand-$'xxl'`}>
+                Offcanvas
+              </Offcanvas.Title>
+            </Offcanvas.Header>
+            <Offcanvas.Body>
+              <Nav className={`${'justify-content-end'} ${'flex-grow-1'} ${'pe-3'}`}>
+                <Nav.Link href="#action1">Home</Nav.Link>
+                <Nav.Link href="#action2">Link</Nav.Link>
+                <NavDropdown
+                  title="Dropdown"
+                  id={`offcanvasNavbarDropdown-expand-$'xxl'`}
+                >
+                  <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
+                  <NavDropdown.Item href="#action4">
+                    Another action
+                  </NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item href="#action5">
+                    Something else here
+                  </NavDropdown.Item>
+                </NavDropdown>
+              </Nav>
+              
+              {/* <Image src={cart} alt="Cart" height={40} /> */}
+            </Offcanvas.Body>
+          </Navbar.Offcanvas>
+        </Container>
+      </Navbar>
     </>
   );
 };
