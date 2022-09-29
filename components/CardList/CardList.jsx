@@ -3,15 +3,15 @@ import styles from "../../styles/layout/CardList.module.scss";
 import Card from "../Card/Card";
 import axios from "axios";
 
-const CardList = ({list}) => {
+const CardList = ({ list, title }) => {
   const headers = {'Accept-Language':'it-IT'}
-  const experiencesBaseURL = "https://api.musement.com/api/v3/activities";
+  const BASE_URL = "https://api.musement.com/api/v3/activities";
   const [displayList, setDisplayList] = useState([]);
 
 
   useEffect(() => {
     axios
-      .get(experiencesBaseURL, {
+      .get(BASE_URL, {
         headers: headers,
         params: {
           limit: 10,
@@ -31,20 +31,26 @@ const CardList = ({list}) => {
 
 
   return (
-    <div className={styles.CardList}>
-      
-      {displayList.map((item) => {
+    <>
+      <div className="cont-title">
+        <h3>{title}</h3>
+      </div>
+    
+      <div className={styles.CardList}>
+        
+        {displayList.map((item) => {
 
-        if(list === "cities") {
+          if(list === "cities") {
 
-          return(<Card key={item.city.id} name={item.city.name} image={item.city.cover_image_url}/>)
-        }
-        if(list === "experiences") {
-          
-          return(<Card key={item.city.id} name={item.title} image={item.cover_image_url}/>)
-        }
-      })}
-    </div>
+            return(<Card key={item.city.id} name={item.city.name} image={item.city.cover_image_url}/>)
+          }
+          if(list === "experiences") {
+            
+            return(<Card key={item.city.id} name={item.title} image={item.cover_image_url}/>)
+          }
+        })}
+      </div>
+    </>
   );
 };
 

@@ -6,8 +6,10 @@ import HeroCity from "../../../components/HeroCity";
 import ActivityCard from "../../../components/ActivityCard/ActivityCard";
 import styles from "../../../styles/layout/CityOverwiev.module.scss";
 import { getCategory } from "../../../api/api";
+import NavbarMain from '../../../components/Navbar'
 
-const cityPage = () => {
+
+const CityPage = () => {
   const router = useRouter();
   const id = router.query.id;
   const [cityData, setCityData] = useState([]);
@@ -39,7 +41,16 @@ const cityPage = () => {
         <HeroCity image={cityData?.cover_image_url} title={cityData?.name} />
       )}
 
+<<<<<<< HEAD
       <div>descrizione</div>
+=======
+      <NavbarMain />
+
+        <div>
+          descrizione
+        </div>
+
+>>>>>>> main
 
       <div className={styles.Exp}>
         <h1 className={styles.ExpTitle}>Food Experiences:</h1>
@@ -96,4 +107,4 @@ const cityPage = () => {
 
 // TODO: in console avete tutto l'oggetto della città
 
-export default cityPage;
+export default CityPage;
