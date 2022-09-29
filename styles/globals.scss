@@ -236,3 +236,8 @@ h5,
 .navbar > .container-fluid {
   justify-content: flex-end;
 }
+
+.navbar-toggler-icon {
+  background-image: url(../public/images/hm-menu.png);
+  background-repeat: no-repeat;
+}
