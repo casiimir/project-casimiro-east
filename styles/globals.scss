@@ -230,7 +230,7 @@ h5,
 
 
 .swiper-slide {
-  height: 600px !important;
+  height: 100vh !important;
 } 
 
 .navbar > .container-fluid {
@@ -240,4 +240,14 @@ h5,
 .navbar-toggler-icon {
   background-image: url(../public/images/hm-menu.png);
   background-repeat: no-repeat;
+}
+
+.top-0 {
+  top: 0;
+  z-index: 15;
+}
+
+.cont-title { 
+  margin-top: 60px;
+  padding: 20px 20px 0;
 }

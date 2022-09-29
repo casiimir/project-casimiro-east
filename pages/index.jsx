@@ -18,8 +18,9 @@ const Home = () => {
       
       <Hero />
       <NavbarMain/>
-      <CardList list={"cities"} />
-      <CardList list={"experiences"} />
+
+      <CardList list={"cities"} title={'Top rated cities'} />
+      <CardList list={"experiences"} title={'Top experiences'} />
       <Footer/>
     </div>
   )

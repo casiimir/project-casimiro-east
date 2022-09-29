@@ -77,7 +77,7 @@ const NavbarMain = () => {
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      if (window.scrollY >= 200) {
+      if (window.scrollY >= 700) {
         navbarRef.current.classList.add('position-fixed');
         navbarRef.current.classList.add('top-0');
         setInputVisibility(true);
