@@ -1,12 +1,16 @@
 import { useRouter } from "next/router";
-import Link from "next/link";
+import {getActivity} from '../../../api/api';
+import {useState, useEffect} from 'react';
 const Activity = () => {
+    const [activity, setActivity] = useState([]); 
     const router = useRouter();
-    const id = router.query.id;
-    const activity = router.query.activity
+    const activityId = router.query.activity;
+    useEffect(() => {
+        getActivity(activityId,setActivity);
+    },[activityId])
     return(
         <h1>
-            id città : {id} // id attività : {activity}
+            {activity?.title}
         </h1>
     )
 }
