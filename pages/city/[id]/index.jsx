@@ -46,9 +46,12 @@ const CityPage = () => {
 
       <NavbarMain />
 
-        <div>
-          descrizione
-        </div>
+      <div className={styles.Desc}>
+        <h3>The City</h3>
+        <p>
+          {cityData?.content}
+        </p>
+      </div>
 
 
       <div className={styles.Exp}>
