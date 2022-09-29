@@ -51,14 +51,14 @@ const Navbar = () => {
     !query && setItems([]);
   }, [query]);
 
-  useEffect(() => {
-    window.addEventListener('scroll', () => {
-    if (window.scrollY >= 700) {
-      setInputVisibility(true)
-    } else {
-      setInputVisibility(false)
-    }
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener('scroll', () => {
+  //   if (window.scrollY >= 700) {
+  //     setInputVisibility(true)
+  //   } else {
+  //     setInputVisibility(false)
+  //   }
+  // }, []);
 
   return (
     <nav className={styles.nav}>
