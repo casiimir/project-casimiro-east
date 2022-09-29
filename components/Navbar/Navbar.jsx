@@ -8,11 +8,22 @@ import Link from 'next/link';
 
 
 import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
+import "@fortawesome/fontawesome-svg-core/styles.css"; // import Font Awesome CSS
+import { config } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false;
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+// import the icons you need
+import {
+  faShoppingCart
+} from "@fortawesome/free-solid-svg-icons";
 
 
 const NavbarMain = () => {
@@ -72,31 +83,45 @@ const NavbarMain = () => {
   return (
     <>
       
-        <Navbar bg="dark" expand='xxl' className={`${styles.Navbar}`}>
+        <Navbar cariant="dark" expand='' className={`${styles.Navbar}`}>
           <Container fluid>
-            <Navbar.Brand href="#">
-              <Image src={logo} alt="Homepage" height={60} />
-            </Navbar.Brand>
-            
-            <div className={styles.CustomSearch}>
-              <input
-                className={`${styles.input} ${'form-control'}`}
-                placeholder="Search City..."
-                type="text"
-                value={query}
-                onChange={handleChange}
-              />
-              <ul>
-                {items.map((item) => (
-                  <li key={item.id} value={item.id}>  
-                    <Link href={`/city/${item.id}`}>
-                      <a>{item.title}</a>
-                    </Link>   
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-$'xxl'`} />
+            <Row className={`${'w-100 align-items-center'}`}>
+              <Col xs={4}>
+                <Navbar.Brand href="#">
+                  <Image src={logo} alt="Homepage" height={60} />
+                </Navbar.Brand>
+              </Col>
+              <Col xs={4}>
+                <div className={styles.CustomSearch}>
+                  <input
+                    className={`${styles.input} ${'form-control'}`}
+                    placeholder="Search City..."
+                    type="text"
+                    value={query}
+                    onChange={handleChange}
+                  />
+                  <ul>
+                    {items.map((item) => (
+                      <li key={item.id} value={item.id}>  
+                        <Link href={`/city/${item.id}`}>
+                          <a>{item.title}</a>
+                        </Link>   
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Col>
+              <Col xs={4} className={`${'d-flex justify-content-end'}`}>
+                <div className={styles.RelativeIcon}>
+                  <FontAwesomeIcon
+                    icon={faShoppingCart}
+                    style={{ fontSize: 24, color: "white" }}
+                  />
+                </div>
+                <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-$'xxl'`} />
+              </Col>
+            </Row>
+
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-$'xxl'`}
               aria-labelledby={`offcanvasNavbarLabel-expand-$'xxl'`}
@@ -126,7 +151,7 @@ const NavbarMain = () => {
                   </NavDropdown>
                 </Nav>
                 
-                <Image src={cart} alt="Cart" height={40} />
+                {/* <Image src={cart} alt="Cart" height={40} /> */}
               </Offcanvas.Body>
             </Navbar.Offcanvas>
           </Container>

@@ -232,3 +232,7 @@ h5,
 .swiper-slide {
   height: 600px !important;
 } 
+
+.navbar > .container-fluid {
+  justify-content: flex-end;
+}
