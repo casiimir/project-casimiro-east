@@ -6,7 +6,7 @@ import axios from "axios";
 const CardList = ({list}) => {
   const headers = {'Accept-Language':'it-IT'}
   const experiencesBaseURL = "https://api.musement.com/api/v3/activities";
-  const [experiences, setExperiences] = useState([]);
+  const [displayList, setDisplayList] = useState([]);
 
 
   useEffect(() => {
@@ -33,7 +33,6 @@ const CardList = ({list}) => {
   return (
     <div className={styles.CardList}>
       
-      {console.log(displayList)}
       {displayList.map((item) => {
 
         if(list === "cities") {
