@@ -4,7 +4,14 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import Image from "next/future/image";
 import HeroCity from "../../../components/HeroCity";
+<<<<<<< HEAD
+import Card from "../../../components/Card/Card";
+import ActivityCard from "../../../components/ActivityCard/ActivityCard";
+
+import styles from "../../../styles/layout/LinkList.module.scss";
+=======
 import { getCategory } from "../../../api/api";
+>>>>>>> main
 
 const cityPage = () => {
   const router = useRouter();
@@ -41,7 +48,57 @@ const cityPage = () => {
           content={cityData?.content}
         />
       )}
+      <div className={styles.Exp}>
+        <h1 className={styles.ExpTitle}>Food Experiences:</h1>
+        <div className={styles.ExpList}>
+          {foodExp.map((item) => (
+            <ActivityCard
+              key={item.id}
+              name={item.title}
+              image={item.cover_image_url}
+            >
+              <Link href={`/city/${id}/${item.uuid}`}>
+                <a className={styles.LinkList}>{item.title}</a>
+              </Link>
+            </ActivityCard>
+          ))}
+        </div>
+      </div>
+      <div className={styles.Exp}>
+        <h1 className={styles.ExpTitle}>History Experiences:</h1>
+        <div className={styles.ExpList}>
+          {museumExp.map((item) => (
+            <ActivityCard
+              key={item.id}
+              name={item.title}
+              image={item.cover_image_url}
+            >
+              <Link href={`/city/${id}/${item.uuid}`}>
+                <a className={styles.LinkList}>{item.title}</a>
+              </Link>
+            </ActivityCard>
+          ))}
+        </div>
+      </div>
 
+<<<<<<< HEAD
+      <div className={styles.Exp}>
+        <h1 className={styles.ExpTitle}>Outdoor Experiences:</h1>
+        <div className={styles.ExpList}>
+          {outdoorExp.map((item) => (
+            <ActivityCard
+              key={item.id}
+              name={item.title}
+              image={item.cover_image_url}
+            >
+              <Link href={`/city/${id}/${item.uuid}`}>
+                <a className={styles.LinkList}>{item.title}</a>
+              </Link>
+            </ActivityCard>
+          ))}
+        </div>
+      </div>
+=======
       {/* IN QUESTA SEZIONE AL POSTO DELLE LISTE, DEVONO ESSERE MAPPATE LE CARDS, CON LE DOVUTE PROPS A CUI VERRANNO PASSATE LE IMMAGINI E LE INFO */}
 
       <h1>Food Experiences:</h1>
@@ -76,6 +133,7 @@ const cityPage = () => {
           </li>
         ))}
       </ul>
+>>>>>>> main
     </>
   );
 };
