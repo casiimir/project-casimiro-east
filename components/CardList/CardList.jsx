@@ -4,15 +4,21 @@ import Card from "../Card/Card";
 import axios from "axios";
 
 const CardList = ({list}) => {
-  const baseURL = "https://api.musement.com/api/v3/activities";
-  const [displayList, setDisplayList] = useState([]);
+  const headers = {'Accept-Language':'it-IT'}
+  const experiencesBaseURL = "https://api.musement.com/api/v3/activities";
+  const [experiences, setExperiences] = useState([]);
+
 
   useEffect(() => {
     axios
-      .get(baseURL, {
+      .get(experiencesBaseURL, {
+        headers: headers,
         params: {
           limit: 10,
           offset: 0,
+          country_in: 'IT',
+          available_language_in:'it',
+          sort_by:'-rating'
         },
       })
       .then((res) => {
