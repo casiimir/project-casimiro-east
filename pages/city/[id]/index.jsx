@@ -41,16 +41,15 @@ const CityPage = () => {
         <HeroCity image={cityData?.cover_image_url} title={cityData?.name} />
       )}
 
-<<<<<<< HEAD
-      <div>descrizione</div>
-=======
       <NavbarMain />
 
-        <div>
-          descrizione
-        </div>
+      <div className={styles.Desc}>
+        <h3>The City</h3>
+        <p>
+          {cityData?.content}
+        </p>
+      </div>
 
->>>>>>> main
 
       <div className={styles.Exp}>
         <h1 className={styles.ExpTitle}>Food Experiences:</h1>

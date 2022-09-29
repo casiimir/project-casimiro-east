@@ -1,17 +1,25 @@
 @import '../utilities/variables';
 
 
-
 .Navbar {
 	width: 100%;
 	background-color: #484645;
 	color: white;
 	display: flex;
 	align-items: center;
+
+	&.position_fixed {
+		position: fixed;
+		width: 100%;
+		top: 0;
+ 		z-index: 15;
+	}
+
 	.input {
 		background: $color_text-midtone;
 		color: white;
 	}
+
 	ul {
 		width: 100%;
 		margin: 0;
@@ -21,6 +29,7 @@
 		align-items: center;
 		justify-content: space-between;
 	}
+
 	.CustomSearch {
 		display: flex;
 		flex-direction: column;
@@ -61,12 +70,14 @@
 			width: 100%;
 			top: 100%;
 			padding-left: 0;
+
 			li {
 				width: 100%;
-				
+
 				a {
 					padding: 15px;
 					display: block;
+
 					&:hover {
 						background-color: rgb(145, 145, 145);
 						color: rgb(35, 35, 35);
@@ -77,11 +88,11 @@
 		}
 
 	}
+
 	.RelativeIcon {
 		position: relative;
 		top: 8px;
 		right: 5px;
 	}
-	
-}
 
+}
