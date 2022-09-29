@@ -8,18 +8,20 @@ const Footer = () => {
 
         <div className={styles.Footer}>
 
-            <div className="list">
-                <h4>Placeholder</h4>
-                <p>enniente</p>
-                <p>enniente</p>
-                <p>enniente</p>
+            <div className={styles.__list}>
+                <h4>Authors</h4>
+                <p>Miyka96</p>
+                <p>fefusphera</p>
+                <p>jupidev1586</p>
+                <p>Chiarads23</p>
+                <p>cb040719</p>
             </div>
-            <div className="logo">
+            <div className={styles.__logo}>
                 <p>made with 😡 and Next.js</p>
             </div>
-            <div className="socialIcons">
+            <div className={styles.__socialIcons}>
                 <h4>Contacts</h4>
-                <div className="container">
+                <div className={styles.__container}>
                     <p>facebook</p>
                     <p>instagram</p>
                     <p>twitter</p>
