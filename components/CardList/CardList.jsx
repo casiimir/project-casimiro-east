@@ -29,7 +29,7 @@ const CardList = ({ list, title }) => {
       });
   }, []);
 
-
+console.log(displayList)
   return (
     <>
       <div className="cont-title">
@@ -46,7 +46,7 @@ const CardList = ({ list, title }) => {
           }
           if(list === "experiences") {
             
-            return(<Card key={item.city.id} name={item.title} image={item.cover_image_url}/>)
+            return(<Card key={item.uuid} name={item.title} image={item.cover_image_url}/>)
           }
         })}
       </div>
