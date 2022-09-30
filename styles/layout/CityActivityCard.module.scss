@@ -11,17 +11,18 @@
     border-radius: 4px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.589);
     // border: 2px solid blue;
-    min-width: 150px;
-    max-width: 150px;
+    min-width: 200px;
+    max-width: 200px;
     min-height: 300px;
     max-height: 300px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.589);
     border-radius: 4px;
     .CityActivityCardImg {
-      min-width: 150px;
-      max-width: 150px;
+      min-width: 200px;
+      max-width: 200px;
       min-height: 165px;
       max-height: 165px;
       object-fit: fill;
