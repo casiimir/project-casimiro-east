@@ -5,7 +5,6 @@ import NavbarMain from "../components/Navbar";
 import CardList from "../components/CardList/CardList";
 import Footer from "../components/Footer";
 import Image from "next/image";
-import CityActivityCard from "../components/CityActivityCard/CityActivityCard";
 
 const Home = () => {
   return (
@@ -22,7 +21,6 @@ const Home = () => {
       <CardList list={"cities"} title={"Top rated cities"} />
       <CardList list={"experiences"} title={"Top experiences"} />
 
-      <CityActivityCard />
       {/* <Footer/> */}
     </div>
   );
