@@ -1,8 +1,17 @@
 .CardList {
-    padding: 24px;
-    display: flex;
-    justify-content: space-between;
-    gap: 24px;
-    overflow: auto;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  overflow: auto;
 }
 
+.Link {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+  cursor: pointer;
+}

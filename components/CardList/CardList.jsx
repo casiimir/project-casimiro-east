@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import styles from "../../styles/layout/CardList.module.scss";
+import Link from "next/link";
 import Card from "../Card/Card";
 import axios from "axios";
 
 const CardList = ({ list, title }) => {
-  const headers = {'Accept-Language':'it-IT'}
+  const headers = { "Accept-Language": "it-IT" };
   const BASE_URL = "https://api.musement.com/api/v3/activities";
   const [displayList, setDisplayList] = useState([]);
-
 
   useEffect(() => {
     axios
@@ -19,8 +19,12 @@ const CardList = ({ list, title }) => {
         },
       })
       .then((res) => {
-        const results = (res.data.data);
-        const uniqueData = [...results.reduce((map, obj) => map.set(obj.city.id, obj), new Map()).values()];
+        const results = res.data.data;
+        const uniqueData = [
+          ...results
+            .reduce((map, obj) => map.set(obj.city.id, obj), new Map())
+            .values(),
+        ];
         setDisplayList(uniqueData);
       })
       .catch((error) => {
@@ -28,24 +32,40 @@ const CardList = ({ list, title }) => {
       });
   }, []);
 
-console.log(displayList)
+  console.log(displayList);
   return (
     <>
       <div className="cont-title">
         <h3>{title}</h3>
       </div>
-    
+
       <div className={styles.CardList}>
-        
         {displayList.map((item) => {
-
-          if(list === "cities") {
-
-            return(<Card key={item.city.id} name={item.city.name} image={item.city.cover_image_url}/>)
+          if (list === "cities") {
+            return (
+              <Card
+                key={item.city.id}
+                name={item.city.name}
+                image={item.city.cover_image_url}
+              >
+                <Link href={`/city/${item.city.id}`}>
+                  <a className={styles.Link}>{item?.city.name}</a>
+                </Link>
+              </Card>
+            );
           }
-          if(list === "experiences") {
-            
-            return(<Card key={item.uuid} name={item.title} image={item.cover_image_url}/>)
+          if (list === "experiences") {
+            return (
+              <Card
+                key={item.uuid}
+                name={item.title}
+                image={item.cover_image_url}
+              >
+                <Link href={`/city/${item.city.id}/${item.uuid}`}>
+                  <a className={styles.Link}>{item?.title}</a>
+                </Link>
+              </Card>
+            );
           }
         })}
       </div>
