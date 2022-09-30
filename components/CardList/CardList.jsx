@@ -41,11 +41,11 @@ console.log(displayList)
 
           if(list === "cities") {
 
-            return(<Card key={item.city.id} name={item.city.name} image={item.city.cover_image_url} pVisibility={"none"}/>)
+            return(<Card key={item.city.id} name={item.city.name} image={item.city.cover_image_url}/>)
           }
           if(list === "experiences") {
             
-            return(<Card key={item.uuid} name={item.title} image={item.cover_image_url} hVisibility={"none"}/>)
+            return(<Card key={item.uuid} name={item.title} image={item.cover_image_url}/>)
           }
         })}
       </div>
@@ -54,3 +54,5 @@ console.log(displayList)
 };
 
 export default CardList;
+
+//commento
