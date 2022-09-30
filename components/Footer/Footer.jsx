@@ -1,3 +1,7 @@
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 import styles from "../../styles/layout/Footer.module.scss";
 import logo from "../../public/logo.png";
 import Image from "next/future/image";
@@ -6,33 +10,53 @@ const Footer = () => {
     
 
     return(
-
-        <div className={styles.Footer}>
-
-            <div className={styles.__list}>
-                <h4>Authors&apos; GitHub</h4>
+			<div className={styles.Footer}>
+        <Container fluid>
+					<Row>
+						<Col xs={12} sm={2}>
+							<div className={styles.__list}>
+                <h5>Authors&apos; GitHub</h5>
                 <div className={styles.__container}>
-                    <a href=""><p>Miyka96</p></a>
-                    <a href=""><p>fefusphera</p></a>
-                    <a href=""><p>jupidev1586</p></a>
-                    <a href=""><p>Chiarads23</p></a>
-                    <a href=""><p>cb040719</p></a>
+                    <a target="_blank" rel="noreferrer" href="https://github.com/Miyka96">Miyka96</a>
+                    <a target="_blank" rel="noreferrer" href="https://github.com/fefusphera">fefusphera</a>
+                    <a target="_blank" rel="noreferrer" href="https://github.com/jupidev1586">jupidev1586</a>
+                    {/* <a target="_blank" rel="noreferrer" href="">Chiarads23</a> */}
+                    <a target="_blank" rel="noreferrer" href="https://github.com/Cb040719">cb040719</a>
                 </div>
-            </div>
-            <div className={styles.__logo}>
-                <Image src={logo} height={120}/>
-                <p>Made with 😡 and Next.js</p>
-            </div>
-            <div className={styles.__socialIcons}>
-                <h4>Contacts</h4>
+            	</div>
+						</Col>
+						<Col xs={12} sm={7} className="text-center">
+							<div className={styles.__logo}>
+							<h5></h5>
+									<Image src={logo} height={120} width={120} alt='logo footer' />
+							
+								<p>Made with Next.js</p>
+							</div>
+						</Col>
+						<Col xs={12} sm={3}>
+							<div className={styles.__socialIcons}>
+                <h5>Author's Linkedin</h5>
                 <div className={styles.__container}>
-                    <p>Facebook</p>
-                    <p>Instagram</p>
-                    <p>Twitter</p>
-                    <p>LinkedIn</p>
+									<ul>
+										<li>
+											<a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/micaela-seminara/">Micaela Seminara</a>
+										</li>
+										<li>
+											<a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/federica-terranova-073939231/">Federica Terranova</a>
+										</li>
+										<li>
+											<a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/gianpaolo-buono/">Gianpaolo Buono</a>
+										</li>
+										<li>
+											<a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/claudiobello47/">Claudio Bello</a>
+										</li>
+									</ul>
                 </div>
-            </div>
-        </div>
+            	</div>
+						</Col>
+					</Row>
+        </Container>
+			</div>
     )
 };
 

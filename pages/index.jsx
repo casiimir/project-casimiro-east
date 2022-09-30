@@ -21,7 +21,7 @@ const Home = () => {
 
       <CardList list={"cities"} title={'Top rated cities'} />
       <CardList list={"experiences"} title={'Top experiences'} />
-      {/* <Footer/> */}
+      <Footer/>
     </div>
   )
 }
