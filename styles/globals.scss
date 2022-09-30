@@ -62,68 +62,6 @@ h6 {
   }
 }
 
-p,
-.paragraph {
-  font-family: $ff-alt;
-  font-size: 16px;
-}
-
-h1,
-.main-title {
-  font-size: 42px;
-}
-
-h2,
-.alt-title {
-  font-size: 36px;
-}
-
-h3,
-.sub-title {
-  font-size: 24px;
-}
-
-h4,
-.alt-sub-title {
-  font-size: 18px;
-}
-
-h5,
-.small-title {
-  font-size: 16px;
-}
-
-@include media-breakpoint-down(md) {
-  /* p, .paragraph {
-    font-size: 16px;
-  } */
-
-  h1,
-  .main-title {
-    font-size: 36px;
-  }
-
-  h2,
-  .alt-title {
-    font-size: 24px;
-    line-height: 28.8px;
-  }
-
-  h3,
-  .sub-title {
-    font-size: 18px;
-  }
-
-  h4,
-  .alt-sub-title {
-    font-size: 16px;
-  }
-
-  h5,
-  .small-title {
-    font-size: 14px;
-  }
-}
 
 // Modifiers
 .no-ls {
