@@ -68,19 +68,7 @@ const NavbarMain = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', () => setScrollPosY(window.scrollY))
-    // window.addEventListener('scroll', () => {
-    //   if (window.scrollY >= 700) {
-    //     navbarRef.current.classList.add('position-fixed');
-    //     navbarRef.current.classList.add('top-0');
-    //   } else {
-    //     console.log(`${styles.cont_navbar}`);
-    //     if (navbarRef.current.classList.contains(`${styles.cont_navbar} ${'position-fixed top-0'} `)) {
-    //       navbarRef.current.classList.remove('position-fixed');
-    //       navbarRef.current.classList.remove('top-0');
-    //     }
-    //   }
-    // })
+    window.addEventListener('scroll', () => setScrollPosY(window.scrollY));
     !query && setItems([]);
   }, [query]);
 
