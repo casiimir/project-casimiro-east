@@ -1,6 +1,3 @@
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Image from 'next/image';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -73,10 +70,7 @@ const Hero = () => {
   return (
     
     <div className={`${styles.Hero}`}>
-      <Container fluid className={`${'g-0'}`}>
-        <Row>
-          <Col>
-            <Row>
+      
               <div className={`${styles.Logo} ${'position-absolute'}`}>
                 <Image src='/logo-scont_3.png' alt="logo-image" width='200' height='200' />
               </div>
@@ -88,7 +82,7 @@ const Hero = () => {
                   are 404
                 </h5>
               </div>
-            </Row>
+           
             <Swiper
               spaceBetween={0}
               effect={"fade"}
@@ -119,9 +113,7 @@ const Hero = () => {
             }
 
             </Swiper>
-          </Col>
-        </Row>
-      </Container>
+          
     </div>
   );
 }

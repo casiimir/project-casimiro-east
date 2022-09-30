@@ -6,8 +6,7 @@ import HeroCity from "../../../components/HeroCity";
 import ActivityCard from "../../../components/ActivityCard/ActivityCard";
 import styles from "../../../styles/layout/CityOverwiev.module.scss";
 import { getCategory } from "../../../api/api";
-import NavbarMain from '../../../components/Navbar'
-
+import NavbarMain from "../../../components/Navbar";
 
 const CityPage = () => {
   const router = useRouter();
@@ -45,11 +44,8 @@ const CityPage = () => {
 
       <div className={styles.Desc}>
         <h3>The City</h3>
-        <p>
-          {cityData?.content}
-        </p>
+        <p>{cityData?.content}</p>
       </div>
-
 
       <div className={styles.Exp}>
         <h1 className={styles.ExpTitle}>Food Experiences:</h1>
@@ -100,6 +96,13 @@ const CityPage = () => {
           ))}
         </div>
       </div>
+
+      {/* bottone provvisorio*/}
+      <button>
+        <Link href={`/city/${id}/activities`}>
+          <a className={styles.LinkList}>See all aviable activities</a>
+        </Link>
+      </button>
     </div>
   );
 };
