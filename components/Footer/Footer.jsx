@@ -10,7 +10,7 @@ const Footer = () => {
         <div className={styles.Footer}>
 
             <div className={styles.__list}>
-                <h4>Authors' GitHub</h4>
+                <h4>Authors&apos; GitHub</h4>
                 <div className={styles.__container}>
                     <a href=""><p>Miyka96</p></a>
                     <a href=""><p>fefusphera</p></a>
