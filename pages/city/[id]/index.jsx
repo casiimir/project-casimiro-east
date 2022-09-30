@@ -48,7 +48,9 @@ const CityPage = () => {
       </div>
 
       <div className={styles.Exp}>
-        <h1 className={styles.ExpTitle}>Food Experiences:</h1>
+        <div className="cont-title">
+          <h3>Food Experiences</h3>
+        </div>
         <div className={styles.ExpList}>
           {foodExp.map((item) => (
             <ActivityCard
@@ -64,7 +66,9 @@ const CityPage = () => {
         </div>
       </div>
       <div className={styles.Exp}>
-        <h1 className={styles.ExpTitle}>History Experiences:</h1>
+        <div className="cont-title">
+          <h3>History Experiences</h3>
+        </div>
         <div className={styles.ExpList}>
           {museumExp.map((item) => (
             <ActivityCard
@@ -81,7 +85,9 @@ const CityPage = () => {
       </div>
 
       <div className={styles.Exp}>
-        <h1 className={styles.ExpTitle}>Outdoor Experiences:</h1>
+        <div className="cont-title">
+          <h3>Outdoor Experiences</h3>
+        </div>
         <div className={styles.ExpList}>
           {outdoorExp.map((item) => (
             <ActivityCard
@@ -98,11 +104,14 @@ const CityPage = () => {
       </div>
 
       {/* bottone provvisorio*/}
-      <button>
-        <Link href={`/city/${id}/activities`}>
-          <a className={styles.LinkList}>See all aviable activities</a>
-        </Link>
-      </button>
+      <div className="cont-button">
+        <button className={`${'button button--dark'}`}>
+          <Link href={`/city/${id}/activities`}>
+            <a className={styles.LinkList}>See all available activities</a>
+          </Link>
+        </button>
+      </div>
+      
     </div>
   );
 };
