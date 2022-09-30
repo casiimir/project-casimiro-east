@@ -38,6 +38,7 @@ const Activities = () => {
             {/* <Link href={`/city/${cityId}/${el?.uuid}`}>
               <a className={styles.ActivitiesLink}>see more</a>
             </Link> */}
+
           </CityActivityCard>
         ))}
       </div>
