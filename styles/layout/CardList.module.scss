@@ -1,9 +1,10 @@
+@import '../utilities/mixins';
 .CardList {
-  padding: 24px;
+  padding: 40px;
+  margin: 20px 0;
   display: flex;
   justify-content: space-between;
   gap: 24px;
-  overflow: auto;
 }
 
 .Link {

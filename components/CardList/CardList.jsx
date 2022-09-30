@@ -3,6 +3,7 @@ import styles from "../../styles/layout/CardList.module.scss";
 import Link from "next/link";
 import Card from "../Card/Card";
 import axios from "axios";
+import ScrollContainer from 'react-indiana-drag-scroll'
 
 const CardList = ({ list, title }) => {
   const headers = { "Accept-Language": "it-IT" };
@@ -39,6 +40,7 @@ const CardList = ({ list, title }) => {
         <h3>{title}</h3>
       </div>
 
+      <ScrollContainer nativeMobileScroll={true}>
       <div className={styles.CardList}>
         {displayList.map((item) => {
           if (list === "cities") {
@@ -69,6 +71,8 @@ const CardList = ({ list, title }) => {
           }
         })}
       </div>
+      </ScrollContainer>
+      
     </>
   );
 };
