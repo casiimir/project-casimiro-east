@@ -25,6 +25,7 @@ const getActivity = (activityId, setter) => {
     .get(`https://api.musement.com/api/v3/activities/${activityId}`)
     .then((res)=>{
         setter(res.data);
+        console.log('====>', res.data);
     })
     .catch((error) =>{
         console.log(error.response);
