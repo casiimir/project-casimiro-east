@@ -19,9 +19,9 @@ const Activities = () => {
 
   return (
     <div className={styles.Activities}>
-      <h1 className={styles.ActivitiesTitle}>all activities avaible</h1>
+      <h1 className={styles.ActivitiesTitle}>All available activities</h1>
 
-      <select className={styles.ActivitiesSelector} onChange={handleChange}>
+      <span>Sort by - </span><select className={styles.ActivitiesSelector} onChange={handleChange}>
         <option value="relevance">Relevance</option>
         <option value="rating">Rating</option>
         <option value="price">Price</option>
