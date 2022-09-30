@@ -14,15 +14,14 @@ const CardList = ({ list, title }) => {
       .get(BASE_URL, {
         headers: headers,
         params: {
-          limit: 10,
+          limit: 20,
           offset: 0,
-          country_in: 'IT',
-          available_language_in:'it',
-          sort_by:'-rating'
         },
       })
       .then((res) => {
-        setDisplayList(res.data.data);
+        const results = (res.data.data);
+        const uniqueData = [...results.reduce((map, obj) => map.set(obj.city.id, obj), new Map()).values()];
+        setDisplayList(uniqueData);
       })
       .catch((error) => {
         console.log(error.response);
