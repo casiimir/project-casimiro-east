@@ -9,3 +9,5 @@ const Card = ({ name, image }) => {
 };
 
 export default Card;
+
+//commento
