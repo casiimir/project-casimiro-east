@@ -16,6 +16,12 @@ const CityPage = () => {
   const [museumExp, setMuseumExp] = useState([]);
   const [outdoorExp, setOutdoorExp] = useState([]);
 
+  const [expanded, setExpanded] = useState(false);
+  function truncate(str, n) {
+    return str?.length > n ? str.substr(0, n - 1) + '...' : str;
+  }
+
+
   useEffect(() => {
     axios
       .get(`https://api.musement.com/api/v3/cities/${id}`)
@@ -44,7 +50,10 @@ const CityPage = () => {
 
       <div className={styles.Desc}>
         <h3>The City</h3>
-        <p>{cityData?.content}</p>
+        <p>
+          {expanded ? cityData?.content : truncate(cityData?.content, 350)}
+        </p>
+        <button className={`${'button button--dark'}`} onClick={() => setExpanded(!expanded)}>{!expanded ? 'Read More' : 'Read Less'}</button>
       </div>
 
       <div className={styles.Exp}>
