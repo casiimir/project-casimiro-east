@@ -1,0 +1,43 @@
+@import "../utilities/variables";
+
+.CityActivityCard {
+  //   border: 2px solid red;
+  display: flex;
+  flex-direction: row;
+
+  background-color: white;
+
+  .CityActivityCardDiv {
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.589);
+    // border: 2px solid blue;
+    .CityActivityCardImg {
+      //   border: 2px solid green;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      width: 180px;
+      height: 230px;
+    }
+    .CityActivityCardText {
+      //   border: 2px solid yellow;
+      padding: 10px;
+      .CityActivityCardTitle {
+        font-size: 16px;
+      }
+      .CityActivityCardDescriptionDiv {
+        // border: 2px solid violet;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .CityActivityCardDescription {
+          text-decoration: underline;
+        }
+        .CityActivityCardPrice {
+          color: $color_tertiary;
+        }
+      }
+    }
+  }
+}
