@@ -72,7 +72,7 @@ const Hero = () => {
     <div className={`${styles.Hero}`}>
       
               <div className={`${styles.Logo} ${'position-absolute'}`}>
-                <Image src='/logo-scont_3.png' alt="logo-image" width='200' height='200' />
+                <Image src='/logo.png' alt="logo-image" width='200' height='200' />
               </div>
            
               <div className={`${styles.motto} ${'position-absolute'}`}>
