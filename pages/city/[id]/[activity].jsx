@@ -4,6 +4,7 @@ import {useState, useEffect} from 'react';
 import styles from "../../../styles/layout/Activity.module.scss";
 import Navbar from "../../../components/Navbar";
 import Footer from "../../../components/Footer";
+import { createCart } from "../../api/api";
 
 const Activity = () => {
 
@@ -15,6 +16,10 @@ const Activity = () => {
         getActivity(activityId,setActivity);
     },[activityId])
 
+    const onHandleCart = () => {
+        createCart();
+    }
+
     return(
         <div className={styles.Activity}>
             <Navbar/>
@@ -23,7 +28,7 @@ const Activity = () => {
             <p>{activity?.description}</p>
             <div className={styles.btnContainer}>
                 <h4>{activity?.retail_price?.formatted_iso_value}</h4>
-                <button>BOOK IT!</button>
+                <button onClick={onHandleCart}>BOOK IT!</button>
             </div>
             <Footer/>
         </div>
