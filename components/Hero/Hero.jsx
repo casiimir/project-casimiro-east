@@ -71,48 +71,48 @@ const Hero = () => {
     
     <div className={`${styles.Hero}`}>
       
-              <div className={`${styles.Logo} ${'position-absolute'}`}>
-                <Image src='/logo.png' alt="logo-image" width='200' height='200' />
-              </div>
-           
-              <div className={`${styles.motto} ${'position-absolute'}`}>
-                <h5>
-                  Not all those <br />
-                  who wander <br />
-                  are 404
-                </h5>
-              </div>
-           
-            <Swiper
-              spaceBetween={0}
-              effect={"fade"}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              modules={[EffectFade, Autoplay]}
-            >
-            {
-              photos.map( ( item, index, array ) => <SwiperSlide key={index}>
-                
-                <Image src={item.url} alt="slider-images" layout='fill'/>
+      <div className={`${styles.Logo} ${'position-absolute'}`}>
+        <Image src='/logo.png' alt="logo-image" width='200' height='200' />
+      </div>
+    
+      <div className={`${styles.motto} ${'position-absolute'}`}>
+        <h5>
+          Not all those <br />
+          who wander <br />
+          are 404
+        </h5>
+      </div>
+    
+    <Swiper
+      spaceBetween={0}
+      effect={"fade"}
+      autoplay={{
+        delay: 2500,
+        disableOnInteraction: false,
+      }}
+      modules={[EffectFade, Autoplay]}
+    >
+    {
+      photos.map( ( item, index, array ) => <SwiperSlide key={index}>
+        
+        <Image src={item.url} alt="slider-images" layout='fill'/>
 
-                <div className={`${styles.Caption}`}>
+        <div className={`${styles.Caption}`}>
 
-                  <h2>
-                    Create <br />
-                    <small>Your</small> <br />
-                    J<span className={`${styles.azure}`}>o</span>u<span className={`${styles.orange}`}>r</span>n<span className={`${styles.green}`}>e</span>y
-                  </h2>
+          <h2>
+            Create <br />
+            <small>Your</small> <br />
+            J<span className={`${styles.azure}`}>o</span>u<span className={`${styles.orange}`}>r</span>n<span className={`${styles.green}`}>e</span>y
+          </h2>
 
-                </div>
+        </div>
 
-              </SwiperSlide>
-                
-              )
-            }
+      </SwiperSlide>
+        
+      )
+    }
 
-            </Swiper>
+    </Swiper>
           
     </div>
   );
