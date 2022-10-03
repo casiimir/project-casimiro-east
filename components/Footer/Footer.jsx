@@ -35,7 +35,7 @@ const Footer = () => {
 						</Col>
 						<Col xs={12} sm={3}>
 							<div className={styles.__socialIcons}>
-                <h5>Author's Linkedin</h5>
+                <h5>Author&apos; Linkedin</h5>
                 <div className={styles.__container}>
 									<ul>
 										<li>
