@@ -19,6 +19,7 @@ const Footer = () => {
                 <div className={styles.__container}>
                     <a target="_blank" rel="noreferrer" href="https://github.com/Miyka96">Miyka96</a>
                     <a target="_blank" rel="noreferrer" href="https://github.com/fefusphera">fefusphera</a>
+                    <a target="_blank" rel="noreferrer" href="https://github.com/Chiarads23">Chiarads23</a>
                     <a target="_blank" rel="noreferrer" href="https://github.com/jupidev1586">jupidev1586</a>
                     {/* <a target="_blank" rel="noreferrer" href="">Chiarads23</a> */}
                     <a target="_blank" rel="noreferrer" href="https://github.com/Cb040719">cb040719</a>
@@ -43,6 +44,9 @@ const Footer = () => {
 										</li>
 										<li>
 											<a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/federica-terranova-073939231/">Federica Terranova</a>
+										</li>
+										<li>
+											<a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/chiara-desantis/">Chiara De Santis</a>
 										</li>
 										<li>
 											<a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/gianpaolo-buono/">Gianpaolo Buono</a>
