@@ -15,10 +15,11 @@ const Footer = () => {
 					<Row>
 						<Col xs={12} sm={2}>
 							<div className={styles.__list}>
-                <h5>Authors&apos; GitHub</h5>
+                <h5>Author&apos;s GitHub</h5>
                 <div className={styles.__container}>
                     <a target="_blank" rel="noreferrer" href="https://github.com/Miyka96">Miyka96</a>
                     <a target="_blank" rel="noreferrer" href="https://github.com/fefusphera">fefusphera</a>
+                    <a target="_blank" rel="noreferrer" href="https://github.com/Chiarads23">Chiarads23</a>
                     <a target="_blank" rel="noreferrer" href="https://github.com/jupidev1586">jupidev1586</a>
                     {/* <a target="_blank" rel="noreferrer" href="">Chiarads23</a> */}
                     <a target="_blank" rel="noreferrer" href="https://github.com/Cb040719">cb040719</a>
@@ -35,7 +36,7 @@ const Footer = () => {
 						</Col>
 						<Col xs={12} sm={3}>
 							<div className={styles.__socialIcons}>
-                <h5>Author&apos; Linkedin</h5>
+                <h5>Author&apos;s Linkedin</h5>
                 <div className={styles.__container}>
 									<ul>
 										<li>
@@ -43,6 +44,9 @@ const Footer = () => {
 										</li>
 										<li>
 											<a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/federica-terranova-073939231/">Federica Terranova</a>
+										</li>
+										<li>
+											<a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/chiara-desantis/">Chiara De Santis</a>
 										</li>
 										<li>
 											<a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/gianpaolo-buono/">Gianpaolo Buono</a>
