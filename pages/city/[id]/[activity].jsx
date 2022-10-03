@@ -4,7 +4,7 @@ import {useState, useEffect} from 'react';
 import styles from "../../../styles/layout/Activity.module.scss";
 import Navbar from "../../../components/Navbar";
 import Footer from "../../../components/Footer";
-import { createCart } from "../../api/api";
+// import { createCart } from "../../api/api";
 
 const Activity = () => {
 
