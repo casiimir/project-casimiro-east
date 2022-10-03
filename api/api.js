@@ -46,4 +46,69 @@ const getAllActivities = (cityId,sortBy,setter) => {
     })   
 }
 
-export {GET, getCategory, getActivity, getAllActivities};  
+
+const createCart = (id, setter) => {
+    axios({
+			method: 'post',
+			url: 'https://api.musement.com/api/v3/carts',
+			headers: {
+        'Content-Type': 'application/json',
+        'Accept-Language': 'en-US',
+        'X-Musement-Application': 'string',
+        'X-Musement-Currency': 'USD',
+        'X-Musement-Market': 'us',
+        'X-Musement-Version': '3.4.0'
+      },
+			data: {
+				firstName: 'Fred',
+				lastName: 'Flintstone'
+			}
+		})
+    .then((res)=>{
+			setter(res.data);
+			console.log(res)
+    })
+    .catch((error) =>{
+        console.log(error.response);
+    })   
+}
+
+//  81927b61-9b75-49b9-9836-d77116809d04 uuid per addcart
+
+
+
+const postInCart = ( setter ) => {
+	axios({
+		method: 'post',
+		url: 'https://api.musement.com/api/v3/81927b61-9b75-49b9-9836-d77116809d04/items',
+		headers: {
+			'X-Musement-Application': 'string',
+			'X-Musement-Version': '3.4.0',
+			'Content-Type': 'application/json'
+		},
+		data: {
+			firstName: 'Fred',
+			lastName: 'Flintstone'
+		}
+	})
+	.then((res)=>{
+		setter(res.data);
+		console.log(res)
+	})
+	.catch((error) =>{
+			console.log(error.response);
+	})   
+}
+
+// const postInCart = (cartUuid, setter) => {
+//     axios
+//     .post(`https://api.musement.com/api/v3/carts/${cartUuid}/items`)
+//     .then((res)=>{
+//         setter(res.data.data);
+//     })
+//     .catch((error) =>{
+//         console.log(error.response);
+//     })   
+// }
+
+export {GET, getCategory, getActivity, getAllActivities, createCart, postInCart};  

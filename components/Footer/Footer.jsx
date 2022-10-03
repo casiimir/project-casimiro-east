@@ -15,7 +15,7 @@ const Footer = () => {
 					<Row>
 						<Col xs={12} sm={2}>
 							<div className={styles.__list}>
-                <h5>Authors&apos; GitHub</h5>
+                <h5>Author&apos;s GitHub</h5>
                 <div className={styles.__container}>
                     <a target="_blank" rel="noreferrer" href="https://github.com/Miyka96">Miyka96</a>
                     <a target="_blank" rel="noreferrer" href="https://github.com/fefusphera">fefusphera</a>
@@ -35,7 +35,7 @@ const Footer = () => {
 						</Col>
 						<Col xs={12} sm={3}>
 							<div className={styles.__socialIcons}>
-                <h5>Author&apos; Linkedin</h5>
+                <h5>Author&apos;s Linkedin</h5>
                 <div className={styles.__container}>
 									<ul>
 										<li>
