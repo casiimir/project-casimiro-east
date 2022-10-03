@@ -8,12 +8,11 @@ const CityActivityCard = ({ image, name, price, children }) => {
         <div className={styles.CityActivityCardText}>
           <h1 className={styles.CityActivityCardTitle}>{name}</h1>
           <div className={styles.CityActivityCardDescriptionDiv}>
-            {/* <p className={styles.CityActivityCardDescription}>see more</p> */}
             <p className={styles.CityActivityCardPrice}>{price}</p>
+            {children}
           </div>
         </div>
       </div>
-      {children}
     </div>
   );
 };

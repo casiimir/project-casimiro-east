@@ -1,51 +1,53 @@
 @import "../utilities/variables";
 
 .CityActivityCard {
-  // border: 2px solid green;
   display: flex;
   flex-direction: row;
-
-  background-color: white;
+  justify-content: center;
 
   .CityActivityCardDiv {
+    // border: 2px solid red;
+    background-color: white;
     border-radius: 4px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.589);
-    // border: 2px solid blue;
-    min-width: 200px;
-    max-width: 200px;
-    min-height: 300px;
-    max-height: 300px;
+    min-width: 300px;
+    max-width: 300px;
+    min-height: 400px;
+    max-height: 400px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.589);
     border-radius: 4px;
     .CityActivityCardImg {
-      min-width: 200px;
-      max-width: 200px;
-      min-height: 165px;
-      max-height: 165px;
-      object-fit: fill;
-      // border-radius: 4px;
+      // border: 2px solid violet;
+      min-width: 300px;
+      max-width: 300px;
+      min-height: 265px;
+      max-height: 265px;
       border-top-left-radius: 4px;
       border-top-right-radius: 4px;
-
       object-fit: cover;
     }
     .CityActivityCardText {
-      //   border: 2px solid yellow;
+      // border: 2px solid yellow;
+      height: 150px;
       padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       .CityActivityCardTitle {
+        // border: 2px solid red;
+        text-align: flex-start;
         font-size: 16px;
       }
+
       .CityActivityCardDescriptionDiv {
         // border: 2px solid violet;
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
-        // .CityActivityCardDescription {
-        //   text-decoration: underline;
-        // }
+        justify-content: space-between;
+        align-items: flex-end;
+
         .CityActivityCardPrice {
           color: $color_tertiary;
         }
