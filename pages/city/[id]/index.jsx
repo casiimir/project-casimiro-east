@@ -1,13 +1,13 @@
 import { useRouter } from "next/router";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import axios from "axios";
-import { useState, useEffect } from "react";
 import HeroCity from "../../../components/HeroCity";
 import ActivityCard from "../../../components/ActivityCard/ActivityCard";
-import styles from "../../../styles/layout/CityOverwiev.module.scss";
 import { getCategory } from "../../../api/api";
 import NavbarMain from "../../../components/Navbar";
 import ScrollContainer from "react-indiana-drag-scroll";
+import styles from "../../../styles/layout/CityOverwiev.module.scss";
 
 const CityPage = () => {
   const router = useRouter();
@@ -49,8 +49,10 @@ const CityPage = () => {
       <NavbarMain />
 
       <div className={styles.Desc}>
-        <h3>The City</h3>
-        <p>{expanded ? cityData?.content : truncate(cityData?.content, 350)}</p>
+        <h3 className={styles.CityOverViewTitle}>The City</h3>
+        <p className={styles.CityOverViewText}>
+          {expanded ? cityData?.content : truncate(cityData?.content, 350)}
+        </p>
         <button
           className={`${"button button--dark"}`}
           onClick={() => setExpanded(!expanded)}
@@ -58,11 +60,11 @@ const CityPage = () => {
           {!expanded ? "Read More" : "Read Less"}
         </button>
       </div>
-        <div className={styles.Exp}>
-          <div className="cont-title">
-            <h3>Food Experiences</h3>
-          </div>
-      <ScrollContainer>
+      <div className={styles.Exp}>
+        <div className="cont-title">
+          <h3 className={styles.ExpTitle}>Food Experiences</h3>
+        </div>
+        <ScrollContainer>
           <div className={styles.ExpList}>
             {foodExp.map((item) => (
               <ActivityCard
@@ -76,14 +78,14 @@ const CityPage = () => {
               </ActivityCard>
             ))}
           </div>
-      </ScrollContainer>
-        </div>
+        </ScrollContainer>
+      </div>
 
-        <div className={styles.Exp}>
-          <div className="cont-title">
-            <h3>History Experiences</h3>
-          </div>
-      <ScrollContainer>
+      <div className={styles.Exp}>
+        <div className="cont-title">
+          <h3 className={styles.ExpTitle}>History Experiences</h3>
+        </div>
+        <ScrollContainer>
           <div className={styles.ExpList}>
             {museumExp.map((item) => (
               <ActivityCard
@@ -97,14 +99,14 @@ const CityPage = () => {
               </ActivityCard>
             ))}
           </div>
-      </ScrollContainer>
-        </div>
+        </ScrollContainer>
+      </div>
 
-        <div className={styles.Exp}>
-          <div className="cont-title">
-            <h3>Outdoor Experiences</h3>
-          </div>
-      <ScrollContainer>
+      <div className={styles.Exp}>
+        <div className="cont-title">
+          <h3 className={styles.ExpTitle}>Outdoor Experiences</h3>
+        </div>
+        <ScrollContainer>
           <div className={styles.ExpList}>
             {outdoorExp.map((item) => (
               <ActivityCard
@@ -118,8 +120,8 @@ const CityPage = () => {
               </ActivityCard>
             ))}
           </div>
-      </ScrollContainer>
-        </div>
+        </ScrollContainer>
+      </div>
 
       {/* bottone provvisorio*/}
       <div className="cont-button">

@@ -1,15 +1,42 @@
+@import "../utilities/variables";
+
 .MainContent {
-  background-color: #ededed;
+  background: $color_background-gray;
+  background: $color_background-linear;
   overflow-y: scroll;
   overflow-x: clip;
   flex: 0 0 auto;
   scroll-behavior: smooth;
   scrollbar-color: transparent;
+
+  .CityOverViewTitle {
+    &::after {
+      content: "";
+      display: block;
+      border-bottom: 1px solid $color_primary;
+      padding-top: 15px;
+      width: 100px;
+    }
+  }
+
+  .CityOverViewText {
+    color: $color_text-dark;
+  }
 }
 
 .Exp {
   display: flex;
   flex-direction: column;
+
+  .ExpTitle {
+    &::after {
+      content: "";
+      display: block;
+      border-bottom: 1px solid $color_tertiary;
+      padding-top: 15px;
+      width: 100px;
+    }
+  }
 
   .ExpList {
     gap: 24px;

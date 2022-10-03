@@ -2,8 +2,10 @@ import { useRouter } from "next/router";
 import { getAllActivities } from "../../../api/api";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import styles from "../../../styles/layout/AllActivities.module.scss";
 import CityActivityCard from "../../../components/CityActivityCard/CityActivityCard";
+import Navbar from "../../../components/Navbar";
+
+import styles from "../../../styles/layout/AllActivities.module.scss";
 
 const Activities = () => {
   const router = useRouter();
@@ -19,9 +21,11 @@ const Activities = () => {
 
   return (
     <div className={styles.Activities}>
+      <Navbar />
       <h1 className={styles.ActivitiesTitle}>All available activities</h1>
 
-      <span>Sort by - </span><select className={styles.ActivitiesSelector} onChange={handleChange}>
+      <span className={styles.ActivitiesSpan}>Sort by - </span>
+      <select className={styles.ActivitiesSelector} onChange={handleChange}>
         <option value="relevance">Relevance</option>
         <option value="rating">Rating</option>
         <option value="price">Price</option>
@@ -35,10 +39,9 @@ const Activities = () => {
             image={el?.cover_image_url}
             price={el?.retail_price?.formatted_iso_value}
           >
-            {/* <Link href={`/city/${cityId}/${el?.uuid}`}>
-              <a className={styles.ActivitiesLink}>see more</a>
-            </Link> */}
-
+            <Link href={`/city/${cityId}/${el?.uuid}`}>
+              <p className={styles.ActivitiesLink}>see more</p>
+            </Link>
           </CityActivityCard>
         ))}
       </div>
