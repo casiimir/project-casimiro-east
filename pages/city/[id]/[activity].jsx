@@ -4,6 +4,7 @@ import {useState, useEffect} from 'react';
 import styles from "../../../styles/layout/Activity.module.scss";
 import Navbar from "../../../components/Navbar";
 import Footer from "../../../components/Footer";
+import Map from "../../../components/Map";
 // import { createCart } from "../../api/api";
 
 const Activity = () => {
@@ -30,6 +31,14 @@ const Activity = () => {
                 <h4>{activity?.retail_price?.formatted_iso_value}</h4>
                 <button onClick={onHandleCart}>BOOK IT!</button>
             </div>
+            {
+                activity.city !== undefined ?            
+                <Map latitude={activity?.city.latitude} longitude={activity?.city.longitude}/>
+                :
+                <div></div>
+            }
+
+            {console.log('attività', activity)}
             <Footer/>
         </div>
     )
