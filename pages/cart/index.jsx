@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import { createCart } from "../../api/api";
+// import { createCart } from "../../api/api";
 
 import styles from '../../styles/layout/Cart.module.scss';
 
