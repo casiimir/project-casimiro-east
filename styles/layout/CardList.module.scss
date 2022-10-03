@@ -1,4 +1,15 @@
-@import '../utilities/mixins';
+@import "../utilities/mixins";
+@import "../utilities/variables";
+
+.CardListTitle {
+  &::after {
+    content: "";
+    display: block;
+    border-bottom: 1px solid $color_primary;
+    padding-top: 15px;
+    width: 100px;
+  }
+}
 .CardList {
   padding: 40px;
   margin: 20px 0;

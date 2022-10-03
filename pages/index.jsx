@@ -5,7 +5,6 @@ import NavbarMain from "../components/Navbar";
 import CardList from "../components/CardList/CardList";
 import Footer from "../components/Footer";
 
-
 const Home = () => {
   return (
     <div className={styles.Home}>

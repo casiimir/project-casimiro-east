@@ -1,40 +1,45 @@
+@import "../utilities/variables";
+
 .Activity {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  background: $color_background-gray;
+  background: $color_background-linear;
 
+  h1 {
+    margin: 24px 24px 16px 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid $color_primary;
+  }
+
+  p {
+    padding: 24px;
+  }
+
+  .btnContainer {
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    width: 100vw;
-    height: 100vh;
-    background: #ebebeb;
+    justify-content: space-between;
+    padding: 0 24px 24px 24px;
 
-    h1{
-        margin: 24px 24px 16px 24px;
-        padding-bottom: 16px;
-        border-bottom: 1px solid #30B0F9;
+    h4 {
+      display: flex;
+      align-items: center;
     }
 
-    p{
-        padding: 24px;
+    button {
+      background: $color_text-midtone;
+      padding: 8px 12px;
+      color: white;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.521);
+      &:hover {
+        transition: $anim-time;
+        background: $color_primary;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.521);
+      }
     }
-
-    .btnContainer {
-        display: flex;
-        justify-content: space-between;
-        padding: 0 24px 24px 24px;
-
-        h4 {
-            display: flex;
-            align-items: center;
-        }
-
-        button {
-            background: #5a5a5a;
-            padding: 8px 12px;
-            color: white;
-            font-weight: 600;
-            border: none;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.521);
-        }
-    }
+  }
 }
