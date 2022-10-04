@@ -15,6 +15,13 @@
  		z-index: 15;
 	}
 	
+	.Container {
+		@media (min-width: 768px) {
+			padding-left: 45px;
+			padding-right: 45px;
+		}
+	}
+
 	.input {
 		background: $color_text-midtone;
 		color: white;
@@ -91,8 +98,8 @@
 
 	.RelativeIcon {
 		position: relative;
-		top: 8px;
-		right: 5px;
+		// top: 8px;
+		// right: 5px;
 	}
 	
 }
