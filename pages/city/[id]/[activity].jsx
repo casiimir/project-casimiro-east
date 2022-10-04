@@ -6,6 +6,9 @@ import styles from "../../../styles/layout/Activity.module.scss";
 import Navbar from "../../../components/Navbar";
 import Footer from "../../../components/Footer";
 import axios from "axios";
+import Map from "../../../components/Map";
+import {TbMapOff} from 'react-icons/tb';
+
 
 const Activity = () => {
   const [activity, setActivity] = useState([]);
@@ -43,6 +46,16 @@ const Activity = () => {
           BOOK IT!
         </button>
       </div>
+      {
+        activity.latitude !== undefined ?
+        <Map latitude={activity?.latitude} longitude={activity?.longitude}/>
+        :
+        <div className={styles.Map_container}>
+          <h5>Mappa non disponibile per questa attività</h5>
+          <TbMapOff/>
+        </div>
+
+      }
       <Footer />
     </div>
   );
