@@ -21,11 +21,15 @@ const Activity = () => {
         createCart();
     }
 
+
     return(
         <div className={styles.Activity}>
             <Navbar/>
             <h1>{activity?.title}</h1>
-            <img src={activity?.cover_image_url} alt="" />
+            { activity.cover_image_url!== undefined ?
+                <img src={(activity.cover_image_url).slice(0, -5)} alt="" /> :
+                <div></div>
+            }
             <p>{activity?.description}</p>
             <div className={styles.btnContainer}>
                 <h4>{activity?.retail_price?.formatted_iso_value}</h4>
