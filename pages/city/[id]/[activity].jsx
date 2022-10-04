@@ -36,7 +36,7 @@ const Activity = () => {
       <h1>{activity?.title}</h1>
       { activity.cover_image_url!== undefined ?
         <img src={(activity.cover_image_url).slice(0, -5)} alt="" /> :
-        <div></div>
+        <img src={(activity?.city?.cover_image_url)} alt="" /> 
       }
       <p>{activity?.description}</p>
       <div className={styles.btnContainer}>

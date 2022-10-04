@@ -27,7 +27,7 @@ const CityPage = () => {
       .get(`https://api.musement.com/api/v3/cities/${id}`)
       .then((res) => {
         setCityData(res.data);
-        console.table(res.data);
+        console.log(res.data);
       })
       .catch((error) => {
         console.log(error.response);
@@ -51,7 +51,7 @@ const CityPage = () => {
       <div className={styles.Desc}>
         <h3 className={styles.CityOverViewTitle}>The City</h3>
         <p className={styles.CityOverViewText}>
-          {expanded ? cityData?.content : truncate(cityData?.content, 350)}
+          {expanded ? cityData?.content_html?.replace(/(<([^>]+)>)/gi, "") : truncate(cityData?.content_html?.replace(/(<([^>]+)>)/gi, ""), 350)}
         </p>
         <button
           className={`${"button button--dark"}`}
@@ -71,6 +71,7 @@ const CityPage = () => {
                   key={item?.id}
                   name={item?.title}
                   image={item?.cover_image_url}
+                  alternativeImg={item?.city?.cover_image_url}
                 >
                   <Link href={`/city/${id}/${item?.uuid}`}>
                     <a className={styles.LinkList}>{item?.title}</a>
@@ -90,6 +91,7 @@ const CityPage = () => {
                     key={item?.id}
                     name={item?.title}
                     image={item?.cover_image_url}
+                    alternativeImg={item?.city?.cover_image_url}
                   >
                     <Link href={`/city/${id}/${item?.uuid}`}>
                       <a className={styles.LinkList}>{item?.title}</a>
@@ -110,6 +112,7 @@ const CityPage = () => {
                     key={item?.id}
                     name={item?.title}
                     image={item?.cover_image_url}
+                    alternativeImg={item?.city?.cover_image_url}
                   >
                     <Link href={`/city/${id}/${item.uuid}`}>
                       <a className={styles.LinkList}>{item?.title}</a>
@@ -131,6 +134,7 @@ const CityPage = () => {
     </div>
   );
 };
+
 
 // TODO: in console avete tutto l'oggetto della città
 
