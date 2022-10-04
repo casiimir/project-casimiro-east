@@ -18,6 +18,10 @@
       width: 100px;
     }
   }
+  .Desc {
+    padding: 20px;
+    margin: 60px 25px 0px;
+  }
 
   .CityOverViewText {
     color: $color_text-dark;
@@ -39,11 +43,11 @@
   }
 
   .ExpList {
-    gap: 24px;
-    padding: 24px;
+    padding: 40px 0;
+    margin: 20px 0;
     display: flex;
-    flex-direction: row;
-    flex: 0 0 auto;
+    justify-content: space-between;
+    gap: 24px;
 
     .LinkList {
       position: absolute;
@@ -55,8 +59,4 @@
       cursor: pointer;
     }
   }
-}
-
-.Desc {
-  padding: 20px;
 }

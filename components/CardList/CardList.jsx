@@ -36,42 +36,42 @@ const CardList = ({ list, title }) => {
   console.log(displayList);
   return (
     <>
-      <div className="cont-title">
+      <div className="main-container">
         <h3 className={styles.CardListTitle}>{title}</h3>
-      </div>
 
-      <ScrollContainer nativeMobileScroll={true}>
-        <div className={styles.CardList}>
-          {displayList.map((item) => {
-            if (list === "cities") {
-              return (
-                <Card
-                  key={item.city.id}
-                  name={item.city.name}
-                  image={item.city.cover_image_url}
-                >
-                  <Link href={`/city/${item.city.id}`}>
-                    <a className={styles.Link}>{item?.city.name}</a>
-                  </Link>
-                </Card>
-              );
-            }
-            if (list === "experiences") {
-              return (
-                <Card
-                  key={item.uuid}
-                  name={item.title}
-                  image={item.cover_image_url}
-                >
-                  <Link href={`/city/${item.city.id}/${item.uuid}`}>
-                    <a className={styles.Link}>{item?.title}</a>
-                  </Link>
-                </Card>
-              );
-            }
-          })}
-        </div>
-      </ScrollContainer>
+        <ScrollContainer nativeMobileScroll={true}>
+          <div className={styles.CardList}>
+            {displayList.map((item) => {
+              if (list === "cities") {
+                return (
+                  <Card
+                    key={item.city.id}
+                    name={item.city.name}
+                    image={item.city.cover_image_url}
+                  >
+                    <Link href={`/city/${item.city.id}`}>
+                      <a className={styles.Link}>{item?.city.name}</a>
+                    </Link>
+                  </Card>
+                );
+              }
+              if (list === "experiences") {
+                return (
+                  <Card
+                    key={item.uuid}
+                    name={item.title}
+                    image={item.cover_image_url}
+                  >
+                    <Link href={`/city/${item.city.id}/${item.uuid}`}>
+                      <a className={styles.Link}>{item?.title}</a>
+                    </Link>
+                  </Card>
+                );
+              }
+            })}
+          </div>
+        </ScrollContainer>
+      </div>
     </>
   );
 };
