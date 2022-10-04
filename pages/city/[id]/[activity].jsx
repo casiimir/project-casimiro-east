@@ -5,7 +5,11 @@ import {useState, useEffect} from 'react';
 import styles from "../../../styles/layout/Activity.module.scss";
 import Navbar from "../../../components/Navbar";
 import Footer from "../../../components/Footer";
+import Map from "../../../components/Map";
+// import { createCart } from "../../api/api";
+import {TbMapOff} from 'react-icons/tb';
 import axios from "axios";
+
 
 
 const Activity = () => {
@@ -44,6 +48,18 @@ const Activity = () => {
                 <h4>{activity?.retail_price?.formatted_iso_value}</h4>
                 <button onClick={addToCart} id={activity?.uuid}>BOOK IT!</button>
             </div>
+            {
+                activity.latitude !== undefined ?            
+                <Map latitude={activity?.latitude} longitude={activity?.longitude}/>
+                :
+                <div className={styles.Map_container}>
+                    <h5>Mappa non disponibile per questa attività</h5>
+                    <TbMapOff/>
+                </div>
+
+            }
+
+            {console.log('attività', activity)}
             <Footer/>
         </div>
     )
