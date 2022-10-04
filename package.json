@@ -21,6 +21,7 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.4.0",
     "react-indiana-drag-scroll": "^2.2.0",
+    "react-responsive-pagination": "^1.7.0",
     "sass": "^1.55.0"
   },
   "devDependencies": {

@@ -4,20 +4,29 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import CityActivityCard from "../../../components/CityActivityCard/CityActivityCard";
 import Navbar from "../../../components/Navbar";
-
+import Pagination from 'react-responsive-pagination';
 import styles from "../../../styles/layout/AllActivities.module.scss";
 
 const Activities = () => {
   const router = useRouter();
   const cityId = router.query.id;
   const [activities, setActivities] = useState([]);
+  const [offset, setOffset] = useState(1);
   useEffect(() => {
-    getAllActivities(cityId, "relevance", setActivities);
-  }, []);
+    getAllActivities(cityId, "relevance", setActivities,offset);
+    window.scroll({
+      top: 0, 
+      left: 0, 
+      behavior: 'smooth' 
+     });
+  }, [offset]);
 
   const handleChange = (e) => {
     getAllActivities(cityId, e.target.value, setActivities);
   };
+
+  const totalPages = Math.floor((activities?.meta?.count)/10);
+
 
   return (
     <div className={styles.Activities}>
@@ -32,7 +41,7 @@ const Activities = () => {
       </select>
 
       <div className={`${styles.ActivitiesDiv} ${'row'}`}>
-        {activities?.map((el, i) => (
+        {activities?.data?.map((el, i) => (
           <CityActivityCard
             key={i}
             name={el?.title}
@@ -45,6 +54,19 @@ const Activities = () => {
           </CityActivityCard>
         ))}
       </div>
+
+      <div className={styles.pagination_wrapper}>
+      <Pagination
+      current={offset}
+      total={totalPages}
+      onPageChange={setOffset}
+      pageLinkClassName={styles.page_item}
+      activeItemClassName={styles.page_item_active}
+      disabledItemClassName={styles.page_item_disabled}
+    />
+      </div>
+
+
     </div>
   );
 };
