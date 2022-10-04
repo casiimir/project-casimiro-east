@@ -24,7 +24,17 @@ const Map = ({ latitude, longitude }) => {
         mapContainerStyle={mapContainerStyle}
         zoom={15}
         center={center}
+      >
+      <Marker
+        key="marker_1"
+        position={{
+          lat: latitude,
+          lng: longitude,
+          map: Map
+        }}
       />
+      </GoogleMap>
+
     </>
   );
 };
