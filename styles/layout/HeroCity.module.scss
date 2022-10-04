@@ -14,13 +14,15 @@
     }
   }
   .Caption {
-    width: 80%;
-    height: 60%;
+    width: 50%;
+    height: 50%;
     margin: auto;
+    backdrop-filter: blur(1px);
     h2 {
       color: white;
       text-shadow: 2px 2px 4px #131313;
       margin-bottom: 30px;
+      font-size: 5rem;
       // font-weight: $fw-light;
       // @media (max-width: 767.98px) {
       //   font-size: 36px;
