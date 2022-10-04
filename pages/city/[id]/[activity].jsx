@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import { getActivity } from "../../../api/api";
 import { useState, useEffect } from "react";
-// import { cartList } from "../../../utils/cartList";
 import styles from "../../../styles/layout/Activity.module.scss";
 import Navbar from "../../../components/Navbar";
 import Footer from "../../../components/Footer";
