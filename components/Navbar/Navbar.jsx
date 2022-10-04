@@ -9,10 +9,7 @@ import Link from 'next/link';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Offcanvas from 'react-bootstrap/Offcanvas';
 
 import "@fortawesome/fontawesome-svg-core/styles.css"; // import Font Awesome CSS
 import { config } from "@fortawesome/fontawesome-svg-core";
@@ -80,7 +77,7 @@ const NavbarMain = () => {
     <>
      
       <Navbar variant="dark" expand='' className={`${styles.Navbar} ${scrollPosY >= 700 && styles.position_fixed}`}>
-        <Container fluid>
+        <Container fluid className={styles.Container}>
           <Row className={`${'w-100 align-items-center'}`}>
             <Col xs={3}>
               <Navbar.Brand href="/">
@@ -114,42 +111,9 @@ const NavbarMain = () => {
                   style={{ fontSize: 24, color: "white" }}
                 />
               </div>
-              <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-$'xxl'`} />
             </Col>
           </Row>
 
-          <Navbar.Offcanvas
-            id={`offcanvasNavbar-expand-$'xxl'`}
-            aria-labelledby={`offcanvasNavbarLabel-expand-$'xxl'`}
-            placement="end"
-          >
-            <Offcanvas.Header closeButton>
-              <Offcanvas.Title id={`offcanvasNavbarLabel-expand-$'xxl'`}>
-                Offcanvas
-              </Offcanvas.Title>
-            </Offcanvas.Header>
-            <Offcanvas.Body>
-              <Nav className={`${'justify-content-end'} ${'flex-grow-1'} ${'pe-3'}`}>
-                <Nav.Link href="#action1">Home</Nav.Link>
-                <Nav.Link href="#action2">Link</Nav.Link>
-                <NavDropdown
-                  title="Dropdown"
-                  id={`offcanvasNavbarDropdown-expand-$'xxl'`}
-                >
-                  <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">
-                    Another action
-                  </NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action5">
-                    Something else here
-                  </NavDropdown.Item>
-                </NavDropdown>
-              </Nav>
-              
-              {/* <Image src={cart} alt="Cart" height={40} /> */}
-            </Offcanvas.Body>
-          </Navbar.Offcanvas>
         </Container>
       </Navbar>
   
