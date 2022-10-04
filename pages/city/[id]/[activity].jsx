@@ -36,8 +36,8 @@ const Activity = () => {
                 <button onClick={onHandleCart}>BOOK IT!</button>
             </div>
             {
-                activity.city !== undefined ?            
-                <Map latitude={activity?.city.latitude} longitude={activity?.city.longitude}/>
+                activity.latitude !== undefined ?            
+                <Map latitude={activity?.latitude} longitude={activity?.longitude}/>
                 :
                 <div></div>
             }
