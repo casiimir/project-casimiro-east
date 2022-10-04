@@ -1,21 +1,25 @@
 @import "../utilities/mixins";
 @import "../utilities/variables";
 
-.CardListTitle {
-  &::after {
-    content: "";
-    display: block;
-    border-bottom: 1px solid $color_primary;
-    padding-top: 15px;
-    width: 100px;
-  }
-}
+
 .CardList {
-  padding: 40px 0;
-  margin: 20px 0;
-  display: flex;
-  justify-content: space-between;
-  gap: 24px;
+ 
+  .ContCards {
+    padding: 40px 0;
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .Title {
+    &::after {
+      content: "";
+      display: block;
+      border-bottom: 1px solid $color_primary;
+      padding-top: 15px;
+      width: 100px;
+    }
+  }
 }
 
 .Link {

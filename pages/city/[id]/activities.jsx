@@ -31,7 +31,7 @@ const Activities = () => {
         <option value="price">Price</option>
       </select>
 
-      <div className={styles.ActivitiesDiv}>
+      <div className={`${styles.ActivitiesDiv} ${'row'}`}>
         {activities?.map((el, i) => (
           <CityActivityCard
             key={i}
