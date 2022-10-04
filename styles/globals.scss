@@ -62,7 +62,6 @@ h6 {
   }
 }
 
-
 // Modifiers
 .no-ls {
   letter-spacing: 0 !important;
@@ -186,6 +185,7 @@ h6 {
 
 .cont-title {
   margin-top: 60px;
+  margin-left: 25px;
   padding: 20px 20px 0;
 }
 
@@ -196,5 +196,17 @@ h6 {
 
 .cont-button {
   margin-bottom: 60px;
-  padding: 20px;
+  padding: 0px;
+}
+
+.main-container {
+  margin-top: 60px;
+  margin-left: 25px;
+  padding: 20px 20px 0;
+}
+
+@media screen and (min-width: 992px) {
+  .cont-title {
+    margin-left: 60px;
+  }
 }
