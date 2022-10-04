@@ -7,6 +7,8 @@ import Footer from "../../../components/Footer";
 import axios from "axios";
 import Map from "../../../components/Map";
 import {TbMapOff} from 'react-icons/tb';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 let cartList = [];
 
@@ -43,7 +45,7 @@ const Activity = () => {
       <Navbar />
       <h1>{activity?.title}</h1>
       { activity.cover_image_url!== undefined ?
-        <img src={(activity.cover_image_url).slice(0, -5)} alt="" /> :
+        <LazyLoadImage src={(activity.cover_image_url).slice(0, -5)} alt="" effect="blur" width={"100%"}/> :
         <div></div>
       }
       <p>{activity?.description}</p>

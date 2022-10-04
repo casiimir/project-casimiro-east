@@ -1,8 +1,8 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
-
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 import styles from '../../styles/layout/HeroCity.module.scss';
 
 
@@ -16,7 +16,7 @@ const HeroCity = ({ image, title}) => {
         <Row>
           <Col>
             <div className={`${styles.cont_image}`}>
-              <img src={image} alt="hero-city" />
+              <LazyLoadImage src={image} alt="hero-city" effect="blur" height={"100vh"} width="100%"/>
               <div className={`${styles.Caption}`}>
                 <h2>{title}</h2>
               </div>
