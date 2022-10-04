@@ -18,6 +18,21 @@ const Activity = () => {
         getActivity(activityId,setActivity);
     },[activityId])
     
+    
+    const addToCart = (e) => {
+        if(e.target.id === activityId){
+            if(typeof window !== "undefined") {
+                
+                const cartList = [...JSON.parse(localStorage.getItem("cartList"))];
+                
+                cartList.push(activity);
+                localStorage.setItem("cartList", JSON.stringify(cartList));
+                console.log(JSON.parse(localStorage.getItem("cartList"))); 
+            }
+        }
+    }
+
+    
 
     return(
         <div className={styles.Activity}>
@@ -27,7 +42,7 @@ const Activity = () => {
             <p>{activity?.description}</p>
             <div className={styles.btnContainer}>
                 <h4>{activity?.retail_price?.formatted_iso_value}</h4>
-                <button id={activity?.uuid}>BOOK IT!</button>
+                <button onClick={addToCart} id={activity?.uuid}>BOOK IT!</button>
             </div>
             <Footer/>
         </div>
