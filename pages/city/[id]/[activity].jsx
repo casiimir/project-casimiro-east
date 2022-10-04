@@ -6,6 +6,7 @@ import Navbar from "../../../components/Navbar";
 import Footer from "../../../components/Footer";
 import Map from "../../../components/Map";
 // import { createCart } from "../../api/api";
+import {TbMapOff} from 'react-icons/tb';
 
 const Activity = () => {
 
@@ -39,7 +40,11 @@ const Activity = () => {
                 activity.latitude !== undefined ?            
                 <Map latitude={activity?.latitude} longitude={activity?.longitude}/>
                 :
-                <div></div>
+                <div className={styles.Map_container}>
+                    <h5>Mappa non disponibile per questa attività</h5>
+                    <TbMapOff/>
+                </div>
+
             }
 
             {console.log('attività', activity)}
