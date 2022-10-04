@@ -61,75 +61,72 @@ const CityPage = () => {
         </button>
       </div>
       <div className={styles.Exp}>
-        <div className="cont-title">
+        <div className="main-container">
           <h3 className={styles.ExpTitle}>Food Experiences</h3>
-        </div>
-        <ScrollContainer>
-          <div className={styles.ExpList}>
-            {foodExp.map((item) => (
-              <ActivityCard
-                key={item?.id}
-                name={item?.title}
-                image={item?.cover_image_url}
-              >
-                <Link href={`/city/${id}/${item?.uuid}`}>
-                  <a className={styles.LinkList}>{item?.title}</a>
-                </Link>
-              </ActivityCard>
-            ))}
-          </div>
-        </ScrollContainer>
-      </div>
 
-      <div className={styles.Exp}>
-        <div className="cont-title">
-          <h3 className={styles.ExpTitle}>History Experiences</h3>
-        </div>
-        <ScrollContainer>
-          <div className={styles.ExpList}>
-            {museumExp.map((item) => (
-              <ActivityCard
-                key={item?.id}
-                name={item?.title}
-                image={item?.cover_image_url}
-              >
-                <Link href={`/city/${id}/${item?.uuid}`}>
-                  <a className={styles.LinkList}>{item?.title}</a>
-                </Link>
-              </ActivityCard>
-            ))}
-          </div>
-        </ScrollContainer>
-      </div>
+          <ScrollContainer>
+            <div className={styles.ExpList}>
+              {foodExp.map((item) => (
+                <ActivityCard
+                  key={item?.id}
+                  name={item?.title}
+                  image={item?.cover_image_url}
+                >
+                  <Link href={`/city/${id}/${item?.uuid}`}>
+                    <a className={styles.LinkList}>{item?.title}</a>
+                  </Link>
+                </ActivityCard>
+              ))}
+            </div>
+          </ScrollContainer>
 
-      <div className={styles.Exp}>
-        <div className="cont-title">
-          <h3 className={styles.ExpTitle}>Outdoor Experiences</h3>
-        </div>
-        <ScrollContainer>
-          <div className={styles.ExpList}>
-            {outdoorExp.map((item) => (
-              <ActivityCard
-                key={item?.id}
-                name={item?.title}
-                image={item?.cover_image_url}
-              >
-                <Link href={`/city/${id}/${item.uuid}`}>
-                  <a className={styles.LinkList}>{item?.title}</a>
-                </Link>
-              </ActivityCard>
-            ))}
-          </div>
-        </ScrollContainer>
-      </div>
+          <div className={styles.Exp}>
+            <h3 className={styles.ExpTitle}>History Experiences</h3>
 
-      {/* bottone provvisorio*/}
-      <div className="cont-button">
-        <button className={`${"button button--dark"}`}>
-          <Link href={`/city/${id}/activities`}>
-            <a className={styles.LinkList}>See all available activities</a>
-          </Link>
-        </button>
+            <ScrollContainer>
+              <div className={styles.ExpList}>
+                {museumExp.map((item) => (
+                  <ActivityCard
+                    key={item?.id}
+                    name={item?.title}
+                    image={item?.cover_image_url}
+                  >
+                    <Link href={`/city/${id}/${item?.uuid}`}>
+                      <a className={styles.LinkList}>{item?.title}</a>
+                    </Link>
+                  </ActivityCard>
+                ))}
+              </div>
+            </ScrollContainer>
+          </div>
+
+          <div className={styles.Exp}>
+            <h3 className={styles.ExpTitle}>Outdoor Experiences</h3>
+
+            <ScrollContainer>
+              <div className={styles.ExpList}>
+                {outdoorExp.map((item) => (
+                  <ActivityCard
+                    key={item?.id}
+                    name={item?.title}
+                    image={item?.cover_image_url}
+                  >
+                    <Link href={`/city/${id}/${item.uuid}`}>
+                      <a className={styles.LinkList}>{item?.title}</a>
+                    </Link>
+                  </ActivityCard>
+                ))}
+              </div>
+            </ScrollContainer>
+          </div>
+          <div className="cont-button">
+            <button className={`${"button button--dark"}`}>
+              <Link href={`/city/${id}/activities`}>
+                <a className={styles.LinkList}>See all available activities</a>
+              </Link>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );

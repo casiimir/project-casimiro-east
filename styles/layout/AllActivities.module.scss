@@ -3,6 +3,7 @@
 .Activities {
   background: $color_background-gray;
   background: $color_background-linear;
+  // border: 2px solid red;
   .ActivitiesTitle {
     padding: 24px;
     &::after {
@@ -25,13 +26,22 @@
   }
 
   .ActivitiesDiv {
-    // border: 2px solid blue;
     display: flex;
     flex-direction: column;
     gap: 30px;
     max-width: 100vw;
     margin: 0 auto;
     margin-top: 30px;
+    @media screen and (min-width: 800px) {
+      display: grid;
+      justify-items: center;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-column-gap: 20px;
+      -moz-column-gap: 20px;
+      column-gap: 20px;
+      grid-row-gap: 30px;
+      row-gap: 30px;
+    }
 
     .ActivitiesLink {
       text-decoration: underline;
@@ -44,12 +54,16 @@
   }
 }
 
-//IN GRID
-// display: grid;
-// justify-items: center;
-// grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-// grid-column-gap: 20px;
-// -moz-column-gap: 20px;
-// column-gap: 20px;
-// grid-row-gap: 30px;
-// row-gap: 30px;
+// @media screen and (min-width: 800px) {
+//   .ActivitiesDiv {
+//     border: 2px solid green;
+//     display: grid;
+//     justify-items: center;
+//     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+//     grid-column-gap: 20px;
+//     -moz-column-gap: 20px;
+//     column-gap: 20px;
+//     grid-row-gap: 30px;
+//     row-gap: 30px;
+//   }
+// }
