@@ -11,22 +11,28 @@ import axios from "axios";
 const Activity = () => {
 
     const [activity, setActivity] = useState([]);
-    const [cartList, setCartList] = useState([]);
     const router = useRouter();
     const activityId = router.query.activity;
 
     useEffect(() => {
         getActivity(activityId,setActivity);
     },[activityId])
-
+    
+    
     const addToCart = (e) => {
         if(e.target.id === activityId){
-            // localStorage.setItem("cartList", JSON.stringify(cartList))
-            // console.log(JSON.parse(localStorage.getItem("cartList")))
-            setCartList([...cartList, activity])
-            console.log(cartList);
+            if(typeof window !== "undefined") {
+                
+                const cartList = [...JSON.parse(localStorage.getItem("cartList"))];
+                
+                cartList.push(activity);
+                localStorage.setItem("cartList", JSON.stringify(cartList));
+                console.log(JSON.parse(localStorage.getItem("cartList"))); 
+            }
         }
     }
+
+    
 
     return(
         <div className={styles.Activity}>
