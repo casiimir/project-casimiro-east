@@ -178,6 +178,13 @@ h6 {
   height: 100vh !important;
 }
 
+.swiperExp .swiper-slide, 
+.swiperExp2 .swiper-slide,
+.swiperExp3 .swiper-slide  
+{
+  height: 100% !important;
+}
+
 .navbar > .container-fluid {
   justify-content: flex-end;
 }
