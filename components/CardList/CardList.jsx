@@ -68,7 +68,7 @@ const CardList = ({ list, title }) => {
                 // when window width is >= 768px
                 768: {
                   width: 768,
-                  slidesPerView: 4,
+                  slidesPerView: 3,
                 },
               }}
             >
