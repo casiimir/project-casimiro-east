@@ -8,7 +8,7 @@ import axios from "axios";
 import Link from "next/link";
 import Map from "../../../components/Map";
 import { TbMapOff } from "react-icons/tb";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import Swal from 'sweetalert2'
 import "react-lazy-load-image-component/src/effects/blur.css";
 
 export let cartList = [];
@@ -38,6 +38,7 @@ const Activity = () => {
         console.log(JSON.parse(localStorage.getItem("cartList")));
       }
     }
+    new Swal('Elemento aggiunto al carrello','','success');
   };
 
   return (
