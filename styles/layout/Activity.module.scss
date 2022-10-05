@@ -8,9 +8,6 @@
   background: $color_background-linear;
 
   h1 {
-    // margin: 24px 24px 16px 24px;
-    // padding-bottom: 16px;
-    // border-bottom: 1px solid $color_primary;
     margin-top: 36px;
     margin-bottom: 48px;
     &::after {
@@ -25,8 +22,63 @@
     }
   }
 
-  .Paragraph {
-    padding: 24px;
+  .Paragraph_title {
+    font-family: $ff-alt;
+    font-weight: 300;
+    margin-top: 50px;
+    span {
+      color: $color_tertiary;
+    }
+  }
+  .Paragraph_wrapper {
+    display: flex;
+    flex-direction: column;
+    .Paragraph {
+      padding: 0;
+    }
+  }
+  .Paragraph_wrapper_row {
+    justify-content: space-between;
+    margin: 30px 50px;
+    .Paragraph_title {
+      margin-top: 0;
+      span {
+        color: $color_tertiary;
+      }
+    }
+    display: flex;
+    gap: 50px;
+    @media screen and (max-width: 480px) {
+      flex-direction: column;
+    }
+    ul {
+      list-style: none;
+      color: $color_text-midtone;
+      margin: 0;
+      padding: 0;
+      width: 300px;
+      li {
+        font-size: 1rem;
+        &.active {
+          color: $color_primary;
+          font-weight: 600;
+          &::before {
+            margin-right: 10px;
+            content: "\2705";
+          }
+        }
+        &.not_active {
+          &::before {
+            margin-right: 10px;
+            content: "\2716";
+          }
+        }
+      }
+    }
+
+    .Meeting_point_wrapper{
+      text-align: right;
+    }
   }
 
   .btnContainer {
@@ -41,7 +93,7 @@
 
     button {
       background: $color_text-midtone;
-      padding: 8px 12px;
+      padding: 18px 30px;
       color: white;
       font-weight: 600;
       border: none;

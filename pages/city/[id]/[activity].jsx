@@ -56,7 +56,28 @@ const Activity = () => {
             ) : (
               <div></div>
             )}
-            <p className={styles.Paragraph}>{activity?.description}</p>
+            
+            <div className={styles.Paragraph_wrapper}>
+              <h4 className={styles.Paragraph_title}>About this <span> experience</span>:</h4>
+              <p className={styles.Paragraph}>{activity?.description}</p>
+            </div>
+            <div className={styles.Paragraph_wrapper}>
+                  <div className={styles.Paragraph_wrapper_row}>
+                      <ul>
+                        <li className={(activity?.best_price === true ? styles.active : styles.not_active)}>Best Price  </li>
+                        <li className={(activity?.daily === true ? styles.active : styles.not_active)}>Daily</li>
+                        <li className={(activity?.exclusive === true ? styles.active : styles.not_active)}>Exclusive</li>
+                        <li className={(activity?.free_cancellation === true ? styles.active : styles.not_active)}>Free Cancellation</li>
+                        <li className={(activity?.is_available_today === true ? styles.active : styles.not_active)}>Is Available Today</li>
+                        <li className={(activity?.is_available_tomorrow === true ? styles.active : styles.not_active)}>Is Available Tomorrow</li>
+                      </ul>
+                      <div className={styles.Meeting_point_wrapper}>
+                        <h4 className={styles.Paragraph_title}>Meeting <span>point</span>:</h4>
+                        <p>{activity?.meeting_point_markdown}</p>
+                      </div>
+                  </div>
+            </div>
+
             <div className={styles.btnContainer}>
               <h4>{activity?.retail_price?.formatted_iso_value}</h4>
               <button onClick={addToCart} id={activity?.uuid}>
