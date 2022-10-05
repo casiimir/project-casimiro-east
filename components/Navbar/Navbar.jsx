@@ -106,10 +106,15 @@ const NavbarMain = () => {
             </Col>
             <Col xs={4} className={`${'d-flex justify-content-end'}`}>
               <div className={styles.RelativeIcon}>
-                <FontAwesomeIcon
-                  icon={faShoppingCart}
-                  style={{ fontSize: 24, color: "white" }}
-                />
+                <Link href={`/cart`}>
+                  <a>
+                    <FontAwesomeIcon
+                      icon={faShoppingCart}
+                      style={{ fontSize: 24, color: "white" }}
+                    />
+                  </a>
+                </Link>  
+                
               </div>
             </Col>
           </Row>
