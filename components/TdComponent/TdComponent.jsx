@@ -5,7 +5,7 @@ const TdComponent = ({ productName, price, image }) => {
 
   return(
     <>
-      <tr>
+      <tr className={styles.TdComponent}>
         <td>
           <img src={image} alt={productName} />
         </td>
