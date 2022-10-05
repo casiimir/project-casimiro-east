@@ -6,7 +6,16 @@ import HeroCity from "../../../components/HeroCity";
 import ActivityCard from "../../../components/ActivityCard/ActivityCard";
 import { getCategory } from "../../../api/api";
 import NavbarMain from "../../../components/Navbar";
-import ScrollContainer from "react-indiana-drag-scroll";
+// import ScrollContainer from "react-indiana-drag-scroll";
+
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+// import required modules
+import { Navigation } from "swiper";
+import "swiper/css/navigation";
+// Import Swiper styles
+import 'swiper/css';
+
 import styles from "../../../styles/layout/CityOverwiev.module.scss";
 
 const CityPage = () => {
@@ -50,51 +59,58 @@ const CityPage = () => {
       )}
 
       <NavbarMain />
+      <div className="container">
 
-      <div className={styles.Desc}>
-        <h3 className={styles.CityOverViewTitle}>The City</h3>
-        <p className={styles.CityOverViewText}>
-          {expanded
-            ? cityData?.content_html?.replace(/(<([^>]+)>)/gi, "")
-            : truncate(
-                cityData?.content_html?.replace(/(<([^>]+)>)/gi, ""),
-                350
-              )}
-        </p>
-        <button
-          className={`${"button button--dark"}`}
-          onClick={() => setExpanded(!expanded)}
-        >
-          {!expanded ? "Read More" : "Read Less"}
-        </button>
-      </div>
-      <div className={styles.Exp}>
-        <div className="main-container">
+        <div className={styles.Desc}>
+          <h3 className={styles.CityOverViewTitle}>The City</h3>
+          <p className={styles.CityOverViewText}>
+            {expanded
+              ? cityData?.content_html?.replace(/(<([^>]+)>)/gi, "")
+              : truncate(
+                  cityData?.content_html?.replace(/(<([^>]+)>)/gi, ""),
+                  350
+                )}
+          </p>
+          <button
+            className={`${"button button--dark"}`}
+            onClick={() => setExpanded(!expanded)}
+          >
+            {!expanded ? "Read More" : "Read Less"}
+          </button>
+        </div>
+        <div className={`${styles.Exp} ${"mt-5"}`}>
+        
           <h3 className={styles.ExpTitle}>Food Experiences</h3>
 
-          <ScrollContainer>
+            <Swiper
+              slidesPerView={3}
+              spaceBetween={30}
+              slidesPerGroup={3}
+              loop={false}
+              loopFillGroupWithBlank={true}
+              navigation={true}
+              modules={[ Navigation ]}
+              className="swiperExp"
+              breakpoints={{
+                0: {
+                  width: 480,
+                  slidesPerView: 1,
+                },
+                // when window width is >= 640px
+                640: {
+                  width: 576,
+                  slidesPerView: 2,
+                },
+                // when window width is >= 768px
+                768: {
+                  width: 768,
+                  slidesPerView: 4,
+                },
+              }}
+            >
             <div className={styles.ExpList}>
-              {foodExp.map((item) => (
-                <ActivityCard
-                  key={item?.id}
-                  name={item?.title}
-                  image={item?.cover_image_url}
-                  alternativeImg={item?.city?.cover_image_url}
-                >
-                  <Link href={`/city/${id}/${item?.uuid}`}>
-                    <a className={styles.LinkList}>{item?.title}</a>
-                  </Link>
-                </ActivityCard>
-              ))}
-            </div>
-          </ScrollContainer>
-
-          <div className={styles.Exp}>
-            <h3 className={styles.ExpTitle}>History Experiences</h3>
-
-            <ScrollContainer>
-              <div className={styles.ExpList}>
-                {museumExp.map((item) => (
+              {foodExp.map((item, index) => (
+                <SwiperSlide key={index}>
                   <ActivityCard
                     key={item?.id}
                     name={item?.title}
@@ -105,38 +121,116 @@ const CityPage = () => {
                       <a className={styles.LinkList}>{item?.title}</a>
                     </Link>
                   </ActivityCard>
+                </SwiperSlide>
+              ))}
+            </div>
+          </Swiper>
+
+          <div className={`${styles.Exp} ${"mt-5"}`}>
+            <h3 className={styles.ExpTitle}>History Experiences</h3>
+
+              <Swiper
+                slidesPerView={3}
+                spaceBetween={30}
+                slidesPerGroup={3}
+                loop={false}
+                loopFillGroupWithBlank={true}
+                navigation={true}
+                modules={[ Navigation ]}
+                className="swiperExp2"
+                breakpoints={{
+                  0: {
+                    width: 480,
+                    slidesPerView: 1,
+                  },
+                  // when window width is >= 640px
+                  640: {
+                    width: 576,
+                    slidesPerView: 2,
+                  },
+                  // when window width is >= 768px
+                  768: {
+                    width: 768,
+                    slidesPerView: 4,
+                  },
+                }}
+              >
+              <div className={styles.ExpList}>
+                {museumExp.map((item, index) => (
+                  <SwiperSlide key={index}>
+                    <ActivityCard
+                      key={item?.id}
+                      name={item?.title}
+                      image={item?.cover_image_url}
+                      alternativeImg={item?.city?.cover_image_url}
+                    >
+                      <Link href={`/city/${id}/${item?.uuid}`}>
+                        <a className={styles.LinkList}>{item?.title}</a>
+                      </Link>
+                    </ActivityCard>
+                  </SwiperSlide>
                 ))}
               </div>
-            </ScrollContainer>
+            </Swiper>
           </div>
 
-          <div className={styles.Exp}>
+          <div className={`${styles.Exp} ${"mt-5"}`}>
             <h3 className={styles.ExpTitle}>Outdoor Experiences</h3>
 
-            <ScrollContainer>
+              <Swiper
+                slidesPerView={3}
+                spaceBetween={30}
+                slidesPerGroup={3}
+                loop={false}
+                loopFillGroupWithBlank={true}
+                navigation={true}
+                modules={[ Navigation ]}
+                className="swiperExp3"
+                breakpoints={{
+                  0: {
+                    width: 480,
+                    slidesPerView: 1,
+                  },
+                  // when window width is >= 640px
+                  640: {
+                    width: 576,
+                    slidesPerView: 2,
+                  },
+                  // when window width is >= 768px
+                  768: {
+                    width: 768,
+                    slidesPerView: 4,
+                  },
+                }}
+              >
               <div className={styles.ExpList}>
-                {outdoorExp.map((item) => (
-                  <ActivityCard
-                    key={item?.id}
-                    name={item?.title}
-                    image={item?.cover_image_url}
-                    alternativeImg={item?.city?.cover_image_url}
-                  >
-                    <Link href={`/city/${id}/${item.uuid}`}>
-                      <a className={styles.LinkList}>{item?.title}</a>
-                    </Link>
-                  </ActivityCard>
+                {outdoorExp.map((item, index) => (
+                  <SwiperSlide key={index}>
+                    <ActivityCard
+                      key={item?.id}
+                      name={item?.title}
+                      image={item?.cover_image_url}
+                      alternativeImg={item?.city?.cover_image_url}
+                    >
+                      <Link href={`/city/${id}/${item.uuid}`}>
+                        <a className={styles.LinkList}>{item?.title}</a>
+                      </Link>
+                    </ActivityCard>
+                  </SwiperSlide>
                 ))}
               </div>
-            </ScrollContainer>
+            </Swiper>
           </div>
-          <div className="cont-button">
+
+          <div className="cont-button mt-5">
             <button className={`${"button button--dark"}`}>
               <Link href={`/city/${id}/activities`}>
-                <a className={styles.LinkList}>See all available activities</a>
+                <a className={styles.LinkListBtn}>See all available activities</a>
               </Link>
             </button>
           </div>
+
+
         </div>
       </div>
     </div>
