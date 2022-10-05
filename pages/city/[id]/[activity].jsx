@@ -8,8 +8,10 @@ import axios from "axios";
 import Link from "next/link";
 import Map from "../../../components/Map";
 import { TbMapOff } from "react-icons/tb";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
-let cartList = [];
+export let cartList = [];
 
 const Activity = (id) => {
   const [activity, setActivity] = useState([]);

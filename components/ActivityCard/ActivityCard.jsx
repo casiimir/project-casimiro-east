@@ -1,4 +1,6 @@
 import styles from "../../styles/layout/ActivityCard.module.scss";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const ActivityCard = ({ name, image, children, alternativeImg }) => {
   return (
@@ -7,9 +9,9 @@ const ActivityCard = ({ name, image, children, alternativeImg }) => {
         {
         image
         ?
-        <img className={styles.ActivityCardImg} src={image} alt={name} />
+        <LazyLoadImage className={styles.ActivityCardImg} src={image} alt={name} effect="blur"/>
         :
-        <img className={styles.ActivityCardImg} src={alternativeImg} alt={name} />
+        <LazyLoadImage className={styles.ActivityCardImg} src={alternativeImg} alt={name} effect="blur"/>
         }
 
         <h2 className={styles.ActivityCardTitle}>{name}</h2>
