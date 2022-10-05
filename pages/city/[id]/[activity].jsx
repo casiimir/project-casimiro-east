@@ -10,7 +10,7 @@ import {TbMapOff} from 'react-icons/tb';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
-let cartList = [];
+export let cartList = [];
 
 
 const Activity = () => {
