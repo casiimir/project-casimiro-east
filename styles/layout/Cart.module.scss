@@ -1,3 +1,23 @@
 .Cart {
-  
+  background: #F8F8F8;
+  font-weight: 600;
+    
+    .MainContent {
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+
+        .titleRow {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+        }
+
+        table {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+    }
 }
