@@ -3,7 +3,7 @@ import { getAllActivities } from "../../../api/api";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import CityActivityCard from "../../../components/CityActivityCard/CityActivityCard";
-import Navbar from "../../../components/Navbar";
+import NavbarMain from "../../../components/Navbar";
 import Pagination from 'react-responsive-pagination';
 import styles from "../../../styles/layout/AllActivities.module.scss";
 
@@ -30,16 +30,20 @@ const Activities = () => {
 
   return (
     <div className={styles.Activities}>
-      <Navbar />
+      <NavbarMain />
       <h1 className={styles.ActivitiesTitle}>All available activities</h1>
-
-      <span className={styles.ActivitiesSpan}>Sort by - </span>
-      <select className={styles.ActivitiesSelector} onChange={handleChange}>
-        <option value="relevance">Relevance</option>
-        <option value="rating">Rating</option>
-        <option value="price">Price</option>
-      </select>
-
+      <div className={`${'container-fluid'}`}>
+        <div className={`${'row'}`}>
+          <div className={`${'col'}`}>
+            <label className={ `${'col mb-3'}` }>Sort by:</label>
+            <select className={`${styles.ActivitiesSelector} ${'form-control'}`} onChange={handleChange}>
+              <option value="relevance">Relevance</option>
+              <option value="rating">Rating</option>
+              <option value="price">Price</option>
+            </select>
+          </div>
+        </div>
+      </div>  
       <div className={`${styles.ActivitiesDiv} ${'row'}`}>
         {activities?.data?.map((el, i) => (
           <CityActivityCard
