@@ -12,7 +12,7 @@ import "swiper/css/navigation";
 import 'swiper/css';
 
 const CardList = ({ list, title }) => {
-  const headers = { "Accept-Language": "it-IT" };
+  const headers = { "Accept-Language": "en-EN" };
   const BASE_URL = "https://api.musement.com/api/v3/activities";
   const [displayList, setDisplayList] = useState([]);
 

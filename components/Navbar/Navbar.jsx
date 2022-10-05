@@ -4,13 +4,10 @@ import Image from "next/future/image";
 import axios from "axios";
 import { useState, useEffect, useRef } from "react";
 import Link from 'next/link';
-
-
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Navbar from 'react-bootstrap/Navbar';
-
 import "@fortawesome/fontawesome-svg-core/styles.css"; // import Font Awesome CSS
 import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
@@ -23,11 +20,11 @@ import {
 
 
 const NavbarMain = () => {
+  const headers = { "Accept-Language": "en-EN" };
   const [query, setQuery] = useState("");
   const [items, setItems] = useState([]);
-  
   const [scrollPosY, setScrollPosY] = useState(0);
-
+  const [cartLength, setCartLength] = useState("0");
   const baseURL = "https://api.musement.com/api/v3/autocomplete";
   const handleChange = (event) => {
     setQuery(event.target.value);
@@ -36,6 +33,7 @@ const NavbarMain = () => {
   const searchItems = (query) => {
     axios
       .get(baseURL, {
+        headers: headers,
         params: {
           activity_limit: 0,
           activity_offset: 0,
@@ -69,10 +67,15 @@ const NavbarMain = () => {
     !query && setItems([]);
   }, [query]);
 
+  if(typeof window !== "undefined"){
+    useEffect(() => {
+      setCartLength(JSON.stringify(JSON.parse(localStorage.getItem("cartList")).length));
+    }, []);
+  }
 
-  const navbarRef = useRef(null);
-
-
+  const resetValue = () => {
+    setQuery('')
+  }
   return (
     <>
      
@@ -95,7 +98,7 @@ const NavbarMain = () => {
                 />
                 <ul>
                   {items.map((item) => (
-                    <li key={item.id} value={item.id}>  
+                    <li onClick={resetValue} key={item.id} value={item.id}>  
                       <Link href={`/city/${item.id}`}>
                         <a>{item.title}</a>
                       </Link>   
@@ -113,7 +116,8 @@ const NavbarMain = () => {
                       style={{ fontSize: 24, color: "white" }}
                     />
                   </a>
-                </Link>  
+                </Link> 
+                <p>{cartLength}</p> 
                 
               </div>
             </Col>
