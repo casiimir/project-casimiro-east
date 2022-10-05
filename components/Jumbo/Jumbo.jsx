@@ -10,24 +10,23 @@ const Jumbo = () => {
         <Row>
             <Col xs={12} md={6} className={`${'d-flex align-items-center justify-content-center mt-5'}`}>
                 <div className={styles.Jumbo_text}>
-                    <h4>Benvenuti in
+                    <h4>Welcome to 
                          <span> Journaly</span> 
                     </h4>
-                    <h2>Ti aiutiamo a scegliere le <span className={styles.Text_orange}>migliori esperienze </span>  
-                        per rendere il tuo viaggio <span className={styles.Text_azure}>indimenticabile</span>
+                    <h2>We help you choose the <span className={styles.Text_orange}>best experiences </span>  
+                    to make your trip <span className={styles.Text_azure}>unforgettable</span>
                      </h2>
                 </div>
             </Col>
             <Col xs={12} md={6} className={`${'d-flex align-items-center justify-content-center mt-5'}`}> 
                 <div className={styles.Polaroid}>
                     <img src="/nature-g0893bc22e_1920.jpg" className={`${'img-fluid'}`} alt="..." />
-                    <p className= {styles.Polaroid__caption}>“La propria destinazione non è mai un luogo, ma un nuovo modo di vedere le cose”</p>
+                    <p className= {styles.Polaroid__caption}>“Your destination is never a place, but a new way of seeing things”</p>
                 </div>
             </Col>
         </Row>
         </Container>
-    </div>
-
+    </div>  
   );
 };
 
