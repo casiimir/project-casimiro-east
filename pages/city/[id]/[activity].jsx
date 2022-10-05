@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import styles from "../../../styles/layout/Activity.module.scss";
 import Navbar from "../../../components/Navbar";
 import Footer from "../../../components/Footer";
-import axios from "axios";
 import Link from "next/link";
 import Map from "../../../components/Map";
 import { TbMapOff } from "react-icons/tb";
@@ -73,7 +72,7 @@ const Activity = () => {
                 />
               ) : (
                 <div className={styles.Map_container}>
-                  <h5>Mappa non disponibile per questa attività</h5>
+                  <h5>Map not available for this activity</h5>
                   <TbMapOff />
                 </div>
               )}

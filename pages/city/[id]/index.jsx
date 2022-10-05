@@ -10,21 +10,24 @@ import ScrollContainer from "react-indiana-drag-scroll";
 import styles from "../../../styles/layout/CityOverwiev.module.scss";
 
 const CityPage = () => {
+  const headers = { "Accept-Language": "en-EN" };
   const router = useRouter();
   const id = router.query.id;
   const [cityData, setCityData] = useState([]);
   const [foodExp, setFoodExp] = useState([]);
   const [museumExp, setMuseumExp] = useState([]);
   const [outdoorExp, setOutdoorExp] = useState([]);
-
   const [expanded, setExpanded] = useState(false);
   function truncate(str, n) {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
   }
 
   useEffect(() => {
-    axios
-      .get(`https://api.musement.com/api/v3/cities/${id}`)
+    axios({
+      method: "get",
+      url: `https://api.musement.com/api/v3/cities/${id}`,
+      headers: headers,
+    })
       .then((res) => {
         setCityData(res.data);
         console.log(res.data);
