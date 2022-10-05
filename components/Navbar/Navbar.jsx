@@ -24,6 +24,7 @@ const NavbarMain = () => {
   const [query, setQuery] = useState("");
   const [items, setItems] = useState([]);
   const [scrollPosY, setScrollPosY] = useState(0);
+  const [cartLength, setCartLength] = useState("0");
   const baseURL = "https://api.musement.com/api/v3/autocomplete";
   const handleChange = (event) => {
     setQuery(event.target.value);
@@ -65,6 +66,12 @@ const NavbarMain = () => {
     window.addEventListener('scroll', () => setScrollPosY(window.scrollY));
     !query && setItems([]);
   }, [query]);
+
+  if(typeof window !== "undefined"){
+    useEffect(() => {
+      setCartLength(JSON.stringify(JSON.parse(localStorage.getItem("cartList")).length));
+    }, []);
+  }
 
   const resetValue = () => {
     setQuery('')
@@ -109,7 +116,8 @@ const NavbarMain = () => {
                       style={{ fontSize: 24, color: "white" }}
                     />
                   </a>
-                </Link>  
+                </Link> 
+                <p>{cartLength}</p> 
                 
               </div>
             </Col>
