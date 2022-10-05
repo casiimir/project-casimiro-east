@@ -8,7 +8,7 @@ const Jumbo = () => {
     <div className={styles.Jumbo}>
         <Container>
         <Row>
-            <Col xs={12} md={6} className={`${'d-flex align-items-center justify-content-center'}`}>
+            <Col xs={12} md={6} className={`${'d-flex align-items-center justify-content-center mt-5'}`}>
                 <div className={styles.Jumbo_text}>
                     <h4>Benvenuti in
                          <span> Journaly</span> 
@@ -18,7 +18,7 @@ const Jumbo = () => {
                      </h2>
                 </div>
             </Col>
-            <Col xs={12} md={6} className={`${'d-flex align-items-center justify-content-center'}`}> 
+            <Col xs={12} md={6} className={`${'d-flex align-items-center justify-content-center mt-5'}`}> 
                 <div className={styles.Polaroid}>
                     <img src="/nature-g0893bc22e_1920.jpg" className={`${'img-fluid'}`} alt="..." />
                     <p className= {styles.Polaroid__caption}>“La propria destinazione non è mai un luogo, ma un nuovo modo di vedere le cose”</p>
