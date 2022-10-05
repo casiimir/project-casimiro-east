@@ -83,6 +83,7 @@ const CityPage = () => {
           <h3 className={styles.ExpTitle}>Food Experiences</h3>
 
             <Swiper
+              rewind={true}
               slidesPerView={3}
               spaceBetween={30}
               slidesPerGroup={3}
@@ -130,6 +131,7 @@ const CityPage = () => {
             <h3 className={styles.ExpTitle}>History Experiences</h3>
 
               <Swiper
+                rewind={true}
                 slidesPerView={3}
                 spaceBetween={30}
                 slidesPerGroup={3}
@@ -178,6 +180,7 @@ const CityPage = () => {
             <h3 className={styles.ExpTitle}>Outdoor Experiences</h3>
 
               <Swiper
+                rewind={true}
                 slidesPerView={3}
                 spaceBetween={30}
                 slidesPerGroup={3}

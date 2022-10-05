@@ -47,6 +47,7 @@ const CardList = ({ list, title }) => {
           <h3 className={styles.Title}>{title}</h3>
 
           <Swiper
+              rewind={true}
               slidesPerView={3}
               spaceBetween={30}
               slidesPerGroup={3}
