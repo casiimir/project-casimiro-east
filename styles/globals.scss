@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Nunito+Sans&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 @import "./utilities/variables";
 @import "bootstrap/scss/bootstrap";
 
@@ -92,6 +93,9 @@ h6 {
 
 .ff-main {
   font-family: $ff-main;
+}
+.ff-polaroid {
+  font-family: 'Caveat', cursive;
 }
 
 .button {

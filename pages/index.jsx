@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import styles from "../styles/layout/Home.module.scss";
 import NavbarMain from "../components/Navbar";
 import CardList from "../components/CardList/CardList";
+import Jumbo from "../components/Jumbo"
 import Footer from "../components/Footer";
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
       </Head>
       <Hero />
       <NavbarMain />
+      <Jumbo/>
       <CardList list={"cities"} title={"Top rated cities"} className="top_rated" />
       <CardList list={"experiences"} title={"Top experiences"} className="top_experiences" />
       <Footer />

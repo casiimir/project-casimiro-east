@@ -1,0 +1,76 @@
+@import "../utilities/variables";
+
+.Jumbo {
+  margin: 100px 0;
+}
+.Polaroid {
+  border: 1px solid rgb(218, 218, 218);
+  padding: 15px 15px 20px 15px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  -webkit-box-shadow: 0px 0px 27px -1px rgba(0, 0, 0, 0.43);
+  box-shadow: 0px 0px 27px -1px rgba(0, 0, 0, 0.43);
+  -moz-transform: rotate(2deg);
+  -webkit-transform: rotate(2deg);
+  -o-transform: rotate(2deg);
+  -ms-transform: rotate(2deg);
+  transform: rotate(2deg);
+  transition: transform 200ms ease-in;
+  &:hover {
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  img {
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  .Polaroid__caption {
+    bottom: 10px;
+    font-family: $ff-polaroid;
+    font-size: 1.3rem;
+    margin: 20px 20px;
+    text-align: center;
+  }
+}
+.Jumbo_text{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    text-align: center;
+    margin: 0 20px;
+    h4{
+        font-family: $ff-alt;
+        font-weight: 300;
+        font-size: 1.7rem;
+        color: $color-text-midtone;
+        span{
+            font-weight: 700;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            vertical-align: middle;
+        }
+    }
+    h2{
+        font-family: $ff-alt;
+        font-weight: 400;
+        font-size: 3rem;
+    }
+}
+
+.Text_green{
+    color: $color-secondary;
+}
+.Text_orange{
+    color: $color-tertiary;
+}
+.Text_azure{
+    color: $color-primary;
+}
