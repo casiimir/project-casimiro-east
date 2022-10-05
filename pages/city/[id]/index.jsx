@@ -9,7 +9,7 @@ import NavbarMain from "../../../components/Navbar";
 import ScrollContainer from "react-indiana-drag-scroll";
 import styles from "../../../styles/layout/CityOverwiev.module.scss";
 
-const CityPage = (id) => {
+const CityPage = () => {
   const router = useRouter();
   const id = router.query.id;
   const [cityData, setCityData] = useState([]);

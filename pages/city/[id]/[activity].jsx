@@ -13,7 +13,7 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 
 export let cartList = [];
 
-const Activity = (id) => {
+const Activity = () => {
   const [activity, setActivity] = useState([]);
   const router = useRouter();
   const activityId = router.query.activity;
@@ -79,7 +79,7 @@ const Activity = (id) => {
             </div>
             <div className="cont-button mt-5">
               <button className={`${"button button--dark"}`}>
-                <Link href={`/city/${id}/activities`}>
+                <Link href={`/city/${activity?.city?.id}/activities`}>
                   <a className={styles.LinkList}>
                     See all available activities
                   </a>
