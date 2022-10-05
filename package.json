@@ -23,7 +23,8 @@
     "react-indiana-drag-scroll": "^2.2.0",
     "react-lazy-load-image-component": "^1.5.5",
     "react-responsive-pagination": "^1.7.0",
-    "sass": "^1.55.0"
+    "sass": "^1.55.0",
+    "sweetalert2": "^11.4.37"
   },
   "devDependencies": {
     "bootstrap": "^5.2.1",

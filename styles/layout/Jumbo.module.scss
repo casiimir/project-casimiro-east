@@ -2,6 +2,9 @@
 
 .Jumbo {
   margin: 100px 0;
+  @media screen and (max-width:991px){
+    margin:0;
+  }
 }
 .Polaroid {
   border: 1px solid rgb(218, 218, 218);
@@ -51,17 +54,27 @@
         font-weight: 300;
         font-size: 1.7rem;
         color: $color-text-midtone;
+        @media screen and (max-width:991px){
+          font-size: 1rem;
+        }
         span{
             font-weight: 700;
             font-size: 2.5rem;
             text-transform: uppercase;
             vertical-align: middle;
+            @media screen and (max-width:991px){
+              font-size: 1.8rem;
+            }
         }
     }
     h2{
         font-family: $ff-alt;
         font-weight: 400;
         font-size: 3rem;
+        @media screen and (max-width:991px){
+          font-size: 1.8rem;
+          font-size: 2rem;
+        }
     }
 }
 
