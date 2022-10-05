@@ -9,7 +9,7 @@ import NavbarMain from "../../../components/Navbar";
 import ScrollContainer from "react-indiana-drag-scroll";
 import styles from "../../../styles/layout/CityOverwiev.module.scss";
 
-const CityPage = () => {
+const CityPage = (id) => {
   const router = useRouter();
   const id = router.query.id;
   const [cityData, setCityData] = useState([]);
@@ -51,7 +51,12 @@ const CityPage = () => {
       <div className={styles.Desc}>
         <h3 className={styles.CityOverViewTitle}>The City</h3>
         <p className={styles.CityOverViewText}>
-          {expanded ? cityData?.content_html?.replace(/(<([^>]+)>)/gi, "") : truncate(cityData?.content_html?.replace(/(<([^>]+)>)/gi, ""), 350)}
+          {expanded
+            ? cityData?.content_html?.replace(/(<([^>]+)>)/gi, "")
+            : truncate(
+                cityData?.content_html?.replace(/(<([^>]+)>)/gi, ""),
+                350
+              )}
         </p>
         <button
           className={`${"button button--dark"}`}
@@ -134,7 +139,6 @@ const CityPage = () => {
     </div>
   );
 };
-
 
 // TODO: in console avete tutto l'oggetto della città
 

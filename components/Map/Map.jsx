@@ -7,8 +7,8 @@ const Map = ({ latitude, longitude }) => {
     googleMapsApiKey: "AIzaSyCpiE2_dlGNKj2Q7IKCwXSOYCPVz2UPcfk",
   });
   const mapContainerStyle = {
-    width: "100vw",
-    height: "60vh",
+    width: "100%",
+    height: "50vh",
   };
   const center = {
     lat: latitude,
@@ -25,16 +25,15 @@ const Map = ({ latitude, longitude }) => {
         zoom={15}
         center={center}
       >
-      <Marker
-        key="marker_1"
-        position={{
-          lat: latitude,
-          lng: longitude,
-          map: Map
-        }}
-      />
+        <Marker
+          key="marker_1"
+          position={{
+            lat: latitude,
+            lng: longitude,
+            map: Map,
+          }}
+        />
       </GoogleMap>
-
     </>
   );
 };
