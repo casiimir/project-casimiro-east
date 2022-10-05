@@ -36,6 +36,7 @@ const Activity = () => {
         cartList.push(activity);
         localStorage.setItem("cartList", JSON.stringify(cartList));
         console.log(JSON.parse(localStorage.getItem("cartList")));
+        location.reload();
       }
     }
   };

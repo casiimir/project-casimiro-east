@@ -25,6 +25,7 @@ import {
 const NavbarMain = () => {
   const [query, setQuery] = useState("");
   const [items, setItems] = useState([]);
+  const [cartLength, setCartLength] = useState("0");
   
   const [scrollPosY, setScrollPosY] = useState(0);
 
@@ -68,6 +69,13 @@ const NavbarMain = () => {
     window.addEventListener('scroll', () => setScrollPosY(window.scrollY));
     !query && setItems([]);
   }, [query]);
+
+
+  if(typeof window !== "undefined"){
+    useEffect(() => {
+      setCartLength(JSON.stringify(JSON.parse(localStorage.getItem("cartList")).length));
+    }, []);
+  }
 
 
   const navbarRef = useRef(null);
@@ -114,6 +122,7 @@ const NavbarMain = () => {
                     />
                   </a>
                 </Link>  
+                <p>{cartLength}</p>
                 
               </div>
             </Col>

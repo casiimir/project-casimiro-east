@@ -97,9 +97,21 @@
 	}
 
 	.RelativeIcon {
-		position: relative;
+		// position: relative;
 		// top: 8px;
 		// right: 5px;
+		
+		p {
+			margin: 0;
+			position: absolute;
+			top: 25px;
+			right: 25px;
+			color: white;
+			background-color: red;
+			border-radius: 100px;
+			padding: 0 3px;
+			font-size: 13px;
+		}
 	}
 	
 }
