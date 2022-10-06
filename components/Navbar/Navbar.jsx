@@ -26,10 +26,13 @@ const NavbarMain = () => {
   const [scrollPosY, setScrollPosY] = useState(0);
   const [cartLength, setCartLength] = useState("0");
   const baseURL = "https://api.musement.com/api/v3/autocomplete";
+
+
   const handleChange = (event) => {
     setQuery(event.target.value);
     searchItems(query);
   };
+
   const searchItems = (query) => {
     axios
       .get(baseURL, {
@@ -67,11 +70,11 @@ const NavbarMain = () => {
     !query && setItems([]);
   }, [query]);
 
-  if(typeof window !== "undefined"){
-    useEffect(() => {
-      setCartLength(JSON.stringify(JSON.parse(localStorage.getItem("cartList")).length));
-    }, []);
-  }
+  
+  useEffect(() => {
+    setCartLength(JSON.stringify(JSON.parse(localStorage.getItem("cartList")).length));
+  }, []);
+ 
 
   const resetValue = () => {
     setQuery('')

@@ -19,23 +19,19 @@ const Activity = () => {
 
   useEffect(() => {
     getActivity(activityId, setActivity);
-  }, [activityId]);
-
-  if (typeof window !== "undefined") {
     if (localStorage.getItem("cartList") === null) {
       localStorage.setItem("cartList", JSON.stringify(cartList));
     }
-  }
+  }, [activityId]);
+
 
   const addToCart = (e) => {
     if (e.target.id === activityId) {
-      if (typeof window !== "undefined") {
-        cartList = [...JSON.parse(localStorage.getItem("cartList"))];
+      cartList = [...JSON.parse(localStorage.getItem("cartList"))];
 
-        cartList.push(activity);
-        localStorage.setItem("cartList", JSON.stringify(cartList));
-        console.log(JSON.parse(localStorage.getItem("cartList")));
-      }
+      cartList.push(activity);
+      localStorage.setItem("cartList", JSON.stringify(cartList));
+      console.log(JSON.parse(localStorage.getItem("cartList")));
     }
     new Swal('Elemento aggiunto al carrello','','success');
   };

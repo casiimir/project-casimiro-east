@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "bootstrap": "^5.2.1",
+    "braintree-web-drop-in": "^1.33.4",
     "eslint": "8.24.0",
     "eslint-config-next": "12.3.1",
     "react-bootstrap": "^2.5.0",
