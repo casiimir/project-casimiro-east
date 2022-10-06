@@ -72,7 +72,10 @@ const NavbarMain = () => {
 
   
   useEffect(() => {
-    setCartLength(JSON.stringify(JSON.parse(localStorage.getItem("cartList")).length));
+    if(localStorage.getItem("cartList") !== null) {
+
+      setCartLength(JSON.stringify(JSON.parse(localStorage.getItem("cartList")).length));
+    }
   }, []);
  
 
