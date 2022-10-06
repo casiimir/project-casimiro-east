@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Nunito+Sans&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
-@import "./utilities/variables";
 @import "bootstrap/scss/bootstrap";
+@import "./utilities/variables";
 
 html,
 body {
@@ -15,6 +15,7 @@ body {
   flex: 0 0 auto;
   scroll-behavior: smooth;
   scrollbar-color: transparent;
+  font-family: $ff-alt;
 }
 
 body::-webkit-scrollbar {
