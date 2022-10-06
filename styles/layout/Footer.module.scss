@@ -1,31 +1,42 @@
+@import "../utilities/variables";
+
 .Footer {
-    padding: 24px;
+    padding: 60px 0;
     background: #3d3d3d;
     display: flex;
     justify-content: space-between;
     color: white;
     .__list{
-
-       
+       padding: 0 90px;
+        @media (min-width: 768px) {
+            padding: 0;
+        }
         a {
             background: #313131;
             border-radius: 8px;
             padding: 8px;
             text-align: center;
+            &:hover {
+                background: $color_secondary;
+                color: $color_primary;
+            }
         }
 
         .__container {
             display: flex;
             flex-wrap: wrap;
             gap: 4px;
+            justify-content: center;
+            @media (min-width: 768px) {
+                justify-content: flex-start;
+            }
         }
     }
 
     h5{
-        display: flex;
         margin-bottom: 30px;
         margin-top: 30px;
-        @media (min-width: 576px) {
+        @media (min-width: 768px) {
             margin-top: 0;
         }
     }
@@ -33,10 +44,17 @@
     ul {
         padding: 0;
         list-style-type: none;
+        text-align: right;
+        @media (max-width: 767.98px) {
+            text-align: center;
+        }
         a {
             padding: 10px 0;
             display: block;
             text-decoration: underline;
+            &:hover {
+                color: white;
+            }
         }
     }
 }

@@ -32,7 +32,7 @@ const Activities = () => {
     <div className={styles.Activities}>
       <NavbarMain />
       <h1 className={styles.ActivitiesTitle}>All available activities</h1>
-      <div className={`${'container-fluid'}`}>
+      <div className={`${'container'}`}>
         <div className={`${'row'}`}>
           <div className={`${'col'}`}>
             <label className={ `${'col mb-3'}` }>Sort by:</label>
@@ -43,34 +43,34 @@ const Activities = () => {
             </select>
           </div>
         </div>
-      </div>  
-      <div className={`${styles.ActivitiesDiv} ${'row'}`}>
-        {activities?.data?.map((el, i) => (
-          <CityActivityCard
-            key={i}
-            name={el?.title}
-            image={el?.cover_image_url}
-            price={el?.retail_price?.formatted_iso_value}
-          >
-            <Link href={`/city/${cityId}/${el?.uuid}`}>
-              <p className={styles.ActivitiesLink}>see more</p>
-            </Link>
-          </CityActivityCard>
-        ))}
-      </div>
+       
+        <div className={`${styles.ActivitiesDiv} ${'row'}`}>
+          {activities?.data?.map((el, i) => (
+            <CityActivityCard
+              key={i}
+              name={el?.title}
+              image={el?.cover_image_url}
+              price={el?.retail_price?.formatted_iso_value}
+            >
+              <Link href={`/city/${cityId}/${el?.uuid}`}>
+                <p className={styles.ActivitiesLink}>see more</p>
+              </Link>
+            </CityActivityCard>
+          ))}
+        </div>
 
-      <div className={styles.pagination_wrapper}>
-      <Pagination
-      current={offset}
-      total={totalPages}
-      onPageChange={setOffset}
-      pageLinkClassName={styles.page_item}
-      activeItemClassName={styles.page_item_active}
-      disabledItemClassName={styles.page_item_disabled}
-    />
-      </div>
+        <div className={styles.pagination_wrapper}>
+        <Pagination
+        current={offset}
+        total={totalPages}
+        onPageChange={setOffset}
+        pageLinkClassName={styles.page_item}
+        activeItemClassName={styles.page_item_active}
+        disabledItemClassName={styles.page_item_disabled}
+      />
+        </div>
 
-
+      </div> 
     </div>
   );
 };

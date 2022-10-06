@@ -11,10 +11,10 @@ const Footer = () => {
 
   return(
 		<div className={styles.Footer}>
-      <Container fluid>
+      <Container>
 				<Row>
-					<Col xs={12} sm={2}>
-						<div className={styles.__list}>
+					<Col xs={12} md={3}>
+						<div className={`${styles.__list} ${'text-center text-md-start'}`}>
 								<h5>Authors GitHub</h5>
 								<div className={styles.__container}>
 										<a target="_blank" rel="noreferrer" href="https://github.com/Miyka96">Miyka96</a>
@@ -25,15 +25,15 @@ const Footer = () => {
 								</div>
 						</div>
 					</Col>
-					<Col xs={12} sm={7} className="text-center">
+					<Col xs={12} md={6} className="text-center my-4">
 						<div className={styles.__logo}>
 						<h5></h5>
 								<Image src={logo} height={120} width={120} alt='logo footer' />
 							<p>Made with Next.js</p>
 						</div>
 					</Col>
-					<Col xs={12} sm={3}>
-						<div className={styles.__socialIcons}>
+					<Col xs={12} md={3}>
+						<div className={`${'text-center text-md-end'}`}>
       		      <h5>Authors Linkedin</h5>
       		      <div className={styles.__container}>
 								<ul>

@@ -5,14 +5,14 @@ const TdComponent = ({ productName, price, image }) => {
 
   return(
     <>
-      <tr className={styles.TdComponent}>
-        <td>
+      <tr className={`${styles.TdComponent} ${'row'}`}>
+        <td className={`${'col-5 col-md-3'}`}>
           <img src={image} alt={productName} />
         </td>
-        <td>
+        <td className={`${'col-5 col-md-8'}`}>
           {productName}
         </td>
-        <td>
+        <td className={`${'col-2 col-md-1'}`}>
           {price}
         </td>
       </tr>

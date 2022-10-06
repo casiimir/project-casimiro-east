@@ -36,7 +36,7 @@ const Cart = () => {
             <p>Total: {sum.toFixed(2)}</p>
           </div>
           
-          <table>
+          <table className={`${'container'}`}>
               {
                 data.map( (item, index) => <TdComponent 
                   key={index} productName={ item.meta_title} 
