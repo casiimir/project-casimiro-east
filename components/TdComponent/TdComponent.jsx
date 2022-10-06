@@ -5,17 +5,17 @@ const TdComponent = ({ productName, price, image }) => {
 
   return(
     <>
-      <tr className={`${styles.TdComponent} ${'row'}`}>
-        <td className={`${'col-5 col-md-3'}`}>
+      <div className={`${styles.TdComponent} ${'row mb-3 align-items-center'}`}>
+        <div className={`${'col-5 col-md-3 ps-0'}`}>
           <img src={image} alt={productName} />
-        </td>
-        <td className={`${'col-5 col-md-8'}`}>
+        </div>
+        <div className={`${'col-5 col-md-8'}`}>
           {productName}
-        </td>
-        <td className={`${'col-2 col-md-1'}`}>
+        </div>
+        <div className={`${'col-2 col-md-1'}`}>
           {price}
-        </td>
-      </tr>
+        </div>
+      </div>
     </>
   )
 };

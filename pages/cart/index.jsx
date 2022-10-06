@@ -3,7 +3,7 @@ import NavbarMain from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer"
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-
+import BrainTree from "../../components/BraintreeComponent";
 
 import styles from "../../styles/layout/Cart.module.scss";
 
@@ -36,7 +36,7 @@ const Cart = () => {
             <p>Total: {sum.toFixed(2)}</p>
           </div>
           
-          <table className={`${'container'}`}>
+          <div className={`${'container'}`}>
               {
                 data.map( (item, index) => <TdComponent 
                   key={index} productName={ item.meta_title} 
@@ -45,9 +45,11 @@ const Cart = () => {
                 />
                 )
               }
-          </table>
+          </div>
         </div>
+        <BrainTree />
       <Footer/>
+      
     </div>
   );
 };
