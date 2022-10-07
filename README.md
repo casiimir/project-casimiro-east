@@ -1,6 +1,6 @@
 
 
-![Logo](https://github.com/casiimir/project-casimiro-east/blob/8f0cae8704b75c5d8df06f794b65966690791694/public/logo.png)
+![Logo](https://github.com/casiimir/project-casimiro-east/blob/def98368aec476eea5721ba6c5b4effdab0f0999/public/logo-resized.png)
 
 
 
