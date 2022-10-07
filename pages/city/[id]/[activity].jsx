@@ -36,6 +36,9 @@ const Activity = () => {
       console.log(JSON.parse(localStorage.getItem("cartList")));
     }
     new Swal('Succesfully added to cart!','','success');
+    setTimeout(() => {
+      location.reload();
+    }, 3000)
   };
 
 
