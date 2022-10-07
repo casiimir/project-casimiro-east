@@ -57,8 +57,8 @@ const CardList = ({ list, title }) => {
               modules={[ Navigation ]}
               className="swiperExp mb-5"
               breakpoints={{
-                0: {
-                  width: 480,
+                320: {
+                  width: 320,
                   slidesPerView: 1,
                 },
                 // when window width is >= 640px
