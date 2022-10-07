@@ -7,7 +7,7 @@ import ActivityCard from "../../../components/ActivityCard/ActivityCard";
 import { getCategory } from "../../../api/api";
 import NavbarMain from "../../../components/Navbar";
 // import ScrollContainer from "react-indiana-drag-scroll";
-
+import LoadingBar from 'react-top-loading-bar'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 // import required modules
@@ -27,6 +27,16 @@ const CityPage = () => {
   const [museumExp, setMuseumExp] = useState([]);
   const [outdoorExp, setOutdoorExp] = useState([]);
   const [expanded, setExpanded] = useState(false);
+
+
+  const [progress, setProgress] = useState(0);
+  const [overlay, setOverlay] = useState(false);
+
+  useEffect( () => {
+    setProgress(100)
+  }, [])
+
+
   function truncate(str, n) {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
   }
@@ -54,6 +64,17 @@ const CityPage = () => {
 
   return (
     <div className={styles.MainContent}>
+      <LoadingBar
+        color='#ff800b'
+        progress={progress}
+        onLoaderFinished={() =>{ setProgress(0), setOverlay(true)}}
+      />
+
+      {
+        !overlay ? <div className="overlay"></div>
+        : 
+        <div></div>
+      }
       {cityData?.cover_image_url && (
         <HeroCity image={cityData?.cover_image_url} title={cityData?.name} />
       )}

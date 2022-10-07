@@ -4,7 +4,7 @@ import Footer from "../../components/Footer"
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import BrainTree from '../../components/BraintreeComponent/BraintreeComponent';
-
+import LoadingBar from 'react-top-loading-bar'
 import styles from "../../styles/layout/Cart.module.scss";
 
 const Cart = () => {
@@ -38,8 +38,27 @@ const Cart = () => {
     localStorage.setItem("cartList", JSON.stringify(JSON.parse(localStorage.getItem("cartList")).filter(item => item.uuid !== product.uuid)));
   }
 
+
+  const [progress, setProgress] = useState(0);
+  const [overlay, setOverlay] = useState(false);
+
+  useEffect( () => {
+    setProgress(100)
+  }, [])
+
   return (
     <div className={styles.Cart}>
+      <LoadingBar
+        color='#ff800b'
+        progress={progress}
+        onLoaderFinished={() =>{ setProgress(0), setOverlay(true)}}
+      />
+
+      {
+        !overlay ? <div className="overlay"></div>
+        : 
+        <div></div>
+      }
       <NavbarMain />
         <div className={styles.MainContent}>
           <div className={styles.titleRow}>
