@@ -21,7 +21,7 @@ const Cart = () => {
     }
   }, [])
 
-  const sum = data.reduce((accumulator, item) => {
+  const sum = cartItems.reduce((accumulator, item) => {
     return accumulator + item.retail_price.value;
   }, 0);
    
@@ -40,7 +40,7 @@ const Cart = () => {
 
   return (
     <div className={styles.Cart}>
-      <NavbarMain/>
+      <NavbarMain />
         <div className={styles.MainContent}>
           <div className={styles.titleRow}>
             <h1>Cart</h1>
@@ -52,27 +52,29 @@ const Cart = () => {
 
                 cartItems.map( (item, index) => {
                   
-                  return(<div  key={index} className={`${styles.TdComponent} ${'row mb-3 align-items-center'}`}>
-                    <div className={`${'col-5 col-md-3 ps-0'}`}>
-                      <img src={item.cover_image_url} alt={item.slug} />
+                  return(
+                    <div key={index} className={`${styles.TdComponent} ${'row mb-3 align-items-center'}`}>
+                      <div className={`${'col-5 col-md-3 ps-0'}`}>
+                        <img src={item.cover_image_url} alt={item.slug} />
+                      </div>
+                      <div className={`${'col-5 col-md-8'}`}>
+                        {fixTitle(item.slug).replace(/-/g, " ")}
+                      </div>
+                      <div className={`${'col-2 col-md-1 text-center'}`}>
+                        {item.retail_price.formatted_iso_value}
+                        <button id={index} onClick={() => removeItem(item)} className={`${"button button--primary mt-2"}`}>X</button>
+                      </div>
                     </div>
-                    <div className={`${'col-5 col-md-8'}`}>
-                      {fixTitle(item.slug).replace(/-/g, " ")}
-                    </div>
-                    <div className={`${'col-2 col-md-1'}`}>
-                      {item.retail_price.formatted_iso_value}
-                    </div>
-                    <div>
-                      <button id={index} onClick={() => removeItem(item)} className={`${"button button--primary"}`}>X</button>
-                    </div>
-                  </div>)
+                  )
                 })
                 :
-                <img src="https://mir-s3-cdn-cf.behance.net/projects/404/95974e121862329.Y3JvcCw5MjIsNzIxLDAsMTM5.png" alt="" />
+                <div className="text-center">
+                  <img className={`${'mw-100'}`} src="https://mir-s3-cdn-cf.behance.net/projects/404/95974e121862329.Y3JvcCw5MjIsNzIxLDAsMTM5.png" alt="" />
+                </div>
               }
             </div>
           </div>
-        <BrainTree setCartItems={() => setCartItems([])}/>
+        <BrainTree setCartItems={() => setCartItems([])} />
       <Footer/>
     </div>
   );

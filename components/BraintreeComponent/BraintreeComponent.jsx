@@ -60,11 +60,11 @@ function BraintreeDropIn(props) {
                   setCartItems;
 
                   new Swal('Payment done! B) ggwp','','success');
-
+                  
                   onPaymentCompleted();
 
                   setTimeout(() => {
-                    location.reload();
+                    location.href = '/';
                   }, 1000)
                   
                 }
