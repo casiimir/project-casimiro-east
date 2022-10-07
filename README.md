@@ -1,24 +1,46 @@
 
+<p align="center">
+<img src="./public/logo-resized.png" alt="journaly" width=350/>
+</p>
 
-![Logo](https://github.com/casiimir/project-casimiro-east/blob/def98368aec476eea5721ba6c5b4effdab0f0999/public/logo-resized.png)
 
-
-
-# Journaly
+<h2 align="center">Journaly</h2>
 
 "Not all those who wander are 404"
 
+<p align="center">
+  <img src="./public/Hero-screen.png" alt="journaly"/>
+</p>
 
-![Img](https://github.com/casiimir/project-casimiro-east/blob/main/public/Hero-screen.png)
-
-
-
-
-
+<hr>
 
 
+<p align="center">Journaly is a tourism web-app: explore cities, experiences, places and so much more!</p>
 
-----------------------------------------------------------------
+
+<h2>Technologies used</h2>
+
+  <ul>
+    <li>HTML</li>
+    <li>SASS</li>
+    <li>Javascript</li>
+    <li>React.js</li>
+    <li>Next.js</li>
+    <li>Axios</li>
+    <li>Musement API</li>
+    <li>Braintree API</li>
+    <li>Google Maps API</li>
+    <li>Designed from zero using Figma</li>
+    <li>Mobile First Design</li>
+  </ul>
+
+<br>
+
+<p align="center">
+  <img src="./public/responsive-example.png" alt="responsive"/>
+</p>
+
+<hr>
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
@@ -40,17 +62,33 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+<h3>Made by</h3>
+<ul>
+  <li>
+    <a href="https://github.com/Cb040719">
+      Claudio Bello
+    </a>
+  </li>
+  <li>
+    <a href="https://github.com/fefusphera">
+      Federica Terranova
+    </a>
+  </li>
+  <li>
+    <a href="https://github.com/jupidev1586">
+     Gianpaolo Buono
+    </a>
+  </li>
+  <li>
+    <a href="https://github.com/Miyka96">
+      Micaela Seminara
+    </a>
+  </li>
+</ul>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<h4>With the special help and support of our Teacher 
+  <a href="https://github.com/casiimir"> 
+    Casimiro P. Ciancimino :heart:
+  </a>
+</h4>
