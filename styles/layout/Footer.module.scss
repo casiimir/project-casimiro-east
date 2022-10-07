@@ -12,13 +12,14 @@
             padding: 0;
         }
         a {
-            background: #313131;
+            // background: #313131;
+            border: 1px solid;
             border-radius: 8px;
             padding: 8px;
             text-align: center;
             &:hover {
-                background: $color_secondary;
-                color: $color_primary;
+                background: $color_tertiary;
+                color: white;
             }
         }
 
@@ -53,7 +54,7 @@
             display: block;
             text-decoration: underline;
             &:hover {
-                color: white;
+                color: $color_tertiary;
             }
         }
     }

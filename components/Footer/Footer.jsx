@@ -15,7 +15,7 @@ const Footer = () => {
 				<Row>
 					<Col xs={12} md={3}>
 						<div className={`${styles.__list} ${'text-center text-md-start'}`}>
-								<h5>Authors GitHub</h5>
+								<h5>Authors Github</h5>
 								<div className={styles.__container}>
 										<a target="_blank" rel="noreferrer" href="https://github.com/Miyka96">Miyka96</a>
 										<a target="_blank" rel="noreferrer" href="https://github.com/fefusphera">fefusphera</a>
