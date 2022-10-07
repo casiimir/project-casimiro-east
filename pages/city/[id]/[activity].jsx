@@ -9,6 +9,8 @@ import Map from "../../../components/Map";
 import { TbMapOff } from "react-icons/tb";
 import Swal from 'sweetalert2'
 import "react-lazy-load-image-component/src/effects/blur.css";
+import LoadingBar from 'react-top-loading-bar'
+
 
 export let cartList = [];
 
@@ -36,8 +38,27 @@ const Activity = () => {
     new Swal('Succesfully added to cart!','','success');
   };
 
+
+  const [progress, setProgress] = useState(0);
+  const [overlay, setOverlay] = useState(false);
+
+  useEffect( () => {
+    setProgress(100)
+  }, [])
+
   return (
     <div className={styles.Activity}>
+      <LoadingBar
+        color='#ff800b'
+        progress={progress}
+        onLoaderFinished={() =>{ setProgress(0), setOverlay(true)}}
+      />
+
+      {
+        !overlay ? <div className="overlay"></div>
+        : 
+        <div></div>
+      }
       <Navbar />
       <div className={`${"container"}`}>
         <div className={`${"row"}`}>

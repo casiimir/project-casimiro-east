@@ -3,6 +3,7 @@ import styles from "../../styles/layout/CardList.module.scss";
 import Link from "next/link";
 import Card from "../Card/Card";
 import axios from "axios";
+
 // import ScrollContainer from "react-indiana-drag-scroll";
 import { Swiper, SwiperSlide } from 'swiper/react';
 // import required modules
@@ -15,6 +16,9 @@ const CardList = ({ list, title }) => {
   const headers = { "Accept-Language": "en-EN" };
   const BASE_URL = "https://api.musement.com/api/v3/activities";
   const [displayList, setDisplayList] = useState([]);
+
+  
+  
 
   useEffect(() => {
     axios
@@ -40,8 +44,12 @@ const CardList = ({ list, title }) => {
   }, []);
 
   console.log(displayList);
+
   return (
     <>
+      
+      
+      
       <div className="container">
         <div className={styles.CardList}>
           <h3 className={styles.Title}>{title}</h3>

@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import { getAllActivities } from "../../../api/api";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import LoadingBar from 'react-top-loading-bar'
 import CityActivityCard from "../../../components/CityActivityCard/CityActivityCard";
 import NavbarMain from "../../../components/Navbar";
 import Pagination from 'react-responsive-pagination';
@@ -27,9 +28,27 @@ const Activities = () => {
 
   const totalPages = Math.floor((activities?.meta?.count)/10);
 
+  const [progress, setProgress] = useState(0);
+  const [overlay, setOverlay] = useState(false);
+
+  useEffect( () => {
+    setProgress(100)
+  }, [])
+
 
   return (
     <div className={styles.Activities}>
+      <LoadingBar
+        color='#ff800b'
+        progress={progress}
+        onLoaderFinished={() =>{ setProgress(0), setOverlay(true)}}
+      />
+
+      {
+        !overlay ? <div className="overlay"></div>
+        : 
+        <div></div>
+      }
       <NavbarMain />
       <h1 className={styles.ActivitiesTitle}>All available activities</h1>
       <div className={`${'container'}`}>

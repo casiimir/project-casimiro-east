@@ -236,3 +236,13 @@ span.lazy-load-image-background.blur.lazy-load-image-loaded {
   width: 100%;
   height: 100%;
 }
+
+// LoADING
+.overlay {
+  background: rgba(177, 173, 173,  0.3);
+  backdrop-filter: blur(2px);
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+}
