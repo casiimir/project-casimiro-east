@@ -51,7 +51,9 @@
 			outline: none;
 			color: rgb(53, 53, 53);
 			text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-
+			@media (max-width: 400px) {
+				font-size: 12px;
+			}
 			&:focus {
 				background-color: rgba(255, 255, 255, 0.6);
 
