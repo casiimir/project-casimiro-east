@@ -16,7 +16,7 @@ export let cartList = [];
 
 const Activity = () => {
   const [activity, setActivity] = useState([]);
-  const [cartListLength, setCartListLength] = useState([]);
+  const [cartListLength, setCartListLength] = useState(0);
   const router = useRouter();
   const activityId = router.query.activity;
 
@@ -27,6 +27,10 @@ const Activity = () => {
     }
   }, [activityId]);
 
+  useEffect(() => {
+    cartList = [...JSON.parse(localStorage.getItem("cartList"))];
+    setCartListLength(cartList.length);
+  }, [])
 
   const addToCart = (e) => {
     if (e.target.id === activityId) {
@@ -39,9 +43,6 @@ const Activity = () => {
       console.log(cartListLength)
     }
     new Swal('Succesfully added to cart!','','success');
-    setTimeout(() => {
-      location.reload();
-    }, 3000)
   };
 
 

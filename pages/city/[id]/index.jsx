@@ -27,6 +27,8 @@ const CityPage = () => {
   const [museumExp, setMuseumExp] = useState([]);
   const [outdoorExp, setOutdoorExp] = useState([]);
   const [expanded, setExpanded] = useState(false);
+  const [cartListLength, setCartListLength] = useState(0);
+
 
 
   const [progress, setProgress] = useState(0);
@@ -62,6 +64,11 @@ const CityPage = () => {
     getCategory(id, 194, setOutdoorExp);
   }, [id]);
 
+  useEffect(() => {
+    const cartList = [...JSON.parse(localStorage.getItem("cartList"))];
+    setCartListLength(cartList.length);
+  }, [])
+
   return (
     <div className={styles.MainContent}>
       <LoadingBar
@@ -79,7 +86,7 @@ const CityPage = () => {
         <HeroCity image={cityData?.cover_image_url} title={cityData?.name} />
       )}
 
-      <NavbarMain />
+      <NavbarMain cartQty={cartListLength}/>
       <div className="container">
 
         <div className={styles.Desc}>

@@ -25,7 +25,7 @@ const NavbarMain = ({ cartQty }) => {
   const [items, setItems] = useState([]);
   const [scrollPosY, setScrollPosY] = useState(0);
   
-  const [cartLength, setCartLength] = useState("0");
+  const [cartLength, setCartLength] = useState(0);
 
   const baseURL = "https://api.musement.com/api/v3/autocomplete";
 
@@ -125,9 +125,13 @@ const NavbarMain = ({ cartQty }) => {
                     />
                   </a>
                 </Link> 
-                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                {
+                  cartLength !== 0 &&
+                  <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                   {cartLength}
-                </span>
+                  </span>
+                }
+                
               </div>
             </Col>
           </Row>

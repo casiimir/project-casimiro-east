@@ -12,11 +12,17 @@ const Home = () => {
 
   const [progress, setProgress] = useState(0);
   const [overlay, setOverlay] = useState(false);
+  const [cartListLength, setCartListLength] = useState(0);
+
 
   useEffect( () => {
     setProgress(100)
   }, [])
 
+  useEffect(() => {
+    const cartList = [...JSON.parse(localStorage.getItem("cartList"))];
+    setCartListLength(cartList.length);
+  }, [])
 
   return (
     <div className={styles.Home}>
@@ -41,7 +47,7 @@ const Home = () => {
       }
       
       <Hero />
-      <NavbarMain />
+      <NavbarMain cartQty={cartListLength}/>
       <Jumbo/>
       <CardList list={"cities"} title={"Top rated cities"} className="top_rated" />
       <CardList list={"experiences"} title={"Top experiences"} className="top_experiences" />

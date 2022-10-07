@@ -13,6 +13,8 @@ const Activities = () => {
   const cityId = router.query.id;
   const [activities, setActivities] = useState([]);
   const [offset, setOffset] = useState(1);
+  const [cartListLength, setCartListLength] = useState(0);
+
   useEffect(() => {
     getAllActivities(cityId, "relevance", setActivities,offset);
     window.scroll({
@@ -35,6 +37,10 @@ const Activities = () => {
     setProgress(100)
   }, [])
 
+  useEffect(() => {
+    const cartList = [...JSON.parse(localStorage.getItem("cartList"))];
+    setCartListLength(cartList.length);
+  }, [])
 
   return (
     <div className={styles.Activities}>
@@ -49,7 +55,7 @@ const Activities = () => {
         : 
         <div></div>
       }
-      <NavbarMain />
+      <NavbarMain cartQty={cartListLength}/>
       <h1 className={styles.ActivitiesTitle}>All available activities</h1>
       <div className={`${'container'}`}>
         <div className={`${'row'}`}>
