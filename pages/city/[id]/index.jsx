@@ -93,8 +93,8 @@ const CityPage = () => {
               modules={[ Navigation ]}
               className="swiperExp"
               breakpoints={{
-                0: {
-                  width: 480,
+                290: {
+                  width: 290,
                   slidesPerView: 1,
                 },
                 // when window width is >= 640px
@@ -141,8 +141,8 @@ const CityPage = () => {
                 modules={[ Navigation ]}
                 className="swiperExp2"
                 breakpoints={{
-                  0: {
-                    width: 480,
+                  290: {
+                    width: 290,
                     slidesPerView: 1,
                   },
                   // when window width is >= 640px
@@ -190,8 +190,8 @@ const CityPage = () => {
                 modules={[ Navigation ]}
                 className="swiperExp3"
                 breakpoints={{
-                  0: {
-                    width: 480,
+                  290: {
+                    width: 290,
                     slidesPerView: 1,
                   },
                   // when window width is >= 640px
