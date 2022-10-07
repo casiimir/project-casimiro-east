@@ -1,12 +1,9 @@
 
 <p align="center">
-<img src="./public/logo-resized.png" alt="journaly" width=350/>
+<img src="./public/logo-resized.png" alt="journaly" width=250/>
 </p>
 
-
-<h2 align="center">Journaly</h2>
-
-"Not all those who wander are 404"
+<p align="center">"Not all those who wander are 404"</p>
 
 <p align="center">
   <img src="./public/Hero-screen.png" alt="journaly"/>
@@ -15,7 +12,7 @@
 <hr>
 
 
-<p align="center">Journaly is a tourism web-app: explore cities, experiences, places and so much more!</p>
+<p align="center"> :world_map: Journaly is a tourism web-app: explore cities, experiences, places and so much more!</p>
 
 
 <h2>Technologies used</h2>
