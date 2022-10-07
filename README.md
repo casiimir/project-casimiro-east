@@ -9,7 +9,7 @@
 "Not all those who wander are 404"
 
 
-![Img](https://github.com/casiimir/project-casimiro-east/blob/main/public/Hero-screen-resized.png)
+![Img](https://github.com/casiimir/project-casimiro-east/blob/main/public/Hero-screen.png)
 
 
 
