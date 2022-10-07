@@ -20,5 +20,3 @@ const CityActivityCard = ({ image, name, price, children }) => {
 };
 
 export default CityActivityCard;
-
-//prop {image, name, price}

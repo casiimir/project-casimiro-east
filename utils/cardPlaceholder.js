@@ -24,7 +24,7 @@ const cityCardPlaceholder = [
 export {cityCardPlaceholder};
 
 
-//---------------------------------------------------------------------------------------------------//
+
 
 
 const experienceCardPlaceholder = [

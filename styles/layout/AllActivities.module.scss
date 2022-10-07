@@ -3,7 +3,6 @@
 .Activities {
   background: $color_background-gray;
   background: $color_background-linear;
-  // border: 2px solid red;
   .ActivitiesTitle {
     padding: 24px;
     &::after {
@@ -20,13 +19,11 @@
     margin-left: 24px;
   }
   .ActivitiesSelector {
-    // margin-top: 15px;
     border: 1px solid rgba(0, 0, 0, 0.589);
     border-radius: 4px;
   }
 
   .ActivitiesDiv {
-    // display: flex;
     flex-direction: column;
     gap: 30px;
     max-width: 100vw;

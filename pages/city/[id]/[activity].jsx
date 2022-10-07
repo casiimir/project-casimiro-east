@@ -34,9 +34,7 @@ const Activity = () => {
 
       cartList.push(activity);
       localStorage.setItem("cartList", JSON.stringify(cartList));
-      console.log(JSON.parse(localStorage.getItem("cartList")));
       setCartListLength(cartList.length)
-      console.log(cartListLength)
     }
     new Swal('Succesfully added to cart!','','success');
   };

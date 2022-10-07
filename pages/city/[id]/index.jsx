@@ -6,16 +6,11 @@ import HeroCity from "../../../components/HeroCity";
 import ActivityCard from "../../../components/ActivityCard/ActivityCard";
 import { getCategory } from "../../../api/api";
 import NavbarMain from "../../../components/Navbar";
-// import ScrollContainer from "react-indiana-drag-scroll";
 import LoadingBar from 'react-top-loading-bar'
-
 import { Swiper, SwiperSlide } from 'swiper/react';
-// import required modules
 import { Navigation } from "swiper";
 import "swiper/css/navigation";
-// Import Swiper styles
 import 'swiper/css';
-
 import styles from "../../../styles/layout/CityOverwiev.module.scss";
 
 const CityPage = () => {
@@ -49,16 +44,12 @@ const CityPage = () => {
     })
       .then((res) => {
         setCityData(res.data);
-        console.log(res.data);
       })
       .catch((error) => {
         console.log(error.response);
       });
-    // food category
     getCategory(id, 221, setFoodExp);
-    // museum category
     getCategory(id, 209, setMuseumExp);
-    // outdoor category
     getCategory(id, 194, setOutdoorExp);
   }, [id]);
 
@@ -260,7 +251,5 @@ const CityPage = () => {
     </div>
   );
 };
-
-// TODO: in console avete tutto l'oggetto della città
 
 export default CityPage;
