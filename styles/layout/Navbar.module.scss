@@ -9,14 +9,12 @@
 	align-items: center;
 	position: relative;
 	transition: all 1.5s ease;
-	opacity: .7;
 	&.position_fixed {
-		background-color: #2e5c6edc;
+		background-color: #244350d5;
 		position: fixed;
 		width: 100%;
 		top: 0;
  		z-index: 15;
-		opacity: 1;
 	}
 	
 	.Container {
