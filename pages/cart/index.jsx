@@ -77,15 +77,17 @@ const Cart = () => {
                 
                 return(
                   <div key={index} className={`${styles.TdComponent} ${'row mb-3 align-items-center'}`}>
-                    <div className={`${'col-5 col-md-3 ps-0'}`}>
+                    <div className={`${'col-md-3 ps-0 pe-0'}`}>
                       <img src={item.cover_image_url} alt={item.slug} />
                     </div>
-                    <div className={`${'col-5 col-md-8'}`}>
+                    <div className={`${'col-md-6 mt-3 mt-md-0'}`}>
                       {fixTitle(item.slug).replace(/-/g, " ")}
                     </div>
-                    <div className={`${'col-2 col-md-1 text-center'}`}>
-                      {item.retail_price.formatted_iso_value}
-                      <button id={index} onClick={() => removeItem(item)} className={`${"button button--primary mt-2"}`}>X</button>
+                    <div className={`${'col-md-3 text-md-center'}`}>
+                      <p>
+                        {item.retail_price.formatted_iso_value}
+                      </p>
+                      <button id={index} onClick={() => removeItem(item)} className={`${"button button--primary my-2"}`}>X</button>
                     </div>
                   </div>
                 )
@@ -96,16 +98,15 @@ const Cart = () => {
               </div>
             }
           </div>
+          {
+            cartItems.length !== 0 ?
+            <BrainTree setCartItems={() => setCartItems([])} />
+            :
+            <div className={`${'container'}`}>
+              <button onClick={() => location.href = '/'} className={`${"button button--primary mb-5"}`}>Back to Home</button>
+            </div>
+          }
         </div>
-        {
-          cartItems.length !== 0 ?
-          <BrainTree setCartItems={() => setCartItems([])} />
-          :
-          <div className={`${'container'}`}>
-            <button onClick={() => location.href = '/'} className={`${"button button--primary mb-5"}`}>Back to Home</button>
-          </div>
-        }
-        
       <Footer/>
     </div>
   );
