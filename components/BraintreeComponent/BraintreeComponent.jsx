@@ -1,5 +1,3 @@
-//import "https://cdn.skypack.dev/bootstrap/dist/css/bootstrap.min.css";
-//import * as reactTransitionGroup from "https://cdn.skypack.dev/react-transition-group@v2.9.0";
 import React, { useState, useEffect } from "react";
 import * as dropin from "braintree-web-drop-in";
 import Container from 'react-bootstrap/Container';

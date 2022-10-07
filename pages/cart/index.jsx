@@ -36,6 +36,9 @@ const Cart = () => {
     
     setCartItems(JSON.parse(localStorage.getItem("cartList")).filter(item => item.uuid !== product.uuid)) 
     localStorage.setItem("cartList", JSON.stringify(JSON.parse(localStorage.getItem("cartList")).filter(item => item.uuid !== product.uuid)));
+    setTimeout(() => {
+      location.reload();
+    }, 3000)
   }
 
 
@@ -61,39 +64,48 @@ const Cart = () => {
       }
       <NavbarMain cartQty={cartItems.length} />
         <div className={styles.MainContent}>
-          <div className={styles.titleRow}>
-            <h1>Cart</h1>
-            <p>Total: {sum.toFixed(2)}</p>
-          </div>
           <div className={`${'container'}`}>
-              {
-                cartItems.length !== 0 ? 
-
-                cartItems.map( (item, index) => {
-                  
-                  return(
-                    <div key={index} className={`${styles.TdComponent} ${'row mb-3 align-items-center'}`}>
-                      <div className={`${'col-5 col-md-3 ps-0'}`}>
-                        <img src={item.cover_image_url} alt={item.slug} />
-                      </div>
-                      <div className={`${'col-5 col-md-8'}`}>
-                        {fixTitle(item.slug).replace(/-/g, " ")}
-                      </div>
-                      <div className={`${'col-2 col-md-1 text-center'}`}>
-                        {item.retail_price.formatted_iso_value}
-                        <button id={index} onClick={() => removeItem(item)} className={`${"button button--primary mt-2"}`}>X</button>
-                      </div>
-                    </div>
-                  )
-                })
-                :
-                <div className="text-center">
-                  <img className={`${'mw-100'}`} src="https://mir-s3-cdn-cf.behance.net/projects/404/95974e121862329.Y3JvcCw5MjIsNzIxLDAsMTM5.png" alt="" />
-                </div>
-              }
+            <div className={styles.titleRow}>
+              <h1>Cart</h1>
+              <p>Total: {sum.toFixed(2)}</p>
             </div>
+          
+            {
+              cartItems.length !== 0 ? 
+
+              cartItems.map( (item, index) => {
+                
+                return(
+                  <div key={index} className={`${styles.TdComponent} ${'row mb-3 align-items-center'}`}>
+                    <div className={`${'col-5 col-md-3 ps-0'}`}>
+                      <img src={item.cover_image_url} alt={item.slug} />
+                    </div>
+                    <div className={`${'col-5 col-md-8'}`}>
+                      {fixTitle(item.slug).replace(/-/g, " ")}
+                    </div>
+                    <div className={`${'col-2 col-md-1 text-center'}`}>
+                      {item.retail_price.formatted_iso_value}
+                      <button id={index} onClick={() => removeItem(item)} className={`${"button button--primary mt-2"}`}>X</button>
+                    </div>
+                  </div>
+                )
+              })
+              :
+              <div className="text-center">
+                <img className={`${'mw-100'}`} src="https://mir-s3-cdn-cf.behance.net/projects/404/95974e121862329.Y3JvcCw5MjIsNzIxLDAsMTM5.png" alt="" />
+              </div>
+            }
           </div>
-        <BrainTree setCartItems={() => setCartItems([])} />
+        </div>
+        {
+          cartItems.length !== 0 ?
+          <BrainTree setCartItems={() => setCartItems([])} />
+          :
+          <div className={`${'container'}`}>
+            <button onClick={() => location.href = '/'} className={`${"button button--primary mb-5"}`}>Back to Home</button>
+          </div>
+        }
+        
       <Footer/>
     </div>
   );

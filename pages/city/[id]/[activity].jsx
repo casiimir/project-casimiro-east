@@ -39,6 +39,9 @@ const Activity = () => {
       console.log(cartListLength)
     }
     new Swal('Succesfully added to cart!','','success');
+    setTimeout(() => {
+      location.reload();
+    }, 3000)
   };
 
 
