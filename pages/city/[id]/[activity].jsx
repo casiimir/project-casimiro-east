@@ -22,9 +22,6 @@ const Activity = () => {
 
   useEffect(() => {
     getActivity(activityId, setActivity);
-    if (localStorage.getItem("cartList") === null) {
-      localStorage.setItem("cartList", JSON.stringify(cartList));
-    }
   }, [activityId]);
 
   useEffect(() => {

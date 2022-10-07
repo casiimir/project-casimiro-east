@@ -20,9 +20,14 @@ const Home = () => {
   }, [])
 
   useEffect(() => {
+    if (localStorage.getItem("cartList") === null) {
+      localStorage.setItem("cartList", JSON.stringify(cartList = []));
+    }
     const cartList = [...JSON.parse(localStorage.getItem("cartList"))];
     setCartListLength(cartList.length);
   }, [])
+
+  
 
   return (
     <div className={styles.Home}>
