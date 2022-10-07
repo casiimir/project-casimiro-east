@@ -16,6 +16,7 @@ export let cartList = [];
 
 const Activity = () => {
   const [activity, setActivity] = useState([]);
+  const [cartListLength, setCartListLength] = useState([]);
   const router = useRouter();
   const activityId = router.query.activity;
 
@@ -34,6 +35,8 @@ const Activity = () => {
       cartList.push(activity);
       localStorage.setItem("cartList", JSON.stringify(cartList));
       console.log(JSON.parse(localStorage.getItem("cartList")));
+      setCartListLength(cartList.length)
+      console.log(cartListLength)
     }
     new Swal('Succesfully added to cart!','','success');
     setTimeout(() => {
@@ -62,7 +65,7 @@ const Activity = () => {
         : 
         <div></div>
       }
-      <Navbar />
+      <Navbar cartQty={cartList.length}/>
       <div className={`${"container"}`}>
         <div className={`${"row"}`}>
           <div className={`${"col"}`}>

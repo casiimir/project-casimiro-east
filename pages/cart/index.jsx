@@ -62,7 +62,7 @@ const Cart = () => {
         : 
         <div></div>
       }
-      <NavbarMain />
+      <NavbarMain cartQty={cartItems.length} />
         <div className={styles.MainContent}>
           <div className={`${'container'}`}>
             <div className={styles.titleRow}>

@@ -19,7 +19,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 
-const NavbarMain = ({ setCartItems }) => {
+const NavbarMain = ({ cartQty }) => {
   const headers = { "Accept-Language": "en-EN" };
   const [query, setQuery] = useState("");
   const [items, setItems] = useState([]);
@@ -75,10 +75,10 @@ const NavbarMain = ({ setCartItems }) => {
   
   useEffect(() => {
     if(localStorage.getItem("cartList") !== null) {
-      setCartLength(JSON.stringify(JSON.parse(localStorage.getItem("cartList")).length));
+      setCartLength(cartQty);
       // console.log(cartLength)
     }
-  }, [cartLength]);
+  }, [cartQty]);
 
 
   const resetValue = () => {
