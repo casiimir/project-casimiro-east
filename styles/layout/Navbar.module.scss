@@ -3,16 +3,20 @@
 
 .Navbar {
 	width: 100%;
-	background-color: #484645;
+	background-color: #244350;
 	color: white;
 	display: flex;
 	align-items: center;
-
+	position: relative;
+	transition: all 1.5s ease;
+	opacity: .7;
 	&.position_fixed {
+		background-color: #2e5c6edc;
 		position: fixed;
 		width: 100%;
 		top: 0;
  		z-index: 15;
+		opacity: 1;
 	}
 	
 	.Container {
@@ -97,7 +101,7 @@
 	}
 
 	.RelativeIcon {
-		// position: relative;
+		position: relative;
 		// top: 8px;
 		// right: 5px;
 		p {
