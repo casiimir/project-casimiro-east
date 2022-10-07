@@ -38,7 +38,10 @@
 </p>
 
 <hr>
-
+<p align="center">
+  <img src="./public/hero-welcome.png" alt="welcome-page"/>
+</p>
+<hr>
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
