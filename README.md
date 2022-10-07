@@ -1,3 +1,6 @@
+
+![Logo](https://github.com/casiimir/project-casimiro-east/blob/8f0cae8704b75c5d8df06f794b65966690791694/public/logo.png)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
