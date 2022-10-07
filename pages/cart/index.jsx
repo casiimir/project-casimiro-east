@@ -98,8 +98,12 @@ const Cart = () => {
           </div>
         </div>
         {
-          cartItems.length !== 0 &&
+          cartItems.length !== 0 ?
           <BrainTree setCartItems={() => setCartItems([])} />
+          :
+          <div className={`${'container'}`}>
+            <button onClick={() => location.href = '/'} className={`${"button button--primary mb-5"}`}>Back to Home</button>
+          </div>
         }
         
       <Footer/>
