@@ -5,8 +5,6 @@ const GET = async (BASE_URL, section) => {
   return res.json();
 };
 
-// la funzione getCategory serve a chiamare una lista di attività correlate ad una città (cityId) e una categoria specifica (categoryId)
-// il parametro "setter" sarà il setter dello state che prenderà i dati risultanti dalla chiamata
 const getCategory = (cityId, categoryId, setter) => {
   axios
     ({
@@ -35,15 +33,12 @@ const getActivity = (activityId, setter) => {
   })
     .then((res) => {
       setter(res.data);
-      console.log("====>", res.data);
     })
     .catch((error) => {
       console.log(error.response);
     });
 };
 
-// questa funzione restituisce tutte le attività per città, il parametro sort_by accetta:
-// rating-relevance-price
 const getAllActivities = (cityId, sortBy, setter, offset) => {
   axios
   ({
@@ -80,14 +75,12 @@ const createCart = (id, setter) => {
   })
     .then((res) => {
       setter(res.data);
-      console.log(res);
     })
     .catch((error) => {
       console.log(error.response);
     });
 };
 
-//  81927b61-9b75-49b9-9836-d77116809d04 uuid per addcart
 
 const postInCart = (setter) => {
   axios({
@@ -105,23 +98,11 @@ const postInCart = (setter) => {
   })
     .then((res) => {
       setter(res.data);
-      console.log(res);
     })
     .catch((error) => {
       console.log(error.response);
     });
 };
-
-// const postInCart = (cartUuid, setter) => {
-//     axios
-//     .post(`https://api.musement.com/api/v3/carts/${cartUuid}/items`)
-//     .then((res)=>{
-//         setter(res.data.data);
-//     })
-//     .catch((error) =>{
-//         console.log(error.response);
-//     })
-// }
 
 export {
   GET,

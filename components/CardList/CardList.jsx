@@ -3,22 +3,15 @@ import styles from "../../styles/layout/CardList.module.scss";
 import Link from "next/link";
 import Card from "../Card/Card";
 import axios from "axios";
-
-// import ScrollContainer from "react-indiana-drag-scroll";
 import { Swiper, SwiperSlide } from 'swiper/react';
-// import required modules
 import { Navigation } from "swiper";
 import "swiper/css/navigation";
-// Import Swiper styles
 import 'swiper/css';
 
 const CardList = ({ list, title }) => {
   const headers = { "Accept-Language": "en-EN" };
   const BASE_URL = "https://api.musement.com/api/v3/activities";
   const [displayList, setDisplayList] = useState([]);
-
-  
-  
 
   useEffect(() => {
     axios
@@ -42,8 +35,6 @@ const CardList = ({ list, title }) => {
         console.log(error.response);
       });
   }, []);
-
-  console.log(displayList);
 
   return (
     <>
@@ -89,7 +80,7 @@ const CardList = ({ list, title }) => {
                       <Card
                         key={item.city.id}
                         name={item.city.name}
-                        image={item.city.cover_image_url}
+                        image={item.city.cover_image_url+'?w=800'}
                       >
                         <Link href={`/city/${item.city.id}`}>
                           <a className={styles.Link}>{item?.city.name}</a>
@@ -124,5 +115,3 @@ const CardList = ({ list, title }) => {
 };
 
 export default CardList;
-
-//commento

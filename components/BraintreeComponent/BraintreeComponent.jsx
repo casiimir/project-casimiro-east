@@ -16,7 +16,7 @@ function BraintreeDropIn(props) {
       const initializeBraintree = () =>
         dropin.create(
           {
-            authorization: "sandbox_s9vcdr2w_dzy5457dprcn3vk8", // insert your tokenization key or client token here
+            authorization: "sandbox_s9vcdr2w_dzy5457dprcn3vk8",
             container: "#braintree-drop-in-div",
           },
           function (error, instance) {

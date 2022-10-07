@@ -1,10 +1,7 @@
 import Image from 'next/image';
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-// import required modules
 import { EffectFade, Autoplay } from "swiper";
 import "swiper/css/effect-fade";
-// Import Swiper styles
 import 'swiper/css';
 
 import styles from '../../styles/layout/Hero.module.scss';
