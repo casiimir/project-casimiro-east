@@ -1,4 +1,3 @@
-// import TdComponent from "../../components/TdComponent";
 import NavbarMain from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer"
 import { useState, useEffect } from "react";
@@ -30,10 +29,7 @@ const Cart = () => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
-  const removeItem = (product) => {
-    console.log("product : ", product)
-    console.log("cartItems : ", cartItems)
-    
+  const removeItem = (product) => {    
     setCartItems(JSON.parse(localStorage.getItem("cartList")).filter(item => item.uuid !== product.uuid)) 
     localStorage.setItem("cartList", JSON.stringify(JSON.parse(localStorage.getItem("cartList")).filter(item => item.uuid !== product.uuid)));
     setTimeout(() => {

@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap");
 
 .ActivityCard {
-  // display: flex;
   flex-direction: row;
   background-color: white;
   border-radius: 4px;
@@ -9,18 +8,13 @@
 
   .ActivityCardDiv {
     display: flex;
-    // min-width: 180px;
-    // max-width: 180px;
     min-height: 280px;
     max-height: 280px;
     align-items: center;
     flex-direction: column;
-    // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.589);
     border-radius: 4px;
 
     .ActivityCardImg {
-      // min-width: 180px;
-      // max-width: 180px;
       min-height: 165px;
       max-height: 165px;
       border-top-left-radius: 4px;

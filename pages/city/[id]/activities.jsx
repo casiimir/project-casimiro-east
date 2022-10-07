@@ -74,7 +74,7 @@ const Activities = () => {
             <CityActivityCard
               key={i}
               name={el?.title}
-              image={el?.cover_image_url}
+              image={el?.cover_image_url+'?w=800'}
               price={el?.retail_price?.formatted_iso_value}
             >
               <Link href={`/city/${cityId}/${el?.uuid}`}>

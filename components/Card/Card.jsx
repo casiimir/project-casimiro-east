@@ -16,4 +16,3 @@ const Card = ({ name, image, children }) => {
 
 export default Card;
 
-//commento

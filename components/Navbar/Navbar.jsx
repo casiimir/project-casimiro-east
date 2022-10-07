@@ -8,12 +8,10 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Navbar from 'react-bootstrap/Navbar';
-import "@fortawesome/fontawesome-svg-core/styles.css"; // import Font Awesome CSS
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-// import the icons you need
 import {
   faShoppingCart
 } from "@fortawesome/free-solid-svg-icons";
@@ -60,7 +58,6 @@ const NavbarMain = ({ cartQty }) => {
       })
       .then((res) => {
         setItems(res.data[0].items);
-        console.table(res.data[0].items);
       })
       .catch((error) => {
         console.log(error.response);
@@ -76,7 +73,6 @@ const NavbarMain = ({ cartQty }) => {
   useEffect(() => {
     if(localStorage.getItem("cartList") !== null) {
       setCartLength(cartQty);
-      // console.log(cartLength)
     }
   }, [cartQty]);
 
