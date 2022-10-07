@@ -19,17 +19,22 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 
-const NavbarMain = () => {
+const NavbarMain = ({ setCartItems }) => {
   const headers = { "Accept-Language": "en-EN" };
   const [query, setQuery] = useState("");
   const [items, setItems] = useState([]);
   const [scrollPosY, setScrollPosY] = useState(0);
+  
   const [cartLength, setCartLength] = useState("0");
+
   const baseURL = "https://api.musement.com/api/v3/autocomplete";
+
+
   const handleChange = (event) => {
     setQuery(event.target.value);
     searchItems(query);
   };
+
   const searchItems = (query) => {
     axios
       .get(baseURL, {
@@ -67,11 +72,14 @@ const NavbarMain = () => {
     !query && setItems([]);
   }, [query]);
 
-  if(typeof window !== "undefined"){
-    useEffect(() => {
+  
+  useEffect(() => {
+    if(localStorage.getItem("cartList") !== null) {
       setCartLength(JSON.stringify(JSON.parse(localStorage.getItem("cartList")).length));
-    }, []);
-  }
+      // console.log(cartLength)
+    }
+  }, [cartLength]);
+
 
   const resetValue = () => {
     setQuery('')
@@ -117,8 +125,9 @@ const NavbarMain = () => {
                     />
                   </a>
                 </Link> 
-                <p>{cartLength}</p> 
-                
+                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  {cartLength}
+                </span>
               </div>
             </Col>
           </Row>
