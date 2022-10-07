@@ -5,8 +5,19 @@ import NavbarMain from "../components/Navbar";
 import CardList from "../components/CardList/CardList";
 import Jumbo from "../components/Jumbo"
 import Footer from "../components/Footer";
+import { useState, useEffect } from "react";
+import LoadingBar from 'react-top-loading-bar'
 
 const Home = () => {
+
+  const [progress, setProgress] = useState(0);
+  const [overlay, setOverlay] = useState(false);
+
+  useEffect( () => {
+    setProgress(100)
+  }, [])
+
+
   return (
     <div className={styles.Home}>
       <Head>
@@ -15,6 +26,20 @@ const Home = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+
+      <LoadingBar
+        color='#ff800b'
+        progress={progress}
+        onLoaderFinished={() =>{ setProgress(0), setOverlay(true)}}
+      />
+
+      {
+        !overlay ? <div className="overlay"></div>
+        : 
+        <div></div>
+      }
+      
       <Hero />
       <NavbarMain />
       <Jumbo/>
