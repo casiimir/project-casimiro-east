@@ -33,7 +33,7 @@ const Activity = () => {
       localStorage.setItem("cartList", JSON.stringify(cartList));
       console.log(JSON.parse(localStorage.getItem("cartList")));
     }
-    new Swal('Elemento aggiunto al carrello','','success');
+    new Swal('Succesfully added to cart!','','success');
   };
 
   return (

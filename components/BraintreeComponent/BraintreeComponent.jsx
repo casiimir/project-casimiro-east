@@ -9,7 +9,7 @@ import Swal from 'sweetalert2';
 
 
 function BraintreeDropIn(props) {
-  const { show, onPaymentCompleted } = props;
+  const { show, onPaymentCompleted, setCartItems, checkoutBtnVis } = props;
 
   const [braintreeInstance, setBraintreeInstance] = useState(undefined);
 
@@ -43,6 +43,7 @@ function BraintreeDropIn(props) {
       <div className={`${'row'}`}>
         <div className={`${'col mb-5'}`}>
         <button
+          style = {{display:`${checkoutBtnVis}`}}
           className={`${'button button--primary'}`}
           disabled={!braintreeInstance}
           onClick={() => {
@@ -50,19 +51,22 @@ function BraintreeDropIn(props) {
               braintreeInstance.requestPaymentMethod((error, payload) => {
                 if (error) {
                   console.error(error);
-                  new Swal('Pagamento non riuscito','','error');
+                  new Swal('Something went wrong :(','','error');
                 } else {
                   const paymentMethodNonce = payload.nonce;
                   console.log("payment method nonce", payload.nonce);
 
-                  // TODO: use the paymentMethodNonce to
-                  //  call you server and complete the payment here
+                  localStorage.removeItem("cartList");
+                  setCartItems;
 
-                  // ...
-
-                  new Swal('Pagamento effettuato con successo','','success');
+                  new Swal('Payment done! B) ggwp','','success');
 
                   onPaymentCompleted();
+
+                  setTimeout(() => {
+                    location.reload();
+                  }, 1000)
+                  
                 }
               });
             }
